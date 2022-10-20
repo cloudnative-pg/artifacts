@@ -1419,51 +1419,6 @@ spec:
                         items:
                           type: string
                         type: array
-                      postInitApplicationSQLRefs:
-                        description: PostInitApplicationSQLRefs points references
-                          to ConfigMaps or Secrets which contain SQL files, the general
-                          implementation order to these references is from all Secrets
-                          to all ConfigMaps, and inside Secrets or ConfigMaps, the
-                          implementation order is same as the order of each array
-                          (by default empty)
-                        properties:
-                          configMapRefs:
-                            description: ConfigMapRefs holds a list of references
-                              to ConfigMaps
-                            items:
-                              description: ConfigMapKeySelector contains enough information
-                                to let you locate the key of a ConfigMap
-                              properties:
-                                key:
-                                  description: The key to select
-                                  type: string
-                                name:
-                                  description: Name of the referent.
-                                  type: string
-                              required:
-                              - key
-                              - name
-                              type: object
-                            type: array
-                          secretRefs:
-                            description: SecretRefs holds a list of references to
-                              Secrets
-                            items:
-                              description: SecretKeySelector contains enough information
-                                to let you locate the key of a Secret
-                              properties:
-                                key:
-                                  description: The key to select
-                                  type: string
-                                name:
-                                  description: Name of the referent.
-                                  type: string
-                              required:
-                              - key
-                              - name
-                              type: object
-                            type: array
-                        type: object
                       postInitSQL:
                         description: List of SQL queries to be executed as a superuser
                           immediately after the cluster has been created - to be used
@@ -2297,7 +2252,7 @@ spec:
                       set up.
                     properties:
                       enabled:
-                        description: This flag enables the constraints for sync replicas
+                        description: This flag enabled the constraints for sync replicas
                         type: boolean
                       nodeLabelsAntiAffinity:
                         description: A list of node labels values to extract and compare
@@ -2346,39 +2301,6 @@ spec:
                     type: string
                 required:
                 - source
-                type: object
-              replicationSlots:
-                description: Replication slots management configuration
-                properties:
-                  highAvailability:
-                    description: Replication slots for high availability configuration
-                    properties:
-                      enabled:
-                        description: If enabled, the operator will automatically manage
-                          replication slots on the primary instance and use them in
-                          streaming replication connections with all the standby instances
-                          that are part of the HA cluster. If disabled (default),
-                          the operator will not take advantage of replication slots
-                          in streaming connections with the replicas. This feature
-                          also controls replication slots in replica cluster, from
-                          the designated primary to its cascading replicas. This can
-                          only be set at creation time.
-                        type: boolean
-                      slotPrefix:
-                        default: _cnpg_
-                        description: Prefix for replication slots managed by the operator
-                          for HA. It may only contain lower case letters, numbers,
-                          and the underscore character. This can only be set at creation
-                          time. By default set to `_cnpg_`.
-                        pattern: ^[0-9a-z_]*$
-                        type: string
-                    type: object
-                  updateInterval:
-                    default: 30
-                    description: Standby will update the status of the local replication
-                      slots every `updateInterval` seconds (default 30).
-                    minimum: 1
-                    type: integer
                 type: object
               resources:
                 description: Resources requirements of every generated Pod. Please
@@ -2628,197 +2550,6 @@ spec:
                   an infinite delay
                 format: int32
                 type: integer
-              walStorage:
-                description: Configuration of the storage for PostgreSQL WAL (Write-Ahead
-                  Log)
-                properties:
-                  pvcTemplate:
-                    description: Template to be used to generate the Persistent Volume
-                      Claim
-                    properties:
-                      accessModes:
-                        description: 'accessModes contains the desired access modes
-                          the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
-                        items:
-                          type: string
-                        type: array
-                      dataSource:
-                        description: 'dataSource field can be used to specify either:
-                          * An existing VolumeSnapshot object (snapshot.storage.k8s.io/VolumeSnapshot)
-                          * An existing PVC (PersistentVolumeClaim) If the provisioner
-                          or an external controller can support the specified data
-                          source, it will create a new volume based on the contents
-                          of the specified data source. If the AnyVolumeDataSource
-                          feature gate is enabled, this field will always have the
-                          same contents as the DataSourceRef field.'
-                        properties:
-                          apiGroup:
-                            description: APIGroup is the group for the resource being
-                              referenced. If APIGroup is not specified, the specified
-                              Kind must be in the core API group. For any other third-party
-                              types, APIGroup is required.
-                            type: string
-                          kind:
-                            description: Kind is the type of resource being referenced
-                            type: string
-                          name:
-                            description: Name is the name of resource being referenced
-                            type: string
-                        required:
-                        - kind
-                        - name
-                        type: object
-                        x-kubernetes-map-type: atomic
-                      dataSourceRef:
-                        description: 'dataSourceRef specifies the object from which
-                          to populate the volume with data, if a non-empty volume
-                          is desired. This may be any local object from a non-empty
-                          API group (non core object) or a PersistentVolumeClaim object.
-                          When this field is specified, volume binding will only succeed
-                          if the type of the specified object matches some installed
-                          volume populator or dynamic provisioner. This field will
-                          replace the functionality of the DataSource field and as
-                          such if both fields are non-empty, they must have the same
-                          value. For backwards compatibility, both fields (DataSource
-                          and DataSourceRef) will be set to the same value automatically
-                          if one of them is empty and the other is non-empty. There
-                          are two important differences between DataSource and DataSourceRef:
-                          * While DataSource only allows two specific types of objects,
-                          DataSourceRef allows any non-core object, as well as PersistentVolumeClaim
-                          objects. * While DataSource ignores disallowed values (dropping
-                          them), DataSourceRef preserves all values, and generates
-                          an error if a disallowed value is specified. (Beta) Using
-                          this field requires the AnyVolumeDataSource feature gate
-                          to be enabled.'
-                        properties:
-                          apiGroup:
-                            description: APIGroup is the group for the resource being
-                              referenced. If APIGroup is not specified, the specified
-                              Kind must be in the core API group. For any other third-party
-                              types, APIGroup is required.
-                            type: string
-                          kind:
-                            description: Kind is the type of resource being referenced
-                            type: string
-                          name:
-                            description: Name is the name of resource being referenced
-                            type: string
-                        required:
-                        - kind
-                        - name
-                        type: object
-                        x-kubernetes-map-type: atomic
-                      resources:
-                        description: 'resources represents the minimum resources the
-                          volume should have. If RecoverVolumeExpansionFailure feature
-                          is enabled users are allowed to specify resource requirements
-                          that are lower than previous value but must still be higher
-                          than capacity recorded in the status field of the claim.
-                          More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
-                        properties:
-                          limits:
-                            additionalProperties:
-                              anyOf:
-                              - type: integer
-                              - type: string
-                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
-                              x-kubernetes-int-or-string: true
-                            description: 'Limits describes the maximum amount of compute
-                              resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
-                            type: object
-                          requests:
-                            additionalProperties:
-                              anyOf:
-                              - type: integer
-                              - type: string
-                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
-                              x-kubernetes-int-or-string: true
-                            description: 'Requests describes the minimum amount of
-                              compute resources required. If Requests is omitted for
-                              a container, it defaults to Limits if that is explicitly
-                              specified, otherwise to an implementation-defined value.
-                              More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
-                            type: object
-                        type: object
-                      selector:
-                        description: selector is a label query over volumes to consider
-                          for binding.
-                        properties:
-                          matchExpressions:
-                            description: matchExpressions is a list of label selector
-                              requirements. The requirements are ANDed.
-                            items:
-                              description: A label selector requirement is a selector
-                                that contains values, a key, and an operator that
-                                relates the key and values.
-                              properties:
-                                key:
-                                  description: key is the label key that the selector
-                                    applies to.
-                                  type: string
-                                operator:
-                                  description: operator represents a key's relationship
-                                    to a set of values. Valid operators are In, NotIn,
-                                    Exists and DoesNotExist.
-                                  type: string
-                                values:
-                                  description: values is an array of string values.
-                                    If the operator is In or NotIn, the values array
-                                    must be non-empty. If the operator is Exists or
-                                    DoesNotExist, the values array must be empty.
-                                    This array is replaced during a strategic merge
-                                    patch.
-                                  items:
-                                    type: string
-                                  type: array
-                              required:
-                              - key
-                              - operator
-                              type: object
-                            type: array
-                          matchLabels:
-                            additionalProperties:
-                              type: string
-                            description: matchLabels is a map of {key,value} pairs.
-                              A single {key,value} in the matchLabels map is equivalent
-                              to an element of matchExpressions, whose key field is
-                              "key", the operator is "In", and the values array contains
-                              only "value". The requirements are ANDed.
-                            type: object
-                        type: object
-                        x-kubernetes-map-type: atomic
-                      storageClassName:
-                        description: 'storageClassName is the name of the StorageClass
-                          required by the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#class-1'
-                        type: string
-                      volumeMode:
-                        description: volumeMode defines what type of volume is required
-                          by the claim. Value of Filesystem is implied when not included
-                          in claim spec.
-                        type: string
-                      volumeName:
-                        description: volumeName is the binding reference to the PersistentVolume
-                          backing this claim.
-                        type: string
-                    type: object
-                  resizeInUseVolumes:
-                    default: true
-                    description: Resize existent PVCs, defaults to true
-                    type: boolean
-                  size:
-                    description: Size of the storage. Required if not already specified
-                      in the PVC template. Changes to this field are automatically
-                      reapplied to the created PVCs. Size cannot be decreased.
-                    type: string
-                  storageClass:
-                    description: StorageClass to use for database data (`PGDATA`).
-                      Applied after evaluating the PVC template, if available. If
-                      not specified, generated PVCs will be satisfied by the default
-                      storage class
-                    type: string
-                required:
-                - size
-                type: object
             required:
             - instances
             type: object
@@ -2892,8 +2623,8 @@ spec:
                   description: "Condition contains details for one aspect of the current
                     state of this API Resource. --- This struct is intended for direct
                     use as an array at the field path .status.conditions.  For example,
-                    \n type FooStatus struct{ // Represents the observations of a
-                    foo's current state. // Known .status.conditions.type are: \"Available\",
+                    type FooStatus struct{ // Represents the observations of a foo's
+                    current state. // Known .status.conditions.type are: \"Available\",
                     \"Progressing\", and \"Degraded\" // +patchMergeKey=type // +patchStrategy=merge
                     // +listType=map // +listMapKey=type Conditions []metav1.Condition
                     `json:\"conditions,omitempty\" patchStrategy:\"merge\" patchMergeKey:\"type\"
@@ -2993,11 +2724,6 @@ spec:
               initializingPVC:
                 description: List of all the PVCs that are being initialized by this
                   cluster
-                items:
-                  type: string
-                type: array
-              instanceNames:
-                description: List of instance names in the cluster
                 items:
                   type: string
                 type: array
@@ -3146,12 +2872,6 @@ spec:
                       replica election in case of failures
                     type: boolean
                 type: object
-              unusablePVC:
-                description: List of all the PVCs that are unusable because another
-                  PVC is missing
-                items:
-                  type: string
-                type: array
               writeService:
                 description: Current write pod
                 type: string
@@ -4809,13 +4529,13 @@ spec:
                               type: string
                             ports:
                               description: List of ports to expose from the container.
-                                Not specifying a port here DOES NOT prevent that port
-                                from being exposed. Any port which is listening on
-                                the default "0.0.0.0" address inside a container will
-                                be accessible from the network. Modifying this array
-                                with strategic merge patch may corrupt the data. For
-                                more information See https://github.com/kubernetes/kubernetes/issues/108255.
-                                Cannot be updated.
+                                Exposing a port here gives the system additional information
+                                about the network connections a container uses, but
+                                is primarily informational. Not specifying a port
+                                here DOES NOT prevent that port from being exposed.
+                                Any port which is listening on the default "0.0.0.0"
+                                address inside a container will be accessible from
+                                the network. Cannot be updated.
                               items:
                                 description: ContainerPort represents a network port
                                   in a single container.
@@ -5573,6 +5293,8 @@ spec:
                           be specified when creating a pod, and it cannot be modified
                           by updating the pod spec. In order to add an ephemeral container
                           to an existing pod, use the pod's ephemeralcontainers subresource.
+                          This field is beta-level and available on clusters that
+                          haven't disabled the EphemeralContainers feature gate.
                         items:
                           description: "An EphemeralContainer is a temporary container
                             that you may add to an existing Pod for user-initiated
@@ -5583,7 +5305,9 @@ spec:
                             container causes the Pod to exceed its resource allocation.
                             \n To add an ephemeral container, use the ephemeralcontainers
                             subresource of an existing Pod. Ephemeral containers may
-                            not be removed or restarted."
+                            not be removed or restarted. \n This is a beta feature
+                            available on clusters that haven't disabled the EphemeralContainers
+                            feature gate."
                           properties:
                             args:
                               description: 'Arguments to the entrypoint. The image''s
@@ -6897,19 +6621,6 @@ spec:
                         description: 'Use the host''s pid namespace. Optional: Default
                           to false.'
                         type: boolean
-                      hostUsers:
-                        description: 'Use the host''s user namespace. Optional: Default
-                          to true. If set to true or not present, the pod will be
-                          run in the host user namespace, useful for when the pod
-                          needs a feature only available to the host user namespace,
-                          such as loading a kernel module with CAP_SYS_MODULE. When
-                          set to false, a new userns is created for the pod. Setting
-                          false is useful for mitigating container breakout vulnerabilities
-                          even allowing users to run their containers as root without
-                          actually having root privileges on the host. This field
-                          is alpha-level and is only honored by servers that enable
-                          the UserNamespacesSupport feature.'
-                        type: boolean
                       hostname:
                         description: Specifies the hostname of the Pod If not specified,
                           the pod's hostname will be set to a system-defined value.
@@ -7536,13 +7247,13 @@ spec:
                               type: string
                             ports:
                               description: List of ports to expose from the container.
-                                Not specifying a port here DOES NOT prevent that port
-                                from being exposed. Any port which is listening on
-                                the default "0.0.0.0" address inside a container will
-                                be accessible from the network. Modifying this array
-                                with strategic merge patch may corrupt the data. For
-                                more information See https://github.com/kubernetes/kubernetes/issues/108255.
-                                Cannot be updated.
+                                Exposing a port here gives the system additional information
+                                about the network connections a container uses, but
+                                is primarily informational. Not specifying a port
+                                here DOES NOT prevent that port from being exposed.
+                                Any port which is listening on the default "0.0.0.0"
+                                address inside a container will be accessible from
+                                the network. Cannot be updated.
                               items:
                                 description: ContainerPort represents a network port
                                   in a single container.
@@ -8262,7 +7973,7 @@ spec:
                           set. \n If the OS field is set to linux, the following fields
                           must be unset: -securityContext.windowsOptions \n If the
                           OS field is set to windows, following fields must be unset:
-                          - spec.hostPID - spec.hostIPC - spec.hostUsers - spec.securityContext.seLinuxOptions
+                          - spec.hostPID - spec.hostIPC - spec.securityContext.seLinuxOptions
                           - spec.securityContext.seccompProfile - spec.securityContext.fsGroup
                           - spec.securityContext.fsGroupChangePolicy - spec.securityContext.sysctls
                           - spec.shareProcessNamespace - spec.securityContext.runAsUser
@@ -8271,7 +7982,8 @@ spec:
                           - spec.containers[*].securityContext.capabilities - spec.containers[*].securityContext.readOnlyRootFilesystem
                           - spec.containers[*].securityContext.privileged - spec.containers[*].securityContext.allowPrivilegeEscalation
                           - spec.containers[*].securityContext.procMount - spec.containers[*].securityContext.runAsUser
-                          - spec.containers[*].securityContext.runAsGroup"
+                          - spec.containers[*].securityContext.runAsGroup This is
+                          a beta field and requires the IdentifyPodOS feature"
                         properties:
                           name:
                             description: 'Name is the name of the operating system.
@@ -8689,20 +8401,6 @@ spec:
                                   type: object
                               type: object
                               x-kubernetes-map-type: atomic
-                            matchLabelKeys:
-                              description: MatchLabelKeys is a set of pod label keys
-                                to select the pods over which spreading will be calculated.
-                                The keys are used to lookup values from the incoming
-                                pod labels, those key-value labels are ANDed with
-                                labelSelector to select the group of existing pods
-                                over which spreading will be calculated for the incoming
-                                pod. Keys that don't exist in the incoming pod labels
-                                will be ignored. A null or empty list means only match
-                                against labelSelector.
-                              items:
-                                type: string
-                              type: array
-                              x-kubernetes-list-type: atomic
                             maxSkew:
                               description: 'MaxSkew describes the degree to which
                                 pods may be unevenly distributed. When `whenUnsatisfiable=DoNotSchedule`,
@@ -8748,34 +8446,10 @@ spec:
                                 new pod with the same labelSelector cannot be scheduled,
                                 because computed skew will be 3(3 - 0) if new Pod
                                 is scheduled to any of the three zones, it will violate
-                                MaxSkew. \n This is a beta field and requires the
-                                MinDomainsInPodTopologySpread feature gate to be enabled
-                                (enabled by default)."
+                                MaxSkew. \n This is an alpha field and requires enabling
+                                MinDomainsInPodTopologySpread feature gate."
                               format: int32
                               type: integer
-                            nodeAffinityPolicy:
-                              description: "NodeAffinityPolicy indicates how we will
-                                treat Pod's nodeAffinity/nodeSelector when calculating
-                                pod topology spread skew. Options are: - Honor: only
-                                nodes matching nodeAffinity/nodeSelector are included
-                                in the calculations. - Ignore: nodeAffinity/nodeSelector
-                                are ignored. All nodes are included in the calculations.
-                                \n If this value is nil, the behavior is equivalent
-                                to the Honor policy. This is a alpha-level feature
-                                enabled by the NodeInclusionPolicyInPodTopologySpread
-                                feature flag."
-                              type: string
-                            nodeTaintsPolicy:
-                              description: "NodeTaintsPolicy indicates how we will
-                                treat node taints when calculating pod topology spread
-                                skew. Options are: - Honor: nodes without taints,
-                                along with tainted nodes for which the incoming pod
-                                has a toleration, are included. - Ignore: node taints
-                                are ignored. All nodes are included. \n If this value
-                                is nil, the behavior is equivalent to the Ignore policy.
-                                This is a alpha-level feature enabled by the NodeInclusionPolicyInPodTopologySpread
-                                feature flag."
-                              type: string
                             topologyKey:
                               description: TopologyKey is the key of node labels.
                                 Nodes that have a label with this key and identical
@@ -8784,11 +8458,11 @@ spec:
                                 to put balanced number of pods into each bucket. We
                                 define a domain as a particular instance of a topology.
                                 Also, we define an eligible domain as a domain whose
-                                nodes meet the requirements of nodeAffinityPolicy
-                                and nodeTaintsPolicy. e.g. If TopologyKey is "kubernetes.io/hostname",
-                                each Node is a domain of that topology. And, if TopologyKey
-                                is "topology.kubernetes.io/zone", each zone is a domain
-                                of that topology. It's a required field.
+                                nodes match the node selector. e.g. If TopologyKey
+                                is "kubernetes.io/hostname", each Node is a domain
+                                of that topology. And, if TopologyKey is "topology.kubernetes.io/zone",
+                                each zone is a domain of that topology. It's a required
+                                field.
                               type: string
                             whenUnsatisfiable:
                               description: 'WhenUnsatisfiable indicates how to deal
@@ -11135,32 +10809,6 @@ data:
             usage: "GAUGE"
             description: "Number of streaming replicas connected to the instance"
 
-    pg_replication_slots:
-      query: |
-        SELECT slot_name,
-          slot_type,
-          database,
-          active,
-          pg_catalog.pg_wal_lsn_diff(pg_catalog.pg_current_wal_lsn(), restart_lsn)
-        FROM pg_catalog.pg_replication_slots
-        WHERE NOT temporary
-      metrics:
-        - slot_name:
-            usage: "LABEL"
-            description: "Name of the replication slot"
-        - slot_type:
-            usage: "LABEL"
-            description: "Type of the replication slot"
-        - database:
-            usage: "LABEL"
-            description: "Name of the database"
-        - active:
-            usage: "GAUGE"
-            description: "Flag indicating whether the slot is active"
-        - pg_wal_lsn_diff:
-            usage: "GAUGE"
-            description: "Replication lag in bytes"
-
     pg_stat_archiver:
       query: |
         SELECT archived_count
@@ -11432,7 +11080,7 @@ spec:
         - /manager
         env:
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.16
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -11442,7 +11090,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-8t28ggb865
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.16
         livenessProbe:
           httpGet:
             path: /readyz
@@ -11470,12 +11118,7 @@ spec:
             memory: 100Mi
         securityContext:
           allowPrivilegeEscalation: false
-          capabilities:
-            drop:
-            - ALL
           readOnlyRootFilesystem: true
-          runAsGroup: 10001
-          runAsUser: 10001
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
@@ -11484,9 +11127,7 @@ spec:
       imagePullSecrets:
       - name: cnpg-pull-secret
       securityContext:
-        runAsNonRoot: true
-        seccompProfile:
-          type: RuntimeDefault
+        runAsUser: 1001
       serviceAccountName: cnpg-manager
       terminationGracePeriodSeconds: 10
       volumes:
