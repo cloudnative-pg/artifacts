@@ -11425,7 +11425,8 @@ spec:
         - --leader-elect
         - --config-map-name=cnpg-controller-manager-config
         - --secret-name=cnpg-controller-manager-config
-        - --log-level=info
+        - --webhook-port=9443
+        - --log-level=debug
         - --pprof-server=true
         command:
         - /manager
