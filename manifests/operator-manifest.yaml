@@ -9,7 +9,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.9.2
+    controller-gen.kubebuilder.io/version: v0.11.3
   creationTimestamp: null
   name: backups.postgresql.cnpg.io
 spec:
@@ -149,7 +149,7 @@ spec:
               destinationPath:
                 description: The path where to store the backup (i.e. s3://bucket/path/to/folder)
                   this path, with different destination folders, will be used for
-                  WALs and for data
+                  WALs and for data. This may not be populated in case of errors.
                 type: string
               encryption:
                 description: Encryption method required to S3 API
@@ -292,8 +292,6 @@ spec:
                 description: When the backup was terminated
                 format: date-time
                 type: string
-            required:
-            - destinationPath
             type: object
         type: object
     served: true
@@ -305,7 +303,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.9.2
+    controller-gen.kubebuilder.io/version: v0.11.3
   creationTimestamp: null
   name: clusters.postgresql.cnpg.io
 spec:
@@ -3131,7 +3129,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.9.2
+    controller-gen.kubebuilder.io/version: v0.11.3
   creationTimestamp: null
   name: poolers.postgresql.cnpg.io
 spec:
@@ -3227,6 +3225,12 @@ spec:
                       to `false` (default). Internally, the operator calls PgBouncer's
                       `PAUSE` and `RESUME` commands.
                     type: boolean
+                  pg_hba:
+                    description: PostgreSQL Host Based Authentication rules (lines
+                      to be appended to the pg_hba.conf file)
+                    items:
+                      type: string
+                    type: array
                   poolMode:
                     default: session
                     description: The pool mode
@@ -10470,7 +10474,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.9.2
+    controller-gen.kubebuilder.io/version: v0.11.3
   creationTimestamp: null
   name: scheduledbackups.postgresql.cnpg.io
 spec:
@@ -10921,10 +10925,10 @@ subjects:
 ---
 apiVersion: v1
 data:
-  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:14
+  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:15.2
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-8t28ggb865
+  name: cnpg-controller-manager-env-bcbbtb5h2t
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -11332,7 +11336,7 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-8t28ggb865
+            name: cnpg-controller-manager-env-bcbbtb5h2t
         image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.17
         livenessProbe:
           httpGet:
