@@ -12633,7 +12633,7 @@ spec:
         - /manager
         env:
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.20
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -12643,7 +12643,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-bcbbtb5h2t
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.20
         livenessProbe:
           httpGet:
             path: /readyz
