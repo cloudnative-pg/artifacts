@@ -12632,6 +12632,8 @@ spec:
         command:
         - /manager
         env:
+        - name: PULL_SECRET_NAME
+          value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
           value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
         - name: OPERATOR_NAMESPACE
