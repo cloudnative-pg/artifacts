@@ -2525,6 +2525,10 @@ spec:
                             and grant or revoke membership in other roles. Default
                             is `false`.
                           type: boolean
+                        disablePassword:
+                          description: DisablePassword indicates that a role's password
+                            should be set to NULL in Postgres
+                          type: boolean
                         ensure:
                           default: present
                           description: Ensure the role is `present` or `absent` -
@@ -2557,7 +2561,8 @@ spec:
                           type: string
                         passwordSecret:
                           description: Secret containing the password of the role
-                            (if present)
+                            (if present) If null, the password will be ignored unless
+                            DisablePassword is set
                           properties:
                             name:
                               description: Name of the referent.
