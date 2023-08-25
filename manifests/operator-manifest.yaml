@@ -63,6 +63,14 @@ spec:
                 required:
                 - name
                 type: object
+              method:
+                default: barmanObjectStore
+                description: 'The backup method to be used, possible options are `barmanObjectStore`
+                  and `volumeSnapshot`. Defaults to: `barmanObjectStore`.'
+                enum:
+                - barmanObjectStore
+                - volumeSnapshot
+                type: string
               target:
                 description: The policy to decide which instance should perform this
                   backup. If empty, it defaults to `cluster.spec.backup.target`. Available
@@ -228,6 +236,9 @@ spec:
                     description: The pod name
                     type: string
                 type: object
+              method:
+                description: The backup method being used
+                type: string
               phase:
                 description: The last backup status
                 type: string
@@ -296,6 +307,16 @@ spec:
                 description: The server name on S3, the cluster name is used if this
                   parameter is omitted
                 type: string
+              snapshotBackupStatus:
+                description: Status of the volumeSnapshot backup
+                properties:
+                  snapshots:
+                    description: The snapshot lists, populated if it is a snapshot
+                      type backup
+                    items:
+                      type: string
+                    type: array
+                type: object
               startedAt:
                 description: When the backup was started
                 format: date-time
@@ -1539,7 +1560,8 @@ spec:
                     description: RetentionPolicy is the retention policy to be used
                       for backups and WALs (i.e. '60d'). The retention policy is expressed
                       in the form of `XXu` where `XX` is a positive integer and `u`
-                      is in `[dwm]` - days, weeks, months.
+                      is in `[dwm]` - days, weeks, months. It's currently only applicable
+                      when using the BarmanObjectStore method.
                     pattern: ^[1-9][0-9]*[dwm]$
                     type: string
                   target:
@@ -1553,6 +1575,41 @@ spec:
                     - primary
                     - prefer-standby
                     type: string
+                  volumeSnapshot:
+                    description: VolumeSnapshot provides the configuration for the
+                      execution of volume snapshot backups.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: Annotations key-value pairs that will be added
+                          to .metadata.annotations snapshot resources.
+                        type: object
+                      className:
+                        description: ClassName specifies the Snapshot Class to be
+                          used for PG_DATA PersistentVolumeClaim. It is the default
+                          class for the other types if no specific class is present
+                        type: string
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: Labels are key-value pairs that will be added
+                          to .metadata.labels snapshot resources.
+                        type: object
+                      snapshotOwnerReference:
+                        default: none
+                        description: SnapshotOwnerReference indicates the type of
+                          owner reference the snapshot should have. .
+                        enum:
+                        - none
+                        - cluster
+                        - backup
+                        type: string
+                      walClassName:
+                        description: WalClassName specifies the Snapshot Class to
+                          be used for the PG_WAL PersistentVolumeClaim.
+                        type: string
+                    type: object
                 type: object
               bootstrap:
                 description: Instructions to bootstrap this cluster
@@ -12188,6 +12245,14 @@ spec:
                 description: If the first backup has to be immediately start after
                   creation or not
                 type: boolean
+              method:
+                default: barmanObjectStore
+                description: 'The backup method to be used, possible options are `barmanObjectStore`
+                  and `volumeSnapshot`. Defaults to: `barmanObjectStore`.'
+                enum:
+                - barmanObjectStore
+                - volumeSnapshot
+                type: string
               schedule:
                 description: The schedule does not follow the same format used in
                   Kubernetes CronJobs as it includes an additional seconds specifier,
@@ -12565,6 +12630,15 @@ rules:
   - list
   - patch
   - update
+  - watch
+- apiGroups:
+  - snapshot.storage.k8s.io
+  resources:
+  - volumesnapshots
+  verbs:
+  - create
+  - get
+  - list
   - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
