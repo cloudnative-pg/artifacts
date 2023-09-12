@@ -12833,6 +12833,7 @@ data:
             description: "Number of streaming replicas connected to the instance"
 
     pg_replication_slots:
+      primary: true
       query: |
         SELECT slot_name,
           slot_type,
