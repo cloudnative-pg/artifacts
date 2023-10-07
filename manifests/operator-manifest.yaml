@@ -27,6 +27,9 @@ spec:
     - jsonPath: .spec.cluster.name
       name: Cluster
       type: string
+    - jsonPath: .spec.method
+      name: Method
+      type: string
     - jsonPath: .status.phase
       name: Phase
       type: string
@@ -312,11 +315,24 @@ spec:
               snapshotBackupStatus:
                 description: Status of the volumeSnapshot backup
                 properties:
-                  snapshots:
-                    description: The snapshot lists, populated if it is a snapshot
-                      type backup
+                  elements:
+                    description: The elements list, populated with the gathered volume
+                      snapshots
                     items:
-                      type: string
+                      description: BackupSnapshotElementStatus is a volume snapshot
+                        that is part of a volume snapshot method backup
+                      properties:
+                        name:
+                          description: Name is the snapshot resource name
+                          type: string
+                        type:
+                          description: Type is tho role of the snapshot in the cluster,
+                            such as PG_DATA and PG_WAL
+                          type: string
+                      required:
+                      - name
+                      - type
+                      type: object
                     type: array
                 type: object
               startedAt:
@@ -2025,13 +2041,13 @@ spec:
                 description: Description of this PostgreSQL cluster
                 type: string
               enableSuperuserAccess:
-                default: true
+                default: false
                 description: When this option is enabled, the operator will use the
                   `SuperuserSecret` to update the `postgres` user password (if the
                   secret is not present, the operator will automatically create one).
                   When this option is disabled, the operator will ignore the `SuperuserSecret`
                   content, delete it when automatically created, and then blank the
-                  password of the `postgres` user by setting it to `NULL`. Enabled
+                  password of the `postgres` user by setting it to `NULL`. Disabled
                   by default.
                 type: boolean
               env:
@@ -13199,6 +13215,8 @@ spec:
           readOnlyRootFilesystem: true
           runAsGroup: 10001
           runAsUser: 10001
+          seccompProfile:
+            type: RuntimeDefault
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
