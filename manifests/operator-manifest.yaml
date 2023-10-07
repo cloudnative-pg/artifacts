@@ -12967,6 +12967,8 @@ spec:
           readOnlyRootFilesystem: true
           runAsGroup: 10001
           runAsUser: 10001
+          seccompProfile:
+            type: RuntimeDefault
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
