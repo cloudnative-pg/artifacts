@@ -2625,7 +2625,13 @@ spec:
                       type: string
                     password:
                       description: The reference to the password to be used to connect
-                        to the server
+                        to the server. If a password is provided, CloudNativePG creates
+                        a PostgreSQL passfile at `/controller/external/NAME/pass`
+                        (where "NAME" is the cluster's name). This passfile is automatically
+                        referenced in the connection string when establishing a connection
+                        to the remote PostgreSQL server from the current PostgreSQL
+                        `Cluster`. This ensures secure and efficient password management
+                        for external clusters.
                       properties:
                         key:
                           description: The key of the secret to select from.  Must
@@ -3118,6 +3124,13 @@ spec:
               postgresql:
                 description: Configuration of the PostgreSQL server
                 properties:
+                  enableAlterSystem:
+                    default: true
+                    description: If this parameter is true, the user will be able
+                      to invoke `ALTER SYSTEM` on this CloudNativePG Cluster. This
+                      should only be used for debugging and troubleshooting. Defaults
+                      to true.
+                    type: boolean
                   ldap:
                     description: Options to specify LDAP configuration
                     properties:
