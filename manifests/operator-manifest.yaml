@@ -428,6 +428,87 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
+  name: clusterimagecatalogs.postgresql.cnpg.io
+spec:
+  group: postgresql.cnpg.io
+  names:
+    kind: ClusterImageCatalog
+    listKind: ClusterImageCatalogList
+    plural: clusterimagecatalogs
+    singular: clusterimagecatalog
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1
+    schema:
+      openAPIV3Schema:
+        description: ClusterImageCatalog is the Schema for the clusterimagecatalogs
+          API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              Specification of the desired behavior of the ClusterImageCatalog.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+            properties:
+              images:
+                description: List of CatalogImages available in the catalog
+                items:
+                  description: CatalogImage defines the image and major version
+                  properties:
+                    image:
+                      description: The image reference
+                      type: string
+                    major:
+                      description: The PostgreSQL major version of the image. Must
+                        be unique within the catalog.
+                      minimum: 10
+                      type: integer
+                  required:
+                  - image
+                  - major
+                  type: object
+                maxItems: 8
+                minItems: 1
+                type: array
+                x-kubernetes-validations:
+                - message: Images must have unique major versions
+                  rule: self.all(e, self.filter(f, f.major==e.major).size() == 1)
+            required:
+            - images
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -3112,6 +3193,40 @@ spec:
                   to be unhealthy
                 format: int32
                 type: integer
+              imageCatalogRef:
+                description: Defines the major PostgreSQL version we want to use within
+                  an ImageCatalog
+                properties:
+                  apiGroup:
+                    description: |-
+                      APIGroup is the group for the resource being referenced.
+                      If APIGroup is not specified, the specified Kind must be in the core API group.
+                      For any other third-party types, APIGroup is required.
+                    type: string
+                  kind:
+                    description: Kind is the type of resource being referenced
+                    type: string
+                  major:
+                    description: The major version of PostgreSQL we want to use from
+                      the ImageCatalog
+                    type: integer
+                    x-kubernetes-validations:
+                    - message: Major is immutable
+                      rule: self == oldSelf
+                  name:
+                    description: Name is the name of resource being referenced
+                    type: string
+                required:
+                - kind
+                - major
+                - name
+                type: object
+                x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: Only image catalogs are supported
+                  rule: self.kind == 'ImageCatalog' || self.kind == 'ClusterImageCatalog'
+                - message: Only image catalogs are supported
+                  rule: self.apiGroup == 'postgresql.cnpg.io'
               imageName:
                 description: |-
                   Name of the container image, supporting both tags (`<image>:<tag>`)
@@ -5163,6 +5278,9 @@ spec:
             required:
             - instances
             type: object
+            x-kubernetes-validations:
+            - message: imageName and imageCatalogRef are mutually exclusive
+              rule: '!(has(self.imageCatalogRef) && has(self.imageName))'
           status:
             description: |-
               Most recently observed status of the cluster. This data may not be up
@@ -5372,6 +5490,9 @@ spec:
                 items:
                   type: string
                 type: array
+              image:
+                description: Image contains the image name used by the pods
+                type: string
               initializingPVC:
                 description: List of all the PVCs that are being initialized by this
                   cluster
@@ -5650,6 +5771,86 @@ spec:
         specReplicasPath: .spec.instances
         statusReplicasPath: .status.instances
       status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.14.0
+  name: imagecatalogs.postgresql.cnpg.io
+spec:
+  group: postgresql.cnpg.io
+  names:
+    kind: ImageCatalog
+    listKind: ImageCatalogList
+    plural: imagecatalogs
+    singular: imagecatalog
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1
+    schema:
+      openAPIV3Schema:
+        description: ImageCatalog is the Schema for the imagecatalogs API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              Specification of the desired behavior of the ImageCatalog.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
+            properties:
+              images:
+                description: List of CatalogImages available in the catalog
+                items:
+                  description: CatalogImage defines the image and major version
+                  properties:
+                    image:
+                      description: The image reference
+                      type: string
+                    major:
+                      description: The PostgreSQL major version of the image. Must
+                        be unique within the catalog.
+                      minimum: 10
+                      type: integer
+                  required:
+                  - image
+                  - major
+                  type: object
+                maxItems: 8
+                minItems: 1
+                type: array
+                x-kubernetes-validations:
+                - message: Images must have unique major versions
+                  rule: self.all(e, self.filter(f, f.major==e.major).size() == 1)
+            required:
+            - images
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources: {}
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -14013,6 +14214,14 @@ rules:
 - apiGroups:
   - postgresql.cnpg.io
   resources:
+  - clusterimagecatalogs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
   - clusters
   verbs:
   - create
@@ -14036,6 +14245,14 @@ rules:
   - get
   - patch
   - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - imagecatalogs
+  verbs:
+  - get
+  - list
   - watch
 - apiGroups:
   - postgresql.cnpg.io
