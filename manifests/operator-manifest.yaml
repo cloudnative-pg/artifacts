@@ -75,11 +75,12 @@ spec:
               method:
                 default: barmanObjectStore
                 description: |-
-                  The backup method to be used, possible options are `barmanObjectStore`
-                  and `volumeSnapshot`. Defaults to: `barmanObjectStore`.
+                  The backup method to be used, possible options are `barmanObjectStore`,
+                  `volumeSnapshot` or `plugin`. Defaults to: `barmanObjectStore`.
                 enum:
                 - barmanObjectStore
                 - volumeSnapshot
+                - plugin
                 type: string
               online:
                 description: |-
@@ -113,6 +114,23 @@ spec:
                       If write activity on the primary is low, it may be useful to run pg_switch_wal on the primary in order to trigger
                       an immediate segment switch.
                     type: boolean
+                type: object
+              pluginConfiguration:
+                description: Configuration parameters passed to the plugin managing
+                  this backup
+                properties:
+                  name:
+                    description: Name is the name of the plugin managing this backup
+                    type: string
+                  parameters:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      Parameters are the configuration parameters passed to the backup
+                      plugin for this backup
+                    type: object
+                required:
+                - name
                 type: object
               target:
                 description: |-
@@ -3715,6 +3733,27 @@ spec:
                       up again) or not (recreate it elsewhere - when `instances` >1)
                     type: boolean
                 type: object
+              plugins:
+                description: |-
+                  The plugins configuration, containing
+                  any plugin to be loaded with the corresponding configuration
+                items:
+                  description: |-
+                    PluginConfiguration specifies a plugin that need to be loaded for this
+                    cluster to be reconciled
+                  properties:
+                    name:
+                      description: Name is the plugin name
+                      type: string
+                    parameters:
+                      additionalProperties:
+                        type: string
+                      description: Parameters is the configuration of the plugin
+                      type: object
+                  required:
+                  - name
+                  type: object
+                type: array
               postgresGID:
                 default: 26
                 description: The GID of the `postgres` user inside the image, defaults
@@ -5646,6 +5685,52 @@ spec:
               phaseReason:
                 description: Reason for the current phase
                 type: string
+              pluginStatus:
+                description: PluginStatus is the status of the loaded plugins
+                items:
+                  description: PluginStatus is the status of a loaded plugin
+                  properties:
+                    backupCapabilities:
+                      description: |-
+                        BackupCapabilities are the list of capabilities of the
+                        plugin regarding the Backup management
+                      items:
+                        type: string
+                      type: array
+                    capabilities:
+                      description: |-
+                        Capabilities are the list of capabilities of the
+                        plugin
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      description: Name is the name of the plugin
+                      type: string
+                    operatorCapabilities:
+                      description: |-
+                        OperatorCapabilities are the list of capabilities of the
+                        plugin regarding the reconciler
+                      items:
+                        type: string
+                      type: array
+                    version:
+                      description: |-
+                        Version is the version of the plugin loaded by the
+                        latest reconciliation loop
+                      type: string
+                    walCapabilities:
+                      description: |-
+                        WALCapabilities are the list of capabilities of the
+                        plugin regarding the WAL management
+                      items:
+                        type: string
+                      type: array
+                  required:
+                  - name
+                  - version
+                  type: object
+                type: array
               poolerIntegrations:
                 description: The integration needed by poolers referencing the cluster
                 properties:
@@ -13962,6 +14047,23 @@ spec:
                       If write activity on the primary is low, it may be useful to run pg_switch_wal on the primary in order to trigger
                       an immediate segment switch.
                     type: boolean
+                type: object
+              pluginConfiguration:
+                description: Configuration parameters passed to the plugin managing
+                  this backup
+                properties:
+                  name:
+                    description: Name is the name of the plugin managing this backup
+                    type: string
+                  parameters:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      Parameters are the configuration parameters passed to the backup
+                      plugin for this backup
+                    type: object
+                required:
+                - name
                 type: object
               schedule:
                 description: |-
