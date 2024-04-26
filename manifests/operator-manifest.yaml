@@ -15321,7 +15321,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1-23
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -15331,7 +15331,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-c9f2hmktt4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1-23
         livenessProbe:
           httpGet:
             path: /readyz
