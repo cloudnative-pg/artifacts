@@ -16752,6 +16752,9 @@ spec:
             scheme: HTTPS
         name: manager
         ports:
+        - containerPort: 6060
+          name: pprof
+          protocol: TCP
         - containerPort: 8080
           name: metrics
           protocol: TCP
