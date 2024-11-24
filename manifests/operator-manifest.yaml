@@ -15914,10 +15914,10 @@ subjects:
 ---
 apiVersion: v1
 data:
-  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.0
+  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.2
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-59f9cbh25k
+  name: cnpg-controller-manager-env-5k648c62t4
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -16430,7 +16430,7 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-59f9cbh25k
+            name: cnpg-controller-manager-env-5k648c62t4
         image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1-24
         livenessProbe:
           httpGet:
