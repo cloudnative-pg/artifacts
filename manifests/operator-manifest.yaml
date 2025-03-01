@@ -16751,6 +16751,13 @@ spec:
           runAsUser: 10001
           seccompProfile:
             type: RuntimeDefault
+        startupProbe:
+          failureThreshold: 6
+          httpGet:
+            path: /readyz
+            port: 9443
+            scheme: HTTPS
+          periodSeconds: 5
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
