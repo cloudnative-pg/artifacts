@@ -17212,9 +17212,10 @@ subjects:
 apiVersion: v1
 data:
   POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.4
+  STANDBY_TCP_USER_TIMEOUT: "5000"
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-g77c8fhf2g
+  name: cnpg-controller-manager-env-g67c9ghf8g
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -17727,7 +17728,7 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-g77c8fhf2g
+            name: cnpg-controller-manager-env-g67c9ghf8g
         image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
         livenessProbe:
           httpGet:
