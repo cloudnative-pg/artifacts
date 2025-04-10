@@ -6456,10 +6456,6 @@ spec:
                   - hash
                   type: object
                 type: array
-              azurePVCUpdateEnabled:
-                description: AzurePVCUpdateEnabled shows if the PVC online upgrade
-                  is enabled for this cluster
-                type: boolean
               certificates:
                 description: The configuration for the CA and related certificates,
                   initialized with defaults.
@@ -17772,6 +17768,7 @@ spec:
         - configMapRef:
             name: cnpg-controller-manager-env-g67c9ghf8g
         image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main
+        imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /readyz
