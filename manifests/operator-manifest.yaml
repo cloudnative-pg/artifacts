@@ -1676,14 +1676,11 @@ spec:
                             description: |-
                               Compress a backup file (a tar file per tablespace) while streaming it
                               to the object store. Available options are empty string (no
-                              compression, default), `gzip`, `bzip2`, `lz4`, `snappy`, `xz`, and `zstd`.
+                              compression, default), `gzip`, `bzip2`, and `snappy`.
                             enum:
                             - bzip2
                             - gzip
-                            - lz4
                             - snappy
-                            - xz
-                            - zstd
                             type: string
                           encryption:
                             description: |-
@@ -3130,14 +3127,11 @@ spec:
                               description: |-
                                 Compress a backup file (a tar file per tablespace) while streaming it
                                 to the object store. Available options are empty string (no
-                                compression, default), `gzip`, `bzip2`, `lz4`, `snappy`, `xz`, and `zstd`.
+                                compression, default), `gzip`, `bzip2`, and `snappy`.
                               enum:
                               - bzip2
                               - gzip
-                              - lz4
                               - snappy
-                              - xz
-                              - zstd
                               type: string
                             encryption:
                               description: |-
@@ -16717,7 +16711,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.24@sha256:203aa8d44868971e8a66fbc29abb62915c9252ee48159bdc3f9d1f238cb2cddf
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.24@sha256:fdf71a8bce269ab78c64594f51133aab5132544ad7e222ffe6c7e5b6908ae478
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -16727,7 +16721,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-g77c8fhf2g
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.24@sha256:203aa8d44868971e8a66fbc29abb62915c9252ee48159bdc3f9d1f238cb2cddf
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.24@sha256:fdf71a8bce269ab78c64594f51133aab5132544ad7e222ffe6c7e5b6908ae478
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
