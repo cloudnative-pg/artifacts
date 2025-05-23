@@ -4675,7 +4675,6 @@ spec:
                       feature
                     properties:
                       dataDurability:
-                        default: required
                         description: |-
                           If set to "required", data durability is strictly enforced. Write operations
                           with synchronous commit settings (`on`, `remote_write`, or `remote_apply`) will
@@ -17769,7 +17768,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4d0a6669153bd2fbbb0124fc3f46b0a65001921c528ffbeb54266e9fee0b8883
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:34bf16993c6843eca30677416038933811a94f4dd6ed2f33b95c9a3e60e7b296
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17779,7 +17778,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4d0a6669153bd2fbbb0124fc3f46b0a65001921c528ffbeb54266e9fee0b8883
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:34bf16993c6843eca30677416038933811a94f4dd6ed2f33b95c9a3e60e7b296
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
