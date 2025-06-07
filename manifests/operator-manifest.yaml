@@ -6905,6 +6905,9 @@ spec:
                       of switching a cluster to a replica cluster.
                     type: boolean
                 type: object
+              systemID:
+                description: SystemID is the latest detected PostgreSQL SystemID
+                type: string
               tablespacesStatus:
                 description: TablespacesStatus reports the state of the declarative
                   tablespaces in the cluster
@@ -17765,7 +17768,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ebac776ca0a62ff2adeba7302a05e7b32895b4d51b9912280d586e24ead6017c
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a2342b79147a34d6a770f436a0e6f21a8038324244e1e1e8d89c5a68dab97101
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17775,7 +17778,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ebac776ca0a62ff2adeba7302a05e7b32895b4d51b9912280d586e24ead6017c
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a2342b79147a34d6a770f436a0e6f21a8038324244e1e1e8d89c5a68dab97101
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
