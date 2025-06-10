@@ -9,7 +9,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.17.3
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -428,7 +428,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.17.3
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -5882,6 +5882,9 @@ spec:
                     description: The resource version of the "postgres" user secret
                     type: string
                 type: object
+              systemID:
+                description: SystemID is the latest detected PostgreSQL SystemID
+                type: string
               tablespacesStatus:
                 description: TablespacesStatus reports the state of the declarative
                   tablespaces in the cluster
@@ -5971,7 +5974,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.17.3
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -14457,7 +14460,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.17.3
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -15361,7 +15364,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.22@sha256:512e1d5a2aa93db6ac635e5f51de6bb97d03c3b23ae63c89b4c8a31f07ba2e5a
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.22@sha256:347dd1c780ca114efb1c4bde2bfda1d9b68210433764098c2cb4cc4476d4677e
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -15371,7 +15374,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-bk6kf5d6ht
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.22@sha256:512e1d5a2aa93db6ac635e5f51de6bb97d03c3b23ae63c89b4c8a31f07ba2e5a
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.22@sha256:347dd1c780ca114efb1c4bde2bfda1d9b68210433764098c2cb4cc4476d4677e
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
