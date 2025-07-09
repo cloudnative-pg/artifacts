@@ -5373,6 +5373,15 @@ spec:
                           This can only be set at creation time. By default set to `_cnpg_`.
                         pattern: ^[0-9a-z_]*$
                         type: string
+                      synchronizeLogicalDecoding:
+                        description: |-
+                          When enabled, the operator automatically manages synchronization of logical
+                          decoding (replication) slots across high-availability clusters.
+
+                          Requires one of the following conditions:
+                          - PostgreSQL version 17 or later
+                          - PostgreSQL version < 17 with pg_failover_slots extension enabled
+                        type: boolean
                     type: object
                   synchronizeReplicas:
                     description: Configures the synchronization of the user defined
@@ -17792,7 +17801,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:65de86e27ceab9e31e3639ce378c49df74bff86d9714e883abad81235934be93
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:0b12830a66a8fac97fbe4f8af2ba4cf6c1ae5411e274f8603648a1c6c6d25348
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17802,7 +17811,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:65de86e27ceab9e31e3639ce378c49df74bff86d9714e883abad81235934be93
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:0b12830a66a8fac97fbe4f8af2ba4cf6c1ae5411e274f8603648a1c6c6d25348
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
