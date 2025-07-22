@@ -148,6 +148,9 @@ spec:
             required:
             - cluster
             type: object
+            x-kubernetes-validations:
+            - message: BackupSpec is immutable once set
+              rule: oldSelf == self
           status:
             description: |-
               Most recently observed status of the backup. This data may not be up to
@@ -17801,7 +17804,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4107b8d7d024039988198b67810da4025e82331aff33e9c05d890d5021043fc6
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:dd1fa9760bc6b72dca5baf547ad729ba39cd3a0c5aeffd0106c1b9466f87927a
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17811,7 +17814,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4107b8d7d024039988198b67810da4025e82331aff33e9c05d890d5021043fc6
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:dd1fa9760bc6b72dca5baf547ad729ba39cd3a0c5aeffd0106c1b9466f87927a
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
