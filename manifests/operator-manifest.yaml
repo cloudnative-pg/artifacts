@@ -16643,8 +16643,11 @@ spec:
                 additionalProperties:
                   type: string
                 description: |-
-                  Subscription parameters part of the `WITH` clause as expected by
-                  PostgreSQL `CREATE SUBSCRIPTION` command
+                  Subscription parameters included in the `WITH` clause of the PostgreSQL
+                  `CREATE SUBSCRIPTION` command. Most parameters cannot be changed
+                  after the subscription is created and will be ignored if modified
+                  later, except for a limited set documented at:
+                  https://www.postgresql.org/docs/current/sql-altersubscription.html#SQL-ALTERSUBSCRIPTION-PARAMS-SET
                 type: object
               publicationDBName:
                 description: |-
@@ -17587,7 +17590,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:a4f63bd20448d192b53a56a1424c3f0434262a5ae07a6cd0eb1ef066a992c512
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:71139d4dd2aa5406463f95f1cb89afa24abfe6dad735f8847973cee2acea7258
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17597,7 +17600,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-bk6kf5d6ht
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:a4f63bd20448d192b53a56a1424c3f0434262a5ae07a6cd0eb1ef066a992c512
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:71139d4dd2aa5406463f95f1cb89afa24abfe6dad735f8847973cee2acea7258
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
