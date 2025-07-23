@@ -6606,14 +6606,18 @@ spec:
               firstRecoverabilityPoint:
                 description: |-
                   The first recoverability point, stored as a date in RFC3339 format.
-                  This field is calculated from the content of FirstRecoverabilityPointByMethod
+                  This field is calculated from the content of FirstRecoverabilityPointByMethod.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               firstRecoverabilityPointByMethod:
                 additionalProperties:
                   format: date-time
                   type: string
-                description: The first recoverability point, stored as a date in RFC3339
-                  format, per backup method type
+                description: |-
+                  The first recoverability point, stored as a date in RFC3339 format, per backup method type.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: object
               healthyPVC:
                 description: List of all the PVCs not dangling nor initializing
@@ -6671,7 +6675,10 @@ spec:
                 format: int32
                 type: integer
               lastFailedBackup:
-                description: Stored as a date in RFC3339 format
+                description: |-
+                  Last failed backup, stored as a date in RFC3339 format.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               lastPromotionToken:
                 description: |-
@@ -6680,15 +6687,19 @@ spec:
                 type: string
               lastSuccessfulBackup:
                 description: |-
-                  Last successful backup, stored as a date in RFC3339 format
-                  This field is calculated from the content of LastSuccessfulBackupByMethod
+                  Last successful backup, stored as a date in RFC3339 format.
+                  This field is calculated from the content of LastSuccessfulBackupByMethod.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               lastSuccessfulBackupByMethod:
                 additionalProperties:
                   format: date-time
                   type: string
-                description: Last successful backup, stored as a date in RFC3339 format,
-                  per backup method type
+                description: |-
+                  Last successful backup, stored as a date in RFC3339 format, per backup method type.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: object
               latestGeneratedNode:
                 description: ID of the latest generated node (used to avoid node name
@@ -16791,8 +16802,11 @@ spec:
                 additionalProperties:
                   type: string
                 description: |-
-                  Subscription parameters part of the `WITH` clause as expected by
-                  PostgreSQL `CREATE SUBSCRIPTION` command
+                  Subscription parameters included in the `WITH` clause of the PostgreSQL
+                  `CREATE SUBSCRIPTION` command. Most parameters cannot be changed
+                  after the subscription is created and will be ignored if modified
+                  later, except for a limited set documented at:
+                  https://www.postgresql.org/docs/current/sql-altersubscription.html#SQL-ALTERSUBSCRIPTION-PARAMS-SET
                 type: object
               publicationDBName:
                 description: |-
@@ -17768,7 +17782,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.26@sha256:4942ddd329f76c13af7df5bfb94c82433251b16d3b55ef50ac2edf74a4bf3465
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.26@sha256:339deae0b2bcce7f884a27add47a493da7760dfeb70873486069811046318dae
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17778,7 +17792,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.26@sha256:4942ddd329f76c13af7df5bfb94c82433251b16d3b55ef50ac2edf74a4bf3465
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.26@sha256:339deae0b2bcce7f884a27add47a493da7760dfeb70873486069811046318dae
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
