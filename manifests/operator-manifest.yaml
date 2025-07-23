@@ -6642,14 +6642,18 @@ spec:
               firstRecoverabilityPoint:
                 description: |-
                   The first recoverability point, stored as a date in RFC3339 format.
-                  This field is calculated from the content of FirstRecoverabilityPointByMethod
+                  This field is calculated from the content of FirstRecoverabilityPointByMethod.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               firstRecoverabilityPointByMethod:
                 additionalProperties:
                   format: date-time
                   type: string
-                description: The first recoverability point, stored as a date in RFC3339
-                  format, per backup method type
+                description: |-
+                  The first recoverability point, stored as a date in RFC3339 format, per backup method type.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: object
               healthyPVC:
                 description: List of all the PVCs not dangling nor initializing
@@ -6707,7 +6711,10 @@ spec:
                 format: int32
                 type: integer
               lastFailedBackup:
-                description: Stored as a date in RFC3339 format
+                description: |-
+                  Last failed backup, stored as a date in RFC3339 format.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               lastPromotionToken:
                 description: |-
@@ -6716,15 +6723,19 @@ spec:
                 type: string
               lastSuccessfulBackup:
                 description: |-
-                  Last successful backup, stored as a date in RFC3339 format
-                  This field is calculated from the content of LastSuccessfulBackupByMethod
+                  Last successful backup, stored as a date in RFC3339 format.
+                  This field is calculated from the content of LastSuccessfulBackupByMethod.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: string
               lastSuccessfulBackupByMethod:
                 additionalProperties:
                   format: date-time
                   type: string
-                description: Last successful backup, stored as a date in RFC3339 format,
-                  per backup method type
+                description: |-
+                  Last successful backup, stored as a date in RFC3339 format, per backup method type.
+
+                  Deprecated: the field is not set for backup plugins.
                 type: object
               latestGeneratedNode:
                 description: ID of the latest generated node (used to avoid node name
@@ -17807,7 +17818,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a038432e8d8cdd06564c8d0fb09414614a2fd67367f02407db16f60cf8a16ea3
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:8e602ba1b5f84a96fe82c93093c47bfb1572fec38e696ac3a7436bf88737d89f
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17817,7 +17828,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a038432e8d8cdd06564c8d0fb09414614a2fd67367f02407db16f60cf8a16ea3
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:8e602ba1b5f84a96fe82c93093c47bfb1572fec38e696ac3a7436bf88737d89f
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
