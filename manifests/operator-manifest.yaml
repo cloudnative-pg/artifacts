@@ -7478,6 +7478,83 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.18.0
+  name: failoverquorums.postgresql.cnpg.io
+spec:
+  group: postgresql.cnpg.io
+  names:
+    kind: FailoverQuorum
+    listKind: FailoverQuorumList
+    plural: failoverquorums
+    singular: failoverquorum
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1
+    schema:
+      openAPIV3Schema:
+        description: |-
+          FailoverQuorum contains the information about the current failover
+          quorum status of a PG cluster. It is updated by the instance manager
+          of the primary node and reset to zero by the operator to trigger
+          an update.
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          status:
+            description: Most recently observed status of the failover quorum.
+            properties:
+              method:
+                description: Contains the latest reported Method value.
+                type: string
+              primary:
+                description: |-
+                  Primary is the name of the primary instance that updated
+                  this object the latest time.
+                type: string
+              standbyNames:
+                description: |-
+                  StandbyNames is the list of potentially synchronous
+                  instance names.
+                items:
+                  type: string
+                type: array
+              standbyNumber:
+                description: |-
+                  StandbyNumber is the number of synchronous standbys that transactions
+                  need to wait for replies from.
+                type: integer
+            type: object
+        required:
+        - metadata
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.18.0
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -17195,11 +17272,22 @@ rules:
   - postgresql.cnpg.io
   resources:
   - clusters/status
+  - failoverquorums/status
   - poolers/status
   verbs:
   - get
   - patch
   - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - failoverquorums
+  verbs:
+  - create
+  - delete
+  - get
+  - list
   - watch
 - apiGroups:
   - rbac.authorization.k8s.io
@@ -17879,7 +17967,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:8be831610a8c593d227ef8b398c0b5dfff3310ce0f15bacd33f798f3c4259b04
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f89d72ed00acd5b27c9676c43c0f375b76d524c865eb9d78cd6436eb2dc1ad7c
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17889,7 +17977,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:8be831610a8c593d227ef8b398c0b5dfff3310ce0f15bacd33f798f3c4259b04
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f89d72ed00acd5b27c9676c43c0f375b76d524c865eb9d78cd6436eb2dc1ad7c
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
