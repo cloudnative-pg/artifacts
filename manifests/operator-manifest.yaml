@@ -17428,10 +17428,9 @@ subjects:
 apiVersion: v1
 data:
   POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.5
-  STANDBY_TCP_USER_TIMEOUT: "5000"
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-m4d2hm8cmf
+  name: cnpg-controller-manager-env-bk6kf5d6ht
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -17967,7 +17966,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a77ce0ffa70eaffae6f30767f8eb2f281fee349b3f1b490c574747ae5cc3a914
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a6ee46f779951d4403167c28d18211c24f2c022368d6d1c2fdc624b4d818b226
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -17976,8 +17975,8 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-m4d2hm8cmf
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a77ce0ffa70eaffae6f30767f8eb2f281fee349b3f1b490c574747ae5cc3a914
+            name: cnpg-controller-manager-env-bk6kf5d6ht
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a6ee46f779951d4403167c28d18211c24f2c022368d6d1c2fdc624b4d818b226
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
