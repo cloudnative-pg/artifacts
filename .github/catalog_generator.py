@@ -17,46 +17,76 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import argparse
 import re
 import json
+import os
+import time
 import yaml
+import urllib.request
 from packaging import version
 from subprocess import check_output
 
 min_supported_major = 13
 
-pg_repo_name = "ghcr.io/cloudnative-pg/postgresql"
+registry = "ghcr.io"
+repo_name = "cloudnative-pg/postgresql"
+full_repo_name = f"{registry}/{repo_name}"
 pg_regexp = r"(\d+)(?:\.\d+|beta\d+|rc\d+|alpha\d+)-(\d{12})"
+_token_cache = {"value": None, "expires_at": 0}
 
 
-def get_json(repo_name):
+def get_json(image_name):
+    start = time.time()
     data = check_output([
         "docker",
         "run",
         "--rm",
         "quay.io/skopeo/stable",
         "list-tags",
-        f"docker://{repo_name}"
+        f"docker://{image_name}"
     ])
+    end = time.time()
+    print(f"Fetching tags took {end - start:.4f} seconds")
     repo_json = json.loads(data.decode("utf-8"))
     return repo_json
 
 
-def get_digest(repo_name, tag):
-    data = check_output([
-        "docker",
-        "run",
-        "--rm",
-        "quay.io/skopeo/stable",
-        "inspect",
-        "-n",
-        f"docker://{repo_name}:{tag}"
-    ])
-    repo_json = json.loads(data.decode("utf-8"))
-    return repo_json["Digest"]
+def get_token(repository_name):
+    global _token_cache
+    now = time.time()
+
+    if _token_cache["value"] and now < _token_cache["expires_at"]:
+        return _token_cache["value"]
+
+    url = "https://ghcr.io/token?scope=repository:{}:pull".format(repository_name)
+    with urllib.request.urlopen(url) as response:
+        data = json.load(response)
+        token = data["token"]
+
+    _token_cache["value"] = token
+    _token_cache["expires_at"] = now + 300
+    return token
 
 
-def write_catalog(tags, version_re, suffix):
+def get_digest(repository_name, tag):
+    start = time.time()
+    token = get_token("cloudnative-pg/postgresql")
+    url = f"https://ghcr.io/v2/{repository_name}/manifests/{tag}"
+    req = urllib.request.Request(url)
+    req.add_header("Authorization", "Bearer {}".format(token))
+    req.add_header(
+        "Accept",
+        "application/vnd.oci.image.index.v1+json,application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json"
+    )
+    with urllib.request.urlopen(req) as response:
+        digest = response.headers.get("Docker-Content-Digest")
+        end = time.time()
+        print(f"Fetching digest took {end - start:.4f} seconds")
+        return digest
+
+
+def write_catalog(tags, version_re, suffix, output_dir="."):
     version_re = re.compile(rf"^{version_re}{re.escape(suffix)}$")
 
     # Filter out all the tags which do not match the version regexp
@@ -81,8 +111,8 @@ def write_catalog(tags, version_re, suffix):
             continue
 
         if major not in results:
-            digest = get_digest(pg_repo_name, item)
-            results[major] = [f"{pg_repo_name}:{item}@{digest}"]
+            digest = get_digest(repo_name, item)
+            results[major] = [f"{full_repo_name}:{item}@{digest}"]
 
     catalog = {
         "apiVersion": "postgresql.cnpg.io/v1",
@@ -95,11 +125,17 @@ def write_catalog(tags, version_re, suffix):
         }
     }
 
-    with open(f"catalog{suffix}.yaml", "w") as f:
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, f"catalog{suffix}.yaml")
+    with open(output_file, "w") as f:
         yaml.dump(catalog, f, sort_keys=False)
 
 if __name__ == "__main__":
-    repo_json = get_json(pg_repo_name)
+    parser = argparse.ArgumentParser(description="CloudNativePG ClusterImageCatalog YAML generator")
+    parser.add_argument("--output-dir", default=".", help="Directory to save the YAML files")
+    args = parser.parse_args()
+
+    repo_json = get_json(full_repo_name)
     tags = repo_json["Tags"]
 
     for suffix in [
@@ -110,4 +146,5 @@ if __name__ == "__main__":
         "-minimal-trixie",
         "-standard-trixie",
     ]:
-        write_catalog(tags, pg_regexp, suffix)
+        print(f"Generating catalog{suffix}.yaml")
+        write_catalog(tags, pg_regexp, suffix, args.output_dir)

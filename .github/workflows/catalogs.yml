@@ -30,8 +30,7 @@ jobs:
 
       - name: Generate catalogs
         run: |
-          mkdir image-catalogs && cd image-catalogs
-          python ${{ github.workspace }}/.github/catalog_generator.py
+          python .github/catalog_generator.py --output-dir image-catalogs/
 
       - name: Print
         run: |
