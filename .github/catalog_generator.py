@@ -29,15 +29,13 @@ from subprocess import check_output
 
 min_supported_major = 13
 
-registry = "ghcr.io"
 repo_name = "cloudnative-pg/postgresql"
-full_repo_name = f"{registry}/{repo_name}"
+full_repo_name = f"ghcr.io/{repo_name}"
 pg_regexp = r"(\d+)(?:\.\d+|beta\d+|rc\d+|alpha\d+)-(\d{12})"
 _token_cache = {"value": None, "expires_at": 0}
 
 
 def get_json(image_name):
-    start = time.time()
     data = check_output([
         "docker",
         "run",
@@ -46,8 +44,6 @@ def get_json(image_name):
         "list-tags",
         f"docker://{image_name}"
     ])
-    end = time.time()
-    print(f"Fetching tags took {end - start:.4f} seconds")
     repo_json = json.loads(data.decode("utf-8"))
     return repo_json
 
@@ -70,19 +66,18 @@ def get_token(repository_name):
 
 
 def get_digest(repository_name, tag):
-    start = time.time()
-    token = get_token("cloudnative-pg/postgresql")
+    token = get_token(repository_name)
+    media_types = [
+        "application/vnd.oci.image.index.v1+json",
+        "application/vnd.oci.image.manifest.v1+json",
+        "application/vnd.docker.distribution.manifest.v2+json",
+    ]
     url = f"https://ghcr.io/v2/{repository_name}/manifests/{tag}"
     req = urllib.request.Request(url)
     req.add_header("Authorization", "Bearer {}".format(token))
-    req.add_header(
-        "Accept",
-        "application/vnd.oci.image.index.v1+json,application/vnd.oci.image.manifest.v1+json,application/vnd.docker.distribution.manifest.v2+json"
-    )
+    req.add_header("Accept", ",".join(media_types))
     with urllib.request.urlopen(req) as response:
         digest = response.headers.get("Docker-Content-Digest")
-        end = time.time()
-        print(f"Fetching digest took {end - start:.4f} seconds")
         return digest
 
 
@@ -129,6 +124,7 @@ def write_catalog(tags, version_re, suffix, output_dir="."):
     output_file = os.path.join(output_dir, f"catalog{suffix}.yaml")
     with open(output_file, "w") as f:
         yaml.dump(catalog, f, sort_keys=False)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CloudNativePG ClusterImageCatalog YAML generator")
