@@ -137,10 +137,13 @@ if __name__ == "__main__":
     for suffix in [
         "-minimal-bullseye",
         "-standard-bullseye",
+        "-system-bullseye",
         "-minimal-bookworm",
         "-standard-bookworm",
+        "-system-bookworm",
         "-minimal-trixie",
         "-standard-trixie",
+        "-system-trixie",
     ]:
         print(f"Generating catalog{suffix}.yaml")
         write_catalog(tags, pg_regexp, suffix, args.output_dir)
