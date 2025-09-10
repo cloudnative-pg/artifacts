@@ -1,0 +1,22 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ClusterImageCatalog
+metadata:
+  name: postgresql-minimal-trixie
+  labels:
+    images.cnpg.io/family: postgresql
+    images.cnpg.io/type: minimal
+    images.cnpg.io/os: trixie
+    images.cnpg.io/date: '20250910'
+    images.cnpg.io/publisher: cnpg.io
+spec:
+  images:
+  - major: 13
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509091311-minimal-trixie@sha256:e8976b8bd30a9bb54392e62066f180b50ef2c48f147408c4d267a88bcecc8f20
+  - major: 14
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509091434-minimal-trixie@sha256:fb9640fa9f1165c6e8320cec9b00f453fcdfeb3cd6c665df56b31f2f98c37f95
+  - major: 15
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509091311-minimal-trixie@sha256:d7f3cb3154971c25f6bea514c9595be6fecf095d0f2a46a1fc2de6a276a178db
+  - major: 16
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509091311-minimal-trixie@sha256:5918141503cc88af2bf5e66919c014d632a0bedcd2cef29a0a246ceac8c4f346
+  - major: 17
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509091311-minimal-trixie@sha256:cd8e738ec85abc97b3a0419945cc5433ef818abe99b2cbb2049e34f94564a519

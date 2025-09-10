@@ -1,0 +1,22 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ClusterImageCatalog
+metadata:
+  name: postgresql-standard-trixie
+  labels:
+    images.cnpg.io/family: postgresql
+    images.cnpg.io/type: standard
+    images.cnpg.io/os: trixie
+    images.cnpg.io/date: '20250910'
+    images.cnpg.io/publisher: cnpg.io
+spec:
+  images:
+  - major: 13
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509091311-standard-trixie@sha256:51568b7a2b4cde1288d7ebdd35408fab3c731bc845238db9736e57c52d543515
+  - major: 14
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509091434-standard-trixie@sha256:3eddbf5fb1bc1cffcfca6d6de7b826edb917479155b28c1b0491690a1fc92370
+  - major: 15
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509091311-standard-trixie@sha256:d05659518e543d50a61c37ef4a2c43322d1cda7f2de9c83ef39dd43bb9dc56de
+  - major: 16
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509091311-standard-trixie@sha256:a8053f800808fdac44bb3ebf65ae6aa8ca2d3e09414c5708c9386c53964e633a
+  - major: 17
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509091311-standard-trixie@sha256:54fa593a955fdb215a15c20b2e2896ec20ec7b3dd69456a425b66a5c6cd86edd

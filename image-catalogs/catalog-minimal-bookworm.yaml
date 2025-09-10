@@ -1,0 +1,22 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ClusterImageCatalog
+metadata:
+  name: postgresql-minimal-bookworm
+  labels:
+    images.cnpg.io/family: postgresql
+    images.cnpg.io/type: minimal
+    images.cnpg.io/os: bookworm
+    images.cnpg.io/date: '20250910'
+    images.cnpg.io/publisher: cnpg.io
+spec:
+  images:
+  - major: 13
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509091311-minimal-bookworm@sha256:909bc70e15d2d659cd4fd11e72d147d723aa127080a19d804d4eb72eb868238c
+  - major: 14
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509091434-minimal-bookworm@sha256:27512182a2412d8fda881032ea3f369976d725efa9e1f8b9044251beaa84fe41
+  - major: 15
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509091311-minimal-bookworm@sha256:c13b634220da6c1bda2a318ef981c7339157b7022d314b281e2181cc49b88c84
+  - major: 16
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509091311-minimal-bookworm@sha256:24b2ac949871acfc5cccf32e14a3c6f65568d1644f9d1d7e3f2b334c65586ee6
+  - major: 17
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509091311-minimal-bookworm@sha256:2078a0f20f67184e3d3bfa744652c85273f8fcfecd763f9d7f35378c78f07923
