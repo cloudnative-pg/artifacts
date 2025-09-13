@@ -318,6 +318,11 @@ spec:
                     description: The pod name
                     type: string
                 type: object
+              majorVersion:
+                description: |-
+                  The PostgreSQL major version that was running when the
+                  backup was taken.
+                type: integer
               method:
                 description: The backup method being used
                 type: string
@@ -18061,10 +18066,10 @@ subjects:
 ---
 apiVersion: v1
 data:
-  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.5
+  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:17.6-system-trixie
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-bk6kf5d6ht
+  name: cnpg-controller-manager-env-cd67kd7f22
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -18600,7 +18605,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:347815a2b64f2ea132671626375bcef03c5b8ea973c2f82d7eb316a93b4eb596
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ef29edf29a87698e1556ebfa77fb8e3292ad85d0c40abc169ede7d04b2bb1c56
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18609,8 +18614,8 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-bk6kf5d6ht
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:347815a2b64f2ea132671626375bcef03c5b8ea973c2f82d7eb316a93b4eb596
+            name: cnpg-controller-manager-env-cd67kd7f22
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ef29edf29a87698e1556ebfa77fb8e3292ad85d0c40abc169ede7d04b2bb1c56
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
