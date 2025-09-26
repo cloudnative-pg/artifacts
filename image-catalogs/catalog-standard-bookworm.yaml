@@ -6,17 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20250923'
+    images.cnpg.io/date: '20250926'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509220807-standard-bookworm@sha256:fdfaa0778a9e817d78ac84109033df36ea7f836cf2b502b8dd5c3c6b7a6e0dfa
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509261031-standard-bookworm@sha256:81fd9d94054439710d5a68429b3edd9ca2084f42ea0a5815ca77cf6b5d98c326
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509220807-standard-bookworm@sha256:0cbc492a0edde1d6f5914199453d94cba5c82478a9ab0d3de244b5c739dfeb12
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509261031-standard-bookworm@sha256:02c9cc9e5136181c1da0b7097aeefcaeefb043f50e2d71631d724a20ba48a667
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509220807-standard-bookworm@sha256:773577194f7fb13620d4ce62dc3fdca45e07370058dab8576469992f77161351
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509261031-standard-bookworm@sha256:8f9008db9ac21a10196fc0df8773ec8424a8d201501c8f5047a8a832bcaaebff
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509220807-standard-bookworm@sha256:b278d6c2b31c1765fcc0775adba9ca6c3ba91df3e2e20bb98cdb46e0c1c2f249
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509261031-standard-bookworm@sha256:211668a4ee99ea1e094fa9d27ee4689f708adbed0e29c025f496151b5a88dae2
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509220807-standard-bookworm@sha256:61d5a8d7fc6e512e0282ee540eed701f5d6c4facf8b868adca0fa945cb4933c0
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509261031-standard-bookworm@sha256:77d3c73f7851999804ba014ef3c709d9594f204b321835af0e91bdd874116359
+  - major: 18
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202509261031-standard-bookworm@sha256:d4e92df1b1c29b8c84789164a28e91aaf7c678b2f40b6a4e0ba2248c0c4cc357

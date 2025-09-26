@@ -6,17 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20250923'
+    images.cnpg.io/date: '20250926'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509220807-standard-bullseye@sha256:b0f2341ba5903c52d496f577f6dbf3b9342a36544058190b8bee1f6940e4e0a2
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509261031-standard-bullseye@sha256:6e0faf07ea7af7519ae55ceae50fbbd99b0d0b0928aa2c7ba1d1a5c09a53f9b8
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509220807-standard-bullseye@sha256:04dd852b7079e8c8ff3adb06ce0f33c41dfe8375c471a84ff966e6f7cc82f040
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509261031-standard-bullseye@sha256:f4b19a7688c952dd97a41b8313ff4a7b6224b89ca28d849b8aa118336fa1a21c
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509220807-standard-bullseye@sha256:b56ac7026b3e18f8dcae42786eb814be752ce0916d25285f1bfae6c0c8a86ed5
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509261031-standard-bullseye@sha256:039d4791cfd9eb9cf088934907a6bd882ee5cc22043d2ae7d5b9c50fe76f7e2d
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509220807-standard-bullseye@sha256:9cb2e0bd195a51293e980d4cf34074a9aad9c729bb5bbab78883f32809d2f5ea
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509261031-standard-bullseye@sha256:105ebdcab2027cb6165cc5caeddbfb1af54b5b3c2fc6337cffcdc643ac98068c
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509220807-standard-bullseye@sha256:711f737c84b8c421bcb224e61d790c851a5cf760b65c127de08eb0fe626c0921
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509261031-standard-bullseye@sha256:964abf8f6444ace3f86730e79b2e25dadc553d39c8ac6ef52f101795c8911eea
+  - major: 18
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202509261031-standard-bullseye@sha256:a84db9871d5e4c9ea368b602cf1997fee8a888051ed1de1e70b03b80281ce7e8
