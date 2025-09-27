@@ -4827,6 +4827,12 @@ spec:
                         - required
                         - preferred
                         type: string
+                      failoverQuorum:
+                        description: |-
+                          FailoverQuorum enables a quorum-based check before failover, improving
+                          data durability and safety during failover events in CloudNativePG-managed
+                          PostgreSQL clusters.
+                        type: boolean
                       maxStandbyNamesFromCluster:
                         description: |-
                           Specifies the maximum number of local cluster pods that can be
@@ -18753,7 +18759,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:aafacb48c025eb8667af9cdbc03f38617bf79596d007df345825b91409c81ab8
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f04f09eab7f84223a3fe35fab9b1065df1de60f1a614a52a0b7377ce7acf9ee8
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18763,7 +18769,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-cd67kd7f22
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:aafacb48c025eb8667af9cdbc03f38617bf79596d007df345825b91409c81ab8
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f04f09eab7f84223a3fe35fab9b1065df1de60f1a614a52a0b7377ce7acf9ee8
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
