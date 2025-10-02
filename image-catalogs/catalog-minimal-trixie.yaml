@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: minimal
     images.cnpg.io/os: trixie
-    images.cnpg.io/date: '20250926'
+    images.cnpg.io/date: '20251002'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509261031-minimal-trixie@sha256:86dcc2a0e384133907553e77bde8f2a43de20b448e416ab1efc144f518de6fdf
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509290807-minimal-trixie@sha256:c8bb89cffd1afbc47f0e7f75a0d3980ecdc7da1970f4d4f879f2728ac9fafbe8
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509261031-minimal-trixie@sha256:6bdde699ffe1c69720ac59ceaf1100adcaa34c1d2d31330e8228b4ae7dec33c2
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509290807-minimal-trixie@sha256:29045e55c5e70a18fe547e51e995135123a96793d1efd795f5f0f91504e9a0ef
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509261031-minimal-trixie@sha256:a4f4dd2ec9c9ad1fcfc5005518c848a4d45e6c2fc3f80bebf742f4a43ab970d3
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509290807-minimal-trixie@sha256:2d38a7a6ac98f951d84327b4c13778d2d3dcf1e30856ee3f4eedeba5e41cc4c6
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509261031-minimal-trixie@sha256:029a187d83891ec6b5e7c1f15863ec216fa8a245eaf187aa9c259b325c40740a
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509290807-minimal-trixie@sha256:f69b49dc63c2988a358c58f8a1311ac98719846f91d8e97186eaf65c7085cf28
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509261031-minimal-trixie@sha256:6031c95eef3b1cae9ee401d2135ba7046052db08b19e89b8714d3c70a6d579b1
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509290807-minimal-trixie@sha256:f3e24407db6eb8c3c9a7cb433cfe81cbff006ba1f97ae9844a58c7d3cd8048d7
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202509261031-minimal-trixie@sha256:e0f5f454dcb3102c1ad1edd6205902607a2c729160fa0b642547fba3bb16453b
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202509290807-minimal-trixie@sha256:dd7c678167cc6d06c2caf4e6ea7bc7a89e39754bc7e0111a81f5d75ac3068f70
