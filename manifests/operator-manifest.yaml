@@ -5754,7 +5754,7 @@ spec:
                 description: |-
                   The time in seconds that controls the window of time reserved for the smart shutdown of Postgres to complete.
                   Make sure you reserve enough time for the operator to request a fast shutdown of Postgres
-                  (that is: `stopDelay` - `smartShutdownTimeout`).
+                  (that is: `stopDelay` - `smartShutdownTimeout`). Default is 180 seconds.
                 format: int32
                 type: integer
               startDelay:
@@ -18491,7 +18491,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:68c01748a9f14054e97d8e1103a6636961fa72f8578447184d46a46785afa3ee
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:0144640a9a05e31c44ad9b5991d40f458dc333866bf29ea4c3fb89c2f649b5cb
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18501,7 +18501,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:68c01748a9f14054e97d8e1103a6636961fa72f8578447184d46a46785afa3ee
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:0144640a9a05e31c44ad9b5991d40f458dc333866bf29ea4c3fb89c2f649b5cb
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
