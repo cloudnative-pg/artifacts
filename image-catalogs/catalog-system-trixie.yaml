@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: system
     images.cnpg.io/os: trixie
-    images.cnpg.io/date: '20251002'
+    images.cnpg.io/date: '20251006'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202509290807-system-trixie@sha256:d3d04d088624a8f654fea5fa97b704934a9796b5b6c3d6ac80e04e05467b2879
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202510060806-system-trixie@sha256:da70e2b8b864b23c0147ed209917f71b348f5299b56dd6cbff56d64aeab05d66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202509290807-system-trixie@sha256:fa54383a50bd6b654f64b237a907a08bf2f1b5accb84936662251db880421b5d
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202510060807-system-trixie@sha256:e01d5b4052943607bcf66f78cd457e7b741bcf1fd09bec9b05f9d49427966fb0
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202509290807-system-trixie@sha256:abbab445a7e0065d57de0b1287f43309d594d2bb174789ff99282946a6bb4fad
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202510060806-system-trixie@sha256:9e654e7325980f751aef073740f989f2b1ed3a0e7238e863fcc56d0637d85448
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202509290807-system-trixie@sha256:ed5e7812601670bee818190599290b2f86433c7b728c05412294964819fbdc22
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202510060806-system-trixie@sha256:b4ad5769261cd1100fdb3246f26fedc94bcf6a2b85c8e67dad7e87a7c7786c59
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202509290807-system-trixie@sha256:1668279f369f1fdaeee86f586d4a0053b8ec67bb79ef3f05eed55120afddff5d
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202510060807-system-trixie@sha256:6779e9677bde7f91d1c5deb17b2bf2cc78e40baf7471a0aea62c6ed55c8d1d9c
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202509290807-system-trixie@sha256:152a5afc2e768b81533c71a40e365c90dcb50b704bff84251bb1334ab898b369
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202510060806-system-trixie@sha256:c438bb1e994eac361101f2a543889422964a52d8599c3a38aca0557bd991c3fc
