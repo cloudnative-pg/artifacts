@@ -4368,11 +4368,18 @@ spec:
                     type: boolean
                   enablePodMonitor:
                     default: false
-                    description: Enable or disable the `PodMonitor`
+                    description: |-
+                      Enable or disable the `PodMonitor`
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     type: boolean
                   podMonitorMetricRelabelings:
-                    description: The list of metric relabelings for the `PodMonitor`.
-                      Applied to samples before ingestion.
+                    description: |-
+                      The list of metric relabelings for the `PodMonitor`. Applied to samples before ingestion.
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     items:
                       description: |-
                         RelabelConfig allows dynamic rewriting of the label set for targets, alerts,
@@ -4459,8 +4466,11 @@ spec:
                       type: object
                     type: array
                   podMonitorRelabelings:
-                    description: The list of relabelings for the `PodMonitor`. Applied
-                      to samples before scraping.
+                    description: |-
+                      The list of relabelings for the `PodMonitor`. Applied to samples before scraping.
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     items:
                       description: |-
                         RelabelConfig allows dynamic rewriting of the label set for targets, alerts,
@@ -8157,8 +8167,11 @@ spec:
                 format: int32
                 type: integer
               monitoring:
-                description: The configuration of the monitoring infrastructure of
-                  this pooler.
+                description: |-
+                  The configuration of the monitoring infrastructure of this pooler.
+
+                  Deprecated: This feature will be removed in an upcoming release. If
+                  you need this functionality, you can create a PodMonitor manually.
                 properties:
                   enablePodMonitor:
                     default: false
@@ -18759,7 +18772,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:65bde92f49f45c4356d132086749f7e8c7dc6675760f15c639e51e342b68cc65
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:fe2f5e5346d8ea206860536ba123a3a441b1ac8d1551e7d3a7a02f639c1483a8
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18769,7 +18782,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:65bde92f49f45c4356d132086749f7e8c7dc6675760f15c639e51e342b68cc65
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:fe2f5e5346d8ea206860536ba123a3a441b1ac8d1551e7d3a7a02f639c1483a8
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
