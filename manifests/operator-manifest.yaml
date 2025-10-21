@@ -566,7 +566,9 @@ spec:
     name: v1
     schema:
       openAPIV3Schema:
-        description: Cluster is the Schema for the PostgreSQL API
+        description: |-
+          Cluster defines the API schema for a highly available PostgreSQL database cluster
+          managed by CloudNativePG.
         properties:
           apiVersion:
             description: |-
@@ -18123,7 +18125,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:d4e572fea75c58bf60a47fd02b60542c2f2f1154e1a666f0b2296a2ec0621312
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:353211b8d3a0d84d1808e9acea3b963c210a3e0737a30a39e32553d46c81b230
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18133,7 +18135,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:d4e572fea75c58bf60a47fd02b60542c2f2f1154e1a666f0b2296a2ec0621312
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:353211b8d3a0d84d1808e9acea3b963c210a3e0737a30a39e32553d46c81b230
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
