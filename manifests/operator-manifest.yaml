@@ -3515,8 +3515,9 @@ spec:
                         isWALArchiver:
                           default: false
                           description: |-
-                            Only one plugin can be declared as WALArchiver.
-                            Cannot be active if ".spec.backup.barmanObjectStore" configuration is present.
+                            Marks the plugin as the WAL archiver. At most one plugin can be
+                            designated as a WAL archiver. This cannot be enabled if the
+                            `.spec.backup.barmanObjectStore` configuration is present.
                           type: boolean
                         name:
                           description: Name is the plugin name
@@ -4556,8 +4557,9 @@ spec:
                     isWALArchiver:
                       default: false
                       description: |-
-                        Only one plugin can be declared as WALArchiver.
-                        Cannot be active if ".spec.backup.barmanObjectStore" configuration is present.
+                        Marks the plugin as the WAL archiver. At most one plugin can be
+                        designated as a WAL archiver. This cannot be enabled if the
+                        `.spec.backup.barmanObjectStore` configuration is present.
                       type: boolean
                     name:
                       description: Name is the plugin name
@@ -18125,7 +18127,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:df52fb431e5946ca0b964dd42b009157bb53ed11d0eda9e6086e304a1fb205c1
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:dff9060eb48a2239e4672d0fead70dfd22c79836d869b793a0bccbd8caf3c68c
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18135,7 +18137,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:df52fb431e5946ca0b964dd42b009157bb53ed11d0eda9e6086e304a1fb205c1
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:dff9060eb48a2239e4672d0fead70dfd22c79836d869b793a0bccbd8caf3c68c
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
