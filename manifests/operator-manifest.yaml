@@ -4377,6 +4377,14 @@ spec:
                       Deprecated: This feature will be removed in an upcoming release. If
                       you need this functionality, you can create a PodMonitor manually.
                     type: boolean
+                  metricsQueriesTTL:
+                    description: |-
+                      The interval during which metrics computed from queries are considered current.
+                      Once it is exceeded, a new scrape will trigger a rerun
+                      of the queries.
+                      If not set, defaults to 30 seconds, in line with Prometheus scraping defaults.
+                      Setting this to zero disables the caching mechanism and can cause heavy load on the PostgreSQL server.
+                    type: string
                   podMonitorMetricRelabelings:
                     description: |-
                       The list of metric relabelings for the `PodMonitor`. Applied to samples before ingestion.
@@ -8374,6 +8382,30 @@ spec:
                       query. In case it is specified, also an AuthQuery
                       (e.g. "SELECT usename, passwd FROM pg_catalog.pg_shadow WHERE usename=$1")
                       has to be specified and no automatic CNPG Cluster integration will be triggered.
+
+                      Deprecated.
+                    properties:
+                      name:
+                        description: Name of the referent.
+                        type: string
+                    required:
+                    - name
+                    type: object
+                  clientCASecret:
+                    description: |-
+                      ClientCASecret provides PgBouncer’s client_tls_ca_file, the root
+                      CA for validating client certificates
+                    properties:
+                      name:
+                        description: Name of the referent.
+                        type: string
+                    required:
+                    - name
+                    type: object
+                  clientTLSSecret:
+                    description: |-
+                      ClientTLSSecret provides PgBouncer’s client_tls_key_file (private key)
+                      and client_tls_cert_file (certificate) used to accept client connections
                     properties:
                       name:
                         description: Name of the referent.
@@ -8410,6 +8442,29 @@ spec:
                     - session
                     - transaction
                     type: string
+                  serverCASecret:
+                    description: |-
+                      ServerCASecret provides PgBouncer’s server_tls_ca_file, the root
+                      CA for validating PostgreSQL certificates
+                    properties:
+                      name:
+                        description: Name of the referent.
+                        type: string
+                    required:
+                    - name
+                    type: object
+                  serverTLSSecret:
+                    description: |-
+                      ServerTLSSecret, when pointing to a TLS secret, provides pgbouncer's
+                      `server_tls_key_file` and `server_tls_cert_file`, used when
+                      authenticating against PostgreSQL.
+                    properties:
+                      name:
+                        description: Name of the referent.
+                        type: string
+                    required:
+                    - name
+                    type: object
                 type: object
               serviceTemplate:
                 description: Template for the Service to be created
@@ -17258,6 +17313,16 @@ spec:
                         description: The ResourceVersion of the secret
                         type: string
                     type: object
+                  clientTLS:
+                    description: The client TLS secret version
+                    properties:
+                      name:
+                        description: The name of the secret
+                        type: string
+                      version:
+                        description: The ResourceVersion of the secret
+                        type: string
+                    type: object
                   pgBouncerSecrets:
                     description: The version of the secrets used by PgBouncer
                     properties:
@@ -18776,7 +18841,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ce7432ab091f71bfd3dc5bc0b3235129420ed93d485b70248b65afa92c86626d
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:73d1557d9c4a8a468a45aa17a69954c25d2e20927c84aa70713c17a64c136f02
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18786,7 +18851,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ce7432ab091f71bfd3dc5bc0b3235129420ed93d485b70248b65afa92c86626d
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:73d1557d9c4a8a468a45aa17a69954c25d2e20927c84aa70713c17a64c136f02
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
