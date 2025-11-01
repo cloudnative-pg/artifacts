@@ -2149,6 +2149,7 @@ spec:
                       options:
                         description: |-
                           The list of options that must be passed to initdb when creating the cluster.
+
                           Deprecated: This could lead to inconsistent configurations,
                           please use the explicit provided parameters instead.
                           If defined, explicit values will be ignored.
@@ -18508,7 +18509,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:ed965f7c0d7021644c809048293b320cfc0b31903cd4d96e8aca68908e32a256
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:c6a99171a426e8ae3cea9548ad1d71238b3e38a21f5dcf0642e3e59121dce9eb
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18518,7 +18519,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-9btd7m95t6
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:ed965f7c0d7021644c809048293b320cfc0b31903cd4d96e8aca68908e32a256
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:c6a99171a426e8ae3cea9548ad1d71238b3e38a21f5dcf0642e3e59121dce9eb
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
