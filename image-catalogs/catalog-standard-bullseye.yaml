@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251104'
+    images.cnpg.io/date: '20251115'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511030807-standard-bullseye@sha256:5797321f8a522215b34f31b02e10be955823f8f43dc1e508d3f6ff76c0ee93e3
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511030807-standard-bullseye@sha256:4188b5dca22f20d7a81eee0b5d0ffc4d793c2e4035173d8ce5536974e6b7ae5e
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511100807-standard-bullseye@sha256:4cb8bb765611e7cb9e671964313807e8145baf043a27f9d7aff0981904ee8a29
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511030807-standard-bullseye@sha256:c763df9142d8a1df9a71955a5906ec6822448ea60efe0c35894976b6be8344b6
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511100817-standard-bullseye@sha256:4e6b583aa50b1eea1c45150121d5ce20afdf28f9266cd2b415e0a4e8e6ed77ee
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511030807-standard-bullseye@sha256:632a0cbe1595503b04248c30c1ef633ada4bb956e6d42bf4d281e368261213d1
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511100807-standard-bullseye@sha256:f5e9d0cb5a6aaa306054582582a929a3e298c97cbc4f13f4e2bf5445192871c2
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511030807-standard-bullseye@sha256:29c57786e7d5116084311fd6e3a73c957e5df169db674a9830312d002d4eb4bf
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511100807-standard-bullseye@sha256:0f60437e5d9452ce83050a70b9e7c30fbf7ffa6ffdfd02914b9f455934531a38
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511030807-standard-bullseye@sha256:984f50e3b9e331e9c520b5d725135cae243e4b923af43a79052f00aebce3756f
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511100807-standard-bullseye@sha256:89b7a95339bb30c142e9f3b7ed7c20c5a754f20d7382fd2092459a04073372f0

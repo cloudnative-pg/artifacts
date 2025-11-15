@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: system
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251104'
+    images.cnpg.io/date: '20251115'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511030807-system-bookworm@sha256:ef8985aeb2b4a1e6aff865108e812748e3ba401fca5e7e23b7d955e8dd3284db
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-system-bookworm@sha256:9a87084ccdc4c51742b861177c4924e2a13a7dd3731782dc20d355b12bab8bcd
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511030807-system-bookworm@sha256:c454c115305ae91776e93ae5f225b6debb6ac637faa5c6fa67b0ccf0c85bf233
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511100807-system-bookworm@sha256:08aefa510c618396b3df3e7e2d8cca0dcb919b9ebcc2438f27cac9733f82495b
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511030807-system-bookworm@sha256:1fddae6821c911a128d7bd7e81e3177c6b3c3abda324d57042ff8580e0613124
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511100817-system-bookworm@sha256:cf13adf3e270ff1a924c03c34954ff6cc17e5c3b1a4c555255612ea612a08466
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511030807-system-bookworm@sha256:2ed5202825bafb0ff0f585d256d45383db8deb04a86c23286d8b789ee961a1fa
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511100807-system-bookworm@sha256:9d1f867b3efc6659e2a41a7f053c509f3aee11d82ba8bcfac0977608b302203e
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511030807-system-bookworm@sha256:c8577c03ba86f40719cb840ee88245e34fa0ab2bff5c330186b44a5877988d96
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511100807-system-bookworm@sha256:80882bbefc7e0b8a614c79cd9ec36ebe78a3f303a441b2edce33b607c906be3f
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511030807-system-bookworm@sha256:4ee9d49bb71e0cb7c9cc9c0f36db48bdb7228ea3926553374e6658b91816b670
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511100807-system-bookworm@sha256:8019033d14652bccb8c2335d8503d83b83e7c5b15aaee5b0f7e7890ec17a82a4

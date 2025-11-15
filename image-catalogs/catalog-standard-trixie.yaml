@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: trixie
-    images.cnpg.io/date: '20251104'
+    images.cnpg.io/date: '20251115'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511030807-standard-trixie@sha256:17388fda133782650ebc2a470c7511dada113057ef1ac1979f89b2f1e9e7db7a
+    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-trixie@sha256:8252529362b12a451a18cb19fdec9174ea09709102a7e6cf2e2b24d140dbd181
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511030807-standard-trixie@sha256:e55430bb27a8f894b0bf24b3a677877576f8a2b6b9b3d916c514e564bd28cdcf
+    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511100807-standard-trixie@sha256:c0b1a73abc61264ee9e1e7cd408e63a85464edea8a66e8fd566d688d848d1320
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511030807-standard-trixie@sha256:ada4609d2d88457164a7a76fe2500564633f80042c8670e0f9a2c9514788d787
+    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511100817-standard-trixie@sha256:0401fd4f9fe13ef9177ba1c52eb34397a3400ea9a1380cf6434bdf9c7fe71279
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511030807-standard-trixie@sha256:915f4fbd6f1aa35a956754e03a8c0402191c04616e39fc8ee2916e25d4e4dc92
+    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511100807-standard-trixie@sha256:6e2be9e6213f3ad57c997b4119c321e10ed368a9031b07ffa946a92f55a27fb2
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511030807-standard-trixie@sha256:6fc6354b0eeb6896395ebc7210c6eff281bf2f16bc4775afb1e1ad8f7a35458d
+    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511100807-standard-trixie@sha256:2114d9615a5c56004ff4f586032d0e61cbaca7c9449d3b57ea240630b28c37b8
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511030807-standard-trixie@sha256:ffd3687c9c71b74d8a19f24c4c56366f42ee96f7c516ad2bf31fbeec5b0f9747
+    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511100807-standard-trixie@sha256:e56be4982b17aa701b1263dbfc2fa95741177bbd3fe55d487a981e134d08625c
