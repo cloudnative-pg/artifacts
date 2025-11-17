@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251115'
+    images.cnpg.io/date: '20251117'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.19-202511100807-standard-bullseye@sha256:4cb8bb765611e7cb9e671964313807e8145baf043a27f9d7aff0981904ee8a29
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511170807-standard-bullseye@sha256:0c250bcd07387846c6ca9807b5831b066313ff6ad51267b174a6d0ec6a5b262e
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.14-202511100817-standard-bullseye@sha256:4e6b583aa50b1eea1c45150121d5ce20afdf28f9266cd2b415e0a4e8e6ed77ee
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511170807-standard-bullseye@sha256:bb50f4a16062b8e07177c8c9244420a95b5d01ad7fcaca19e64cb42e89714413
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.10-202511100807-standard-bullseye@sha256:f5e9d0cb5a6aaa306054582582a929a3e298c97cbc4f13f4e2bf5445192871c2
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511170807-standard-bullseye@sha256:b67d2cee5ce26dc09a8f691c61491784bf8a2b3cc567b1c52744af2bd0cf51a0
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.6-202511100807-standard-bullseye@sha256:0f60437e5d9452ce83050a70b9e7c30fbf7ffa6ffdfd02914b9f455934531a38
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511170807-standard-bullseye@sha256:bf6f887fb6404501892ddcfc475d9179ae087d723ee1df0113416e130de246bf
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.0-202511100807-standard-bullseye@sha256:89b7a95339bb30c142e9f3b7ed7c20c5a754f20d7382fd2092459a04073372f0
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511170807-standard-bullseye@sha256:14005e16012f121252538f7fcbdc896169bdad73945f65225c08e4a121111515
