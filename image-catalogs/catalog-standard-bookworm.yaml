@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251117'
+    images.cnpg.io/date: '20251124'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511170807-standard-bookworm@sha256:50ac2edfb50a4e93ef2cf62affcabf83f06b56cabd24537528de316fca0a94af
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511240807-standard-bookworm@sha256:95b9fb45e7a99910d73b55a7fefe93c8ffc53fc4c9674ef7a4e1ea8423803d30
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511170807-standard-bookworm@sha256:80f8399e30502153342094ea43c93bf0d4f6d7d90e2918a79c25e59cfff9c2bf
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511240807-standard-bookworm@sha256:3d5d1f9cb929c85e5cd9fe105de1edaf22cdd93dfeaafc589287bcf5b290847b
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511170807-standard-bookworm@sha256:d171df5f989ecc75d7a1c299dea65fce515273c8ffa2c7c498fae9134b827383
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511240807-standard-bookworm@sha256:254dc8f831cbfa561c8d325c046a9f955e4bdd81393625140f4f2c652428bc31
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511170807-standard-bookworm@sha256:750535d4817e1edefe4b6a23e8b7083aa24baa98b33c06a266bda10d289908d0
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511240807-standard-bookworm@sha256:3fdd23b4f3a11a85ec07382915c223feb3f34b3ab6621b091801db2b45594107
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511170807-standard-bookworm@sha256:a4048bfbde5f17684b4756fc98b29dfc13da53532a1958762b922677c2579b76
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511240807-standard-bookworm@sha256:a0ecd8bdf51120f4892186d9fb3cf5884ee88c9ffde5ed5677b85ed60c1a44c9

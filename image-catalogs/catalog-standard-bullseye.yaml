@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251117'
+    images.cnpg.io/date: '20251124'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511170807-standard-bullseye@sha256:0c250bcd07387846c6ca9807b5831b066313ff6ad51267b174a6d0ec6a5b262e
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511240807-standard-bullseye@sha256:f4ba29c39acda4f334db64d9ad0b7c08dedf85fffc2278c12f6a8c531c38650d
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511170807-standard-bullseye@sha256:bb50f4a16062b8e07177c8c9244420a95b5d01ad7fcaca19e64cb42e89714413
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511240807-standard-bullseye@sha256:bc1013e9631f639f6f00635529eeeb855e4eea5587909c92055991fcd4db6099
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511170807-standard-bullseye@sha256:b67d2cee5ce26dc09a8f691c61491784bf8a2b3cc567b1c52744af2bd0cf51a0
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511240807-standard-bullseye@sha256:f62f293325b9cc4def8ae8e98600b689642c1b0200484473658241bea51f30f2
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511170807-standard-bullseye@sha256:bf6f887fb6404501892ddcfc475d9179ae087d723ee1df0113416e130de246bf
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511240807-standard-bullseye@sha256:35b1639e387e5b7f8294460b887aa17d3d5af16f152a13aa4e60bb534153af6d
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511170807-standard-bullseye@sha256:14005e16012f121252538f7fcbdc896169bdad73945f65225c08e4a121111515
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511240807-standard-bullseye@sha256:4fec8f06e183eb379269b4514507eff7b21a9e9e4a62a0f1ef41222e8a633979
