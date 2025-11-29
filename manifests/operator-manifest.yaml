@@ -17622,10 +17622,10 @@ subjects:
 apiVersion: v1
 data:
   PGBOUNCER_IMAGE_NAME: ghcr.io/cloudnative-pg/pgbouncer:1.24.1
-  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:18.0-system-trixie
+  POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:18.1-system-trixie
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-h5g847gh64
+  name: cnpg-controller-manager-env-t84m6hh8mt
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -18129,7 +18129,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:95e0d093b418df0f8845f9be273dd5eb5fff7b95994097c2c5fb2825d9228eaf
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:90c673d9ea9f09e6d828bd57616e86e75f494ae864f2bf7ca6d062fec57824be
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18138,8 +18138,8 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-h5g847gh64
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:95e0d093b418df0f8845f9be273dd5eb5fff7b95994097c2c5fb2825d9228eaf
+            name: cnpg-controller-manager-env-t84m6hh8mt
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:90c673d9ea9f09e6d828bd57616e86e75f494ae864f2bf7ca6d062fec57824be
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
