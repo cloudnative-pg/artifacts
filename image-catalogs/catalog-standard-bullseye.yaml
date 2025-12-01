@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251124'
+    images.cnpg.io/date: '20251201'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511240807-standard-bullseye@sha256:f4ba29c39acda4f334db64d9ad0b7c08dedf85fffc2278c12f6a8c531c38650d
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512010807-standard-bullseye@sha256:9c1b98a03adc246540e49eab7c0fdc51ac8989ad21dc44659984540a261248e9
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511240807-standard-bullseye@sha256:bc1013e9631f639f6f00635529eeeb855e4eea5587909c92055991fcd4db6099
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512010807-standard-bullseye@sha256:27af1154e8a1c7bea0da9087ab10eff057014d97492e878cae4c53d788facbd4
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511240807-standard-bullseye@sha256:f62f293325b9cc4def8ae8e98600b689642c1b0200484473658241bea51f30f2
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512010807-standard-bullseye@sha256:be6d8109a87bcde4c631c4ac9ed93aee93e87c5a19892a95687d087ad23708d8
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511240807-standard-bullseye@sha256:35b1639e387e5b7f8294460b887aa17d3d5af16f152a13aa4e60bb534153af6d
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512010807-standard-bullseye@sha256:29e62df12339d264320f5d68a588b32f2ee5ae558296863478a3f73bf1c97173
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511240807-standard-bullseye@sha256:4fec8f06e183eb379269b4514507eff7b21a9e9e4a62a0f1ef41222e8a633979
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512010807-standard-bullseye@sha256:a5bcc4353b8b73037abd09ecb914d91ca741c2258ca6e9b61577ef7c2bc182b9

@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251124'
+    images.cnpg.io/date: '20251201'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202511240807-standard-bookworm@sha256:95b9fb45e7a99910d73b55a7fefe93c8ffc53fc4c9674ef7a4e1ea8423803d30
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512010807-standard-bookworm@sha256:42ce3109212c521736468abb8548253894f269ebca5f36b5dabb73c79e23855b
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202511240807-standard-bookworm@sha256:3d5d1f9cb929c85e5cd9fe105de1edaf22cdd93dfeaafc589287bcf5b290847b
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512010807-standard-bookworm@sha256:86360175834efd9db7fe3f7777cc5f45f28686ca286c1f166912c2597d8f0db7
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202511240807-standard-bookworm@sha256:254dc8f831cbfa561c8d325c046a9f955e4bdd81393625140f4f2c652428bc31
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512010807-standard-bookworm@sha256:f601b33c546b51e910fafac8877db0f69a1bfddc9fdb2ff0e23843775a873f89
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202511240807-standard-bookworm@sha256:3fdd23b4f3a11a85ec07382915c223feb3f34b3ab6621b091801db2b45594107
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512010807-standard-bookworm@sha256:d3245c74d56dbb575a1869b9d12436bf9da596c5a397de3d9fc8902e8779b13c
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202511240807-standard-bookworm@sha256:a0ecd8bdf51120f4892186d9fb3cf5884ee88c9ffde5ed5677b85ed60c1a44c9
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512010807-standard-bookworm@sha256:f3eb4bb31f72bc8ed7d1a7a5197d48de27be10019e495673cafc670d93f8ac90
