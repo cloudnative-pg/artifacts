@@ -5148,7 +5148,10 @@ spec:
                 description: |-
                   Method to follow to upgrade the primary server during a rolling
                   update procedure, after all replicas have been successfully updated:
-                  it can be with a switchover (`switchover`) or in-place (`restart` - default)
+                  it can be with a switchover (`switchover`) or in-place (`restart` - default).
+                  Note: when using `switchover`, the operator will reject updates that change both
+                  the image name and PostgreSQL configuration parameters simultaneously to avoid
+                  configuration mismatches during the switchover process.
                 enum:
                 - switchover
                 - restart
@@ -19272,7 +19275,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:7e80b73160ac3189b86327990727bc6aa2fd9234230c8637d1ae60b3f73390c8
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:80e62540383eae64c99b3a4d78d86c2e2d6ee5a09ef03a015fad7ecb48d32d8d
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19282,7 +19285,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:7e80b73160ac3189b86327990727bc6aa2fd9234230c8637d1ae60b3f73390c8
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:80e62540383eae64c99b3a4d78d86c2e2d6ee5a09ef03a015fad7ecb48d32d8d
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
