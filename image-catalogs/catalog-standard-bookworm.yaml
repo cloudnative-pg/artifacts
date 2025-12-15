@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251208'
+    images.cnpg.io/date: '20251215'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512080807-standard-bookworm@sha256:a6edb2e558565033694d6f2364c1a8193cab73e6b5f9755752017575341e6d12
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512150807-standard-bookworm@sha256:249c6e4f8c5fa8da9a384dc3465380d610952bd9e3e879edaf578129e7bdd595
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512080807-standard-bookworm@sha256:68ec617f7aab1fb86815a86abcb4e624a0d2b0d994feb8fa640176a412d2de87
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512150807-standard-bookworm@sha256:21d743af472ecd3945c364beb43694c011ab6c2709231148f423862d59393b31
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512080807-standard-bookworm@sha256:4d0a82323214c131ab75b0937665a691e7608c3362a31ea5d6f8dab4a4257692
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512150807-standard-bookworm@sha256:330a8ff6e7f30707d65ed43bdc18c7e5a45766e2cafd0d1b736d45c8fd0bf50f
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512080807-standard-bookworm@sha256:1ac00bc0c0478b18bf128f8b8c0568586083cda82cf463abe950c635657b3c4f
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512150807-standard-bookworm@sha256:24d303127eba0812b54d28534473d89170e27697e52721564f437958685b25bd
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512080807-standard-bookworm@sha256:fbcdda659340dba1fa2fdd5c37be21672452644275a9c2cf03d35b724158a87c
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512150807-standard-bookworm@sha256:68966f4d0fe3f5fec848d4324cba2b02a25f67a378c9bf1e738fd7d7c68c91c7

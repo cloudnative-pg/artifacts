@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: minimal
     images.cnpg.io/os: trixie
-    images.cnpg.io/date: '20251208'
+    images.cnpg.io/date: '20251215'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-trixie@sha256:68703fc0579e2f93379f94628092b5bde55d676e546feab1251c243f414a6a20
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512080807-minimal-trixie@sha256:805a2aa96175ed7c4a447843526794058433502495c5f5bd96dd69c84a5b91b8
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512150807-minimal-trixie@sha256:22926fd08fbb91add27aa1afd250e72696b1498709c7a7141b67818eae3c904d
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512080807-minimal-trixie@sha256:21451ed568afd07b514d0976e9e84ec076e541bb97da5edd990c2b20c1b30809
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512150807-minimal-trixie@sha256:8842a92c8ea1c8a02556ffd9ed03fbf6a3df10039216cb3cf4d7f4ff6e8347cf
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512080807-minimal-trixie@sha256:34ca4e67b531d323be2eaa72d6755180e2585257c32c71b4a10db235de687399
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512150807-minimal-trixie@sha256:80b6e42705341c1528058ffda4b50f3d82597b4df7f9eb1a2d145f8e48085ef4
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512080807-minimal-trixie@sha256:7e8e6453eab618b0d8c6e536abce4ae5ed1ada3757392b4b40a3722f548253a1
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512150807-minimal-trixie@sha256:dd6f9cda42c24bcd8ee2b619516e2aa5ddc40317c00d55d808543cef51286701
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512080807-minimal-trixie@sha256:ba1ac5727adf0075d343706fed48b348a79a6bd0a7f90bcdcca5cfe250cc9476
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512150807-minimal-trixie@sha256:e9682ca1e7b2dd991b13a02840dfff4de25fee0f2c8c3a2cdd00ef27afb9a5ef

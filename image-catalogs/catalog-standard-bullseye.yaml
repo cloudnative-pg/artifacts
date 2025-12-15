@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251208'
+    images.cnpg.io/date: '20251215'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512080807-standard-bullseye@sha256:09a998824784e2175e48073631809310fcb010580197f2a6613bdfcb6abf4fbf
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512150807-standard-bullseye@sha256:af62e51defd71477dbca998a2b6c33f5575295bd7480cb9c0e365fd98a865039
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512080807-standard-bullseye@sha256:b8860b1eba69d5570f1dd8bf37a753b5a58a4351445ec859e8e23b179def2f16
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512150807-standard-bullseye@sha256:df85167d347a42d29f2101631e2e94a1b9fb4a4893dbae0394d040c20e731066
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512080807-standard-bullseye@sha256:cf02398c07255325acea948a4228bd2963b3f1add493f95a0629b07b87c40afc
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512150807-standard-bullseye@sha256:9083882ad6052830f93e414f15ad8db8a334ee98bfac088db57891058bfd3f65
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512080807-standard-bullseye@sha256:8e1d53cc2dc1f9d5d09aedf0aa11d5323af006fd234a7e4b17a12a21f01797b5
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512150807-standard-bullseye@sha256:a7c08e2caa8ab3c811b30d216c2feb1940c725a244173831a5e2ef0173b8d44f
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512080807-standard-bullseye@sha256:3944a15a198e4fdd98f1023c8ff1a9f768ccd93ef461736920e3919998949762
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512150807-standard-bullseye@sha256:fd9ced1ef224ad693dc17695f7c767cfc29764edd189fb2f5e70cd60b3b1d130
