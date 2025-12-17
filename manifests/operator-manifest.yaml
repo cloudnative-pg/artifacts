@@ -17797,6 +17797,9 @@ data:
           , COALESCE(CAST(CAST('x'||pg_catalog.right(pg_catalog.split_part(last_failed_wal, '.', 1), 16) AS pg_catalog.bit(64)) AS pg_catalog.int8), -1) AS last_failed_wal_start_lsn
           , EXTRACT(EPOCH FROM stats_reset) AS stats_reset_time
         FROM pg_catalog.pg_stat_archiver
+      predicate_query: |
+        SELECT NOT pg_catalog.pg_is_in_recovery()
+          OR pg_catalog.current_setting('archive_mode') = 'always'
       metrics:
         - archived_count:
             usage: "COUNTER"
@@ -18129,7 +18132,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:98994d8e69704c4af9459516e210da0f2323c4b6318edba228eb922440424327
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:2d855c21b61497a09bcc29bab9a584428c47120f908774a1d88155a338723b18
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18139,7 +18142,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:98994d8e69704c4af9459516e210da0f2323c4b6318edba228eb922440424327
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:2d855c21b61497a09bcc29bab9a584428c47120f908774a1d88155a338723b18
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
