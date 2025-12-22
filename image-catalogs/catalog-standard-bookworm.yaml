@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251215'
+    images.cnpg.io/date: '20251222'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512150807-standard-bookworm@sha256:249c6e4f8c5fa8da9a384dc3465380d610952bd9e3e879edaf578129e7bdd595
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512220807-standard-bookworm@sha256:9282ad13cd3fc3b76a379f2f77164ae4e6c79145a8d67d6b46c618ade311e544
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512150807-standard-bookworm@sha256:21d743af472ecd3945c364beb43694c011ab6c2709231148f423862d59393b31
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512220807-standard-bookworm@sha256:1a8c15e6ca97478bbf919167ce15fa659d7f8e30f63a838837e93caa8bd0b3e9
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512150807-standard-bookworm@sha256:330a8ff6e7f30707d65ed43bdc18c7e5a45766e2cafd0d1b736d45c8fd0bf50f
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512220807-standard-bookworm@sha256:ade99c2a11986551c29927e95d294a8097dbe08e0bee59c9e4fc897801d57ff3
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512150807-standard-bookworm@sha256:24d303127eba0812b54d28534473d89170e27697e52721564f437958685b25bd
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512220807-standard-bookworm@sha256:63631c910d0a5b54be1996413ca4e482555d5944267f1efc9ab09227b46a19b7
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512150807-standard-bookworm@sha256:68966f4d0fe3f5fec848d4324cba2b02a25f67a378c9bf1e738fd7d7c68c91c7
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512220807-standard-bookworm@sha256:b6c7234d171faf64ed8759a9b35597f6624413f2c2ecae9e5ab4b96730bbb7ed

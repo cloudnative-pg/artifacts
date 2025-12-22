@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251215'
+    images.cnpg.io/date: '20251222'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512150807-standard-bullseye@sha256:af62e51defd71477dbca998a2b6c33f5575295bd7480cb9c0e365fd98a865039
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512220807-standard-bullseye@sha256:d94b6ad8b6dad8b5aa6c4485bc063cba54558c3729efe6f66581d37db97b7e7f
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512150807-standard-bullseye@sha256:df85167d347a42d29f2101631e2e94a1b9fb4a4893dbae0394d040c20e731066
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512220807-standard-bullseye@sha256:411c7bd72c816eefa52615099706ee3de0a51aae0f88f49acec91e78b1c86266
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512150807-standard-bullseye@sha256:9083882ad6052830f93e414f15ad8db8a334ee98bfac088db57891058bfd3f65
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512220807-standard-bullseye@sha256:a13d5fa4349a7cce5eb9143caacda06c55023f74443e83da46d8c3282428e09d
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512150807-standard-bullseye@sha256:a7c08e2caa8ab3c811b30d216c2feb1940c725a244173831a5e2ef0173b8d44f
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512220807-standard-bullseye@sha256:712f17a465884d2f7a83593d0626421e3c7b059aa7d41a5ef6b6c06e9b1b65c3
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512150807-standard-bullseye@sha256:fd9ced1ef224ad693dc17695f7c767cfc29764edd189fb2f5e70cd60b3b1d130
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512220807-standard-bullseye@sha256:76907e51800f77d939c395f8d9ea7c1b5e4dfb5519b168c2e5553fe1f3ec57a6
