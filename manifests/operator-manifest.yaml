@@ -338,6 +338,15 @@ spec:
                   type: string
                 description: A map containing the plugin metadata
                 type: object
+              reconciliationStartedAt:
+                description: When the backup process was started by the operator
+                format: date-time
+                type: string
+              reconciliationTerminatedAt:
+                description: When the reconciliation was terminated by the operator
+                  (either successfully or not)
+                format: date-time
+                type: string
               s3Credentials:
                 description: The credentials to use to upload data to S3
                 properties:
@@ -433,11 +442,12 @@ spec:
                     type: array
                 type: object
               startedAt:
-                description: When the backup was started
+                description: When the backup execution was started by the backup tool
                 format: date-time
                 type: string
               stoppedAt:
-                description: When the backup was terminated
+                description: When the backup execution was terminated by the backup
+                  tool
                 format: date-time
                 type: string
               tablespaceMapFile:
@@ -19278,7 +19288,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:142e9f66bd9a643ea3b88d4e3fc07e6391e4abf9e9d70a7ff86146bea12a1513
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c67b10cee7ba1c0de1d708a1092809f63b9a13acd21f141fa9cb832d32e472d7
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19288,7 +19298,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:142e9f66bd9a643ea3b88d4e3fc07e6391e4abf9e9d70a7ff86146bea12a1513
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c67b10cee7ba1c0de1d708a1092809f63b9a13acd21f141fa9cb832d32e472d7
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
