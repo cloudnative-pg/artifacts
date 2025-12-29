@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251222'
+    images.cnpg.io/date: '20251229'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512220807-standard-bullseye@sha256:d94b6ad8b6dad8b5aa6c4485bc063cba54558c3729efe6f66581d37db97b7e7f
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512290807-standard-bullseye@sha256:c95f19a739a72447ebb94e990559c550fe367a8bfa271b1b8eb29cac9819f479
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512220807-standard-bullseye@sha256:411c7bd72c816eefa52615099706ee3de0a51aae0f88f49acec91e78b1c86266
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512290807-standard-bullseye@sha256:e3cab25046cfbeaac8866795297eb5db110c40c462ec394d6fe7fa5ffad57901
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512220807-standard-bullseye@sha256:a13d5fa4349a7cce5eb9143caacda06c55023f74443e83da46d8c3282428e09d
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512290807-standard-bullseye@sha256:7b7df298c5795857963d67d9664e15e60f958c56e9907317fe506a77815a9f73
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512220807-standard-bullseye@sha256:712f17a465884d2f7a83593d0626421e3c7b059aa7d41a5ef6b6c06e9b1b65c3
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512290807-standard-bullseye@sha256:14d705fd66b761b5aa903b246d6b5950f5b882bb29d36125afa7409818a42fa7
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512220807-standard-bullseye@sha256:76907e51800f77d939c395f8d9ea7c1b5e4dfb5519b168c2e5553fe1f3ec57a6
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512290807-standard-bullseye@sha256:2e03c96f2c75f2e0952f27a59cf7c0a680bbe29bcf222c7d9d1e0c7849a6a444
