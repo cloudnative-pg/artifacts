@@ -2467,8 +2467,9 @@ spec:
                               integer)
                             type: string
                           targetTime:
-                            description: The target time as a timestamp in the RFC3339
-                              standard
+                            description: |-
+                              The target time as a timestamp in RFC3339 format or PostgreSQL timestamp format.
+                              Timestamps without an explicit timezone are interpreted as UTC.
                             type: string
                           targetXID:
                             description: The target transaction ID
@@ -18210,7 +18211,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:8c4f4b61fc738ca463137299fdedc613b8311b5adb4c736eadb721b19621ead1
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:15371ebe23d5b80b5481bcf803c58d26a6aefcf00da186b212e273c1f6a66c0c
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18220,7 +18221,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:8c4f4b61fc738ca463137299fdedc613b8311b5adb4c736eadb721b19621ead1
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.25@sha256:15371ebe23d5b80b5481bcf803c58d26a6aefcf00da186b212e273c1f6a66c0c
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
