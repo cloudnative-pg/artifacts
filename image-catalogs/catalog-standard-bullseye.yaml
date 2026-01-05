@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20251229'
+    images.cnpg.io/date: '20260105'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512290807-standard-bullseye@sha256:c95f19a739a72447ebb94e990559c550fe367a8bfa271b1b8eb29cac9819f479
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601050807-standard-bullseye@sha256:5d6a11f52a2e338fb4ea090621ecbf88f8958ba744998d0e3e7d05fd5612a53c
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512290807-standard-bullseye@sha256:e3cab25046cfbeaac8866795297eb5db110c40c462ec394d6fe7fa5ffad57901
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601050807-standard-bullseye@sha256:fd59b002c948570223a81005a898a1bdabb9aac2cd39d16609e5bb485af8ecb6
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512290807-standard-bullseye@sha256:7b7df298c5795857963d67d9664e15e60f958c56e9907317fe506a77815a9f73
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601050808-standard-bullseye@sha256:cbed35b00da6094060f545286b475f69c06a57ed0b1ea82bf22a63f2564b9061
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512290807-standard-bullseye@sha256:14d705fd66b761b5aa903b246d6b5950f5b882bb29d36125afa7409818a42fa7
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601050807-standard-bullseye@sha256:b7bd539a5f541738fa845e30ab879d5180290e406c9fca056c84854e26d1c88c
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512290807-standard-bullseye@sha256:2e03c96f2c75f2e0952f27a59cf7c0a680bbe29bcf222c7d9d1e0c7849a6a444
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601050807-standard-bullseye@sha256:24e5db4ef1dc10d906583f2b5afbcf6b2d7e811a224d8c06e6b4f7b955ac5c5c

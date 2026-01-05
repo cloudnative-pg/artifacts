@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20251229'
+    images.cnpg.io/date: '20260105'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202512290807-standard-bookworm@sha256:c292ba6517f0df2cc63eb395d9d06a6746f68f05d0d39e30d0fb0588ab211d28
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601050807-standard-bookworm@sha256:af170c168bdee8ad0168f64b061706c97f1319055c7ecca9e9267f9b34fc4540
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202512290807-standard-bookworm@sha256:1a88a97d3be87757a1cb5c804bd3caa224dc84d90056e7b1923ebda912e185f4
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601050807-standard-bookworm@sha256:8cea2b1d3188538b8e4efc12e0fb9f930e888b468b5c3bc94993d38889cecc88
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202512290807-standard-bookworm@sha256:38e9976975c25e6174dbec41feafa49b8a0b8000edeaeb38fd6731a9a4a67794
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601050808-standard-bookworm@sha256:1f2b738f95b78779234dc647c6fc00dc14c7931ce73841670d1cdbf6ab6cddb9
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202512290807-standard-bookworm@sha256:bd3c772836d1b3f4977248f19fd9904d087ee6b5f6428a81de1cb44ff7e8ef8d
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601050807-standard-bookworm@sha256:d808b7d1efb5740ed1fbd8ab2c70e4743c3bd8bea179f38c6f7c8279a1f0ba1c
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202512290807-standard-bookworm@sha256:dceeeadcc3468c6c988d12926323505261fb047f70322e272601b6f8d9ba72bc
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601050807-standard-bookworm@sha256:a6565d45a689fc58c261eadc1d698c4dd892bf2ca1caef646d3b79dccc76c305
