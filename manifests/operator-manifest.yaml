@@ -220,6 +220,11 @@ spec:
                     - key
                     - name
                     type: object
+                  useDefaultAzureCredentials:
+                    description: |-
+                      Use the default Azure authentication flow, which includes DefaultAzureCredential.
+                      This allows authentication using environment variables and managed identities.
+                    type: boolean
                 type: object
               backupId:
                 description: The ID of the Barman backup
@@ -1653,6 +1658,11 @@ spec:
                             - key
                             - name
                             type: object
+                          useDefaultAzureCredentials:
+                            description: |-
+                              Use the default Azure authentication flow, which includes DefaultAzureCredential.
+                              This allows authentication using environment variables and managed identities.
+                            type: boolean
                         type: object
                       data:
                         description: |-
@@ -3200,6 +3210,11 @@ spec:
                               - key
                               - name
                               type: object
+                            useDefaultAzureCredentials:
+                              description: |-
+                                Use the default Azure authentication flow, which includes DefaultAzureCredential.
+                                This allows authentication using environment variables and managed identities.
+                              type: boolean
                           type: object
                         data:
                           description: |-
@@ -18592,7 +18607,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:b6201bb923ea313cf1c1080bb6fea3486f3c9361f5f4a41c274601af16b331e2
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:9adaa550c0a7c0400ff42c0939f15cc4690d3ee47dc929415372f0c801958392
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18602,7 +18617,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:b6201bb923ea313cf1c1080bb6fea3486f3c9361f5f4a41c274601af16b331e2
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:9adaa550c0a7c0400ff42c0939f15cc4690d3ee47dc929415372f0c801958392
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
