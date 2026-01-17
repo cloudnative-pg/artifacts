@@ -322,6 +322,13 @@ spec:
                   podName:
                     description: The pod name
                     type: string
+                  sessionID:
+                    description: |-
+                      The instance manager session ID. This is a unique identifier generated at instance manager
+                      startup and changes on every restart (including container reboots). Used to detect if
+                      the instance manager was restarted during long-running operations like backups, which
+                      would terminate any running backup process.
+                    type: string
                 type: object
               majorVersion:
                 description: |-
@@ -19372,7 +19379,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e1abbbb4f80648debb2489ecd88d4e18bd26da10eaef49da0cc9d8eba78b359a
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:c126b8bde4be5b399409542889f9eb1dc89192b595b909f1774ac0e0859588d3
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19382,7 +19389,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e1abbbb4f80648debb2489ecd88d4e18bd26da10eaef49da0cc9d8eba78b359a
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:c126b8bde4be5b399409542889f9eb1dc89192b595b909f1774ac0e0859588d3
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
