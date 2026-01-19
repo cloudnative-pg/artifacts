@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260112'
+    images.cnpg.io/date: '20260119'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601120807-standard-bookworm@sha256:5b51972094f1afae6591b7af979027c3838bf2773db6b622d7a8f948bf168c54
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601190807-standard-bookworm@sha256:5aa961ef1c9797d23102610633a6399353b46ec47a417923516f3fd0212e8704
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601120807-standard-bookworm@sha256:1d2cba4bcfa699c9ac57c8dd6dc8335b7b9ac98c6a478b2d758abfbe0d0f89bb
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601190807-standard-bookworm@sha256:3ddffbbd4046beff2f8f3ff2d7b240f66eebb31b41b8bfea20a1bcf2ccaedd9a
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601120807-standard-bookworm@sha256:be1b009545b67e6d1779122e52c4a7e4a2a2f59a2eed1b76a1f219083d81d800
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601190807-standard-bookworm@sha256:e17333d3d394cde134358be5e9c275fc17c4a5523ac52df27e5c5b425f1df709
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601120807-standard-bookworm@sha256:d6e740c72980ff9437f752dc0779c66be6bfecc397d73811ddaa5b1e153f58b8
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601190807-standard-bookworm@sha256:cc2a8df6f90b48d9e8a607e817bfd3bed95fc69f2d99d6a3faceaf8083d53693
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601120807-standard-bookworm@sha256:8c0a67e6188a071e77821d75bd9026a5593134b6f2f1e246cc4087857b52e293
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601190807-standard-bookworm@sha256:5672ea4c8cb782628c77631d6b44c73694f898eec4e4ff6dc34638790132ed17
