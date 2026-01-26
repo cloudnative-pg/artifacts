@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: minimal
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260119'
+    images.cnpg.io/date: '20260126'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-bullseye@sha256:e8f3dd320ec555ee810ca62e04538880ca77855901762629eac441da173b5639
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601190807-minimal-bullseye@sha256:c26e4c3a862c55fef0f1ce2ffdff4d079fd7021463d58fc6ac8eb99d6f33bede
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601260808-minimal-bullseye@sha256:b848448170ae74c515f92447b9aa2cabfb0a18ac3f61ffdab19132b5b7571065
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601190807-minimal-bullseye@sha256:b221418a01eafc50163949fc2483950235b621149edca1f2c1a705aa6b241ec4
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601260807-minimal-bullseye@sha256:053c40aa7555b780a23556e0c1e5235f363bc6a4b40cce89f1f6a718bc0a3c4e
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601190807-minimal-bullseye@sha256:b7e7bade2ec7304c019cfb75ca6dbd6cc3e941feb13e5b26525c54de2d010e41
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601260807-minimal-bullseye@sha256:b5d7d655277f4a5f08a35f25a8be2348bb12dbbc3075a270812601f7a5de8587
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601190807-minimal-bullseye@sha256:f4a28a0e74f078ff5048dd69a2b88db30db4c73c533be99601a0c38a02d51022
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601260808-minimal-bullseye@sha256:0ec4c43a969d58d25556b53966b0694d0074ac40d5ae0913d31741067d384ff4
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601190807-minimal-bullseye@sha256:c37a9671f89c30f6e39e38828179e0cabc64f6929553886d1abb8eb775c03b5e
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601260808-minimal-bullseye@sha256:3fa032996a6d87da5f9d9fe53d8e4b3c0cccc19dc906f235d83f58495853e37c

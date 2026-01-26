@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260119'
+    images.cnpg.io/date: '20260126'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601190807-standard-bullseye@sha256:15ce3adf9ecf05f7e51e129a618a4977c64117f22025a3c0c21e5471d98a6926
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601260808-standard-bullseye@sha256:ad231379d39d7c39d459e020ad671351c9b7a3879b2327dd8665ab95c49a6690
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601190807-standard-bullseye@sha256:a41fde5e424d2fcee554a3c55038481842d904b49a3be8a467d3fc85a2876474
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601260807-standard-bullseye@sha256:e1ba6f38234cd69fb91c5bfaed0ed562a735b7df81f131d66723fe297a7c6d50
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601190807-standard-bullseye@sha256:c4618beef03daec0a25bac9ee6eacd2c98764d2d807662f27c11bad3a71dc4a4
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601260807-standard-bullseye@sha256:1b2043ec53c7cefc11ce98b4f21f6ac28a84f7868fb25fd8dd9e7f7570c9b4ad
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601190807-standard-bullseye@sha256:aff33e4f0d71a6a5bf8164c0b0a53261a1d4cc1883a86bf9d8a0437e931c283d
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601260808-standard-bullseye@sha256:2b54ab714596eb3ee5d3856a72575fac75a5a43c648e7650e324011f54708977
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601190807-standard-bullseye@sha256:1c9886fc4cbee9dbb94dfd4ed937f288626bd1c6f4f97eea3474ebb06f34fe95
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601260808-standard-bullseye@sha256:afcc7b608bc4cd395f913ec5e23c55846e9860304c1707a628a7971bcfb5d660

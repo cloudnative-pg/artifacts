@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260119'
+    images.cnpg.io/date: '20260126'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601190807-standard-bookworm@sha256:5aa961ef1c9797d23102610633a6399353b46ec47a417923516f3fd0212e8704
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202601260808-standard-bookworm@sha256:ad9e207e141748633f4dc9029f3b075600da7ed2fc122819271120f90c3f3a92
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601190807-standard-bookworm@sha256:3ddffbbd4046beff2f8f3ff2d7b240f66eebb31b41b8bfea20a1bcf2ccaedd9a
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202601260807-standard-bookworm@sha256:053a4e5729932c120d13df6d8ba863080ee7f6cf3ee022230e0fa94cc846650d
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601190807-standard-bookworm@sha256:e17333d3d394cde134358be5e9c275fc17c4a5523ac52df27e5c5b425f1df709
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202601260807-standard-bookworm@sha256:f3a1b34827142fee2533c655d54f455a17970aebc8fe69cc030b22d8fea33763
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601190807-standard-bookworm@sha256:cc2a8df6f90b48d9e8a607e817bfd3bed95fc69f2d99d6a3faceaf8083d53693
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202601260808-standard-bookworm@sha256:1510039e9e45178aaea38a57a2cd0611ab413141a4e1b1f1c52c659c4ae08691
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601190807-standard-bookworm@sha256:5672ea4c8cb782628c77631d6b44c73694f898eec4e4ff6dc34638790132ed17
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202601260808-standard-bookworm@sha256:07f32a119fb1c9548732bc7716918bc11d6bdbecb7a1976e74770a62ff34b394
