@@ -1,0 +1,36 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ClusterImageCatalog
+metadata:
+  name: postgresql-minimal-bookworm
+  labels:
+    images.cnpg.io/date: "20260202"
+    images.cnpg.io/family: postgresql
+    images.cnpg.io/os: bookworm
+    images.cnpg.io/publisher: cnpg.io
+    images.cnpg.io/type: minimal
+spec:
+  images:
+    - major: 13
+      image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-bookworm@sha256:02e8ffc71aec2768ca177711278d3c0e6ceb5403df5fa6d3780cd590332e3a5d
+    - major: 14
+      image: ghcr.io/cloudnative-pg/postgresql:14.20-202602020815-minimal-bookworm@sha256:89ce30cd8513700de2da53abebda33f90371c9207c1a8e9247e5688c326c285a
+    - major: 15
+      image: ghcr.io/cloudnative-pg/postgresql:15.15-202602020814-minimal-bookworm@sha256:13690b0b41156c4d80c566ffa736d62356b7969375f23f40d754b9c81a31e3b5
+    - major: 16
+      image: ghcr.io/cloudnative-pg/postgresql:16.11-202602020815-minimal-bookworm@sha256:02104de161fbb07b3c2bb9f682c766fd9c98bd2eea5018a005031aa00df4c61d
+    - major: 17
+      image: ghcr.io/cloudnative-pg/postgresql:17.7-202602020815-minimal-bookworm@sha256:0d87460d5f6f410f2b06872eeffcefcbc40ebbfb5fd85747004da6aaf8d96d48
+    - major: 18
+      image: ghcr.io/cloudnative-pg/postgresql:18.1-202602020815-minimal-bookworm@sha256:117fdbfbffafa0e77c79732a3820e08079c9cdf557358bee32c20497acf07f1f
+      extensions:
+        - name: pgaudit
+          image:
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202602051117-18-bookworm@sha256:ec815e066e8b371a0604361189f020481046a0b3f5d297983d7ae73722106fd2
+        - name: pgvector
+          image:
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.1-202602051117-18-bookworm@sha256:78b0f7df8b0703c1960abf4a74be763439191c72cef8c87d3e4e8299afd034d1
+        - name: postgis
+          image:
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.1-202602051117-18-bookworm@sha256:b0d42b42c1f430c4177ae879b2c18b3ff2c001224eef7abf91ffcf81b39697ab
+          ld_library_path:
+            - /system
