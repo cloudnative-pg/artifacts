@@ -4679,7 +4679,7 @@ spec:
                         name:
                           description: The name of the extension, required
                           minLength: 1
-                          pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                          pattern: ^[a-z0-9]([-a-z0-9_]*[a-z0-9])?$
                           type: string
                       required:
                       - image
@@ -18614,7 +18614,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:aa40e953b8e2dd82920974ea12845c520d39f6a9ed7a28ac2b900af93a7b9096
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:b74a9e30bf1b87ba9f502d01d32880df47688d6e10681115f94c5063bd202d84
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18624,7 +18624,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-ft8f574hd4
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:aa40e953b8e2dd82920974ea12845c520d39f6a9ed7a28ac2b900af93a7b9096
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:b74a9e30bf1b87ba9f502d01d32880df47688d6e10681115f94c5063bd202d84
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
