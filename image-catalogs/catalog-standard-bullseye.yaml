@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260202'
+    images.cnpg.io/date: '20260209'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202602020815-standard-bullseye@sha256:f5986fc6d3b0718cced283167151852d39b5d79f5ddc27caa3538f572fc7c356
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202602090817-standard-bullseye@sha256:89a61ce332a5413683b884851cc5d44409ca3561fe842e69b2993133162c2950
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202602020814-standard-bullseye@sha256:1482b798cd3458bc989f568722159e6c21b1a886247d78ffd97ea98792446fdc
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202602090817-standard-bullseye@sha256:6ab414d2970a16f61b0fed7feb71c1fd8edf9d4a7253fb0db79855c0b77b856b
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202602020815-standard-bullseye@sha256:4b56811abf3619575f055ee1c4e80fae0b81a0be59c4effcaf0d7ae26b3b686b
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202602090816-standard-bullseye@sha256:37da75c7e2f19b37e3a904ffce45e6d7302b1228de196ddea44f31d2bb06d011
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202602020815-standard-bullseye@sha256:2bec9032ae633ce13e204fa51ae458bf41e41ee1d5763a11073b4d62d4425873
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202602090816-standard-bullseye@sha256:9899125acfd0b48a61bf42da077f1f5498b0dfee02319a964ec5172180992941
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202602020815-standard-bullseye@sha256:fdd5042d0f2dded2a3dd11ac33c17c97128f451f4e9485623c84ea9ef0600c87
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202602090816-standard-bullseye@sha256:15fc8dad2024deff551bf8087127f1f7d72a7667f2fd72548998e8f7af3969d0

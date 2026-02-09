@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260202'
+    images.cnpg.io/date: '20260209'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202602020815-standard-bookworm@sha256:a4e537ce4e0423f87a25421f99956019ad4a6608adbc8246a21dce6d0689fdc5
+    image: ghcr.io/cloudnative-pg/postgresql:14.20-202602090817-standard-bookworm@sha256:0d5ba10e546f5db52fd5a8a8610cdc981e7914c12e30611cb382f188cfd791eb
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202602020814-standard-bookworm@sha256:fe9a43b2465ba510e7916db704b11fab4fb709d9c31777e75049561191a562e6
+    image: ghcr.io/cloudnative-pg/postgresql:15.15-202602090817-standard-bookworm@sha256:9b2123e9c9b008226c6783037059a272888db0565717a361140e80f67271b6d2
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202602020815-standard-bookworm@sha256:fa066a98a1f86ab55bcb11fa65c6dc3d69f435cad3856694c89a908166edc5bf
+    image: ghcr.io/cloudnative-pg/postgresql:16.11-202602090816-standard-bookworm@sha256:2f62cd9413a08f0c59c73c36dd8d8c4b7f80019fd91888bedefe356f1f4f6d9a
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202602020815-standard-bookworm@sha256:06c79ca5a39f51ffde94195fcd813d2436d1bca5a5bb3b9f522ff4e3b6194f7c
+    image: ghcr.io/cloudnative-pg/postgresql:17.7-202602090816-standard-bookworm@sha256:ec0531cf065367bf9f73f83a4cbf37a2075e32d1e84b2318af915e420300cfbc
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202602020815-standard-bookworm@sha256:5b41c1a17c3ee5471b728d46118fef2f896f9f3837382eecabd27d4ff1103bc2
+    image: ghcr.io/cloudnative-pg/postgresql:18.1-202602090816-standard-bookworm@sha256:4d7755c0460bdac6143f49e5d16ba4865aeb61368fe773adfea8696380a69b7a
