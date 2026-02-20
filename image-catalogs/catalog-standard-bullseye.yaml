@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260209'
+    images.cnpg.io/date: '20260220'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.20-202602090817-standard-bullseye@sha256:89a61ce332a5413683b884851cc5d44409ca3561fe842e69b2993133162c2950
+    image: ghcr.io/cloudnative-pg/postgresql:14.21-202602201511-standard-bullseye@sha256:5c022534b6763070af1a13ece893d07626f9fb93faf66f075352a6ce0ca5fd63
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.15-202602090817-standard-bullseye@sha256:6ab414d2970a16f61b0fed7feb71c1fd8edf9d4a7253fb0db79855c0b77b856b
+    image: ghcr.io/cloudnative-pg/postgresql:15.16-202602201511-standard-bullseye@sha256:1ac72b8e8edd003186530f8bd8688241b1df1311d075b77e433abc950097ea0a
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.11-202602090816-standard-bullseye@sha256:37da75c7e2f19b37e3a904ffce45e6d7302b1228de196ddea44f31d2bb06d011
+    image: ghcr.io/cloudnative-pg/postgresql:16.12-202602201511-standard-bullseye@sha256:38f559f896545362746bf2bd657caafb7133df9762b80d160e9bdcea053c0e35
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.7-202602090816-standard-bullseye@sha256:9899125acfd0b48a61bf42da077f1f5498b0dfee02319a964ec5172180992941
+    image: ghcr.io/cloudnative-pg/postgresql:17.8-202602201511-standard-bullseye@sha256:9cfef02689c86678488f068099951a91364012fa61763109c6e60ce0247d6ff3
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.1-202602090816-standard-bullseye@sha256:15fc8dad2024deff551bf8087127f1f7d72a7667f2fd72548998e8f7af3969d0
+    image: ghcr.io/cloudnative-pg/postgresql:18.2-202602201511-standard-bullseye@sha256:76ec67a4d655085207b2796f6bec70364137427dd91d67d45a4cd33ef4e06f44
