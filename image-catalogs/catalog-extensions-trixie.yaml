@@ -25,12 +25,12 @@ spec:
       extensions:
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202602241306-18-trixie@sha256:e9b5b4dd4fb1f0f0e60ad6cb1e0d84d2f8544ba4e92a9ef6bdb378f7f2269a53
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202602242104-18-trixie@sha256:9b374dcf5109f081580f80bcbe7248d71f293e994c8350cfe6363662493edea4
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.1-202602241306-18-trixie@sha256:657af9133598e3933c72055d98b620341f87b70731ef176463e4dbc46c366994
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.1-202602242104-18-trixie@sha256:860c76ab2673d63e6b12e5cac052be0618284d6ecd0099bda5fdc9cd4b12c7a8
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202602241306-18-trixie@sha256:f36cea9dff9970a771acc23028cc15351170553821d6925381b0c79254861867
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202602242104-18-trixie@sha256:277d212880b56f081b275ed66b3bedd9a1f605bfed39925c72d649d1d25b9d60
           ld_library_path:
             - system
