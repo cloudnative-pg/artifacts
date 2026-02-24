@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260220'
+    images.cnpg.io/date: '20260224'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.21-202602201511-standard-bullseye@sha256:5c022534b6763070af1a13ece893d07626f9fb93faf66f075352a6ce0ca5fd63
+    image: ghcr.io/cloudnative-pg/postgresql:14.21-202602230816-standard-bullseye@sha256:4d63c41d91ab475117a3587f48bcef2f244929bd3c06d70477325c3b4fc3429c
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.16-202602201511-standard-bullseye@sha256:1ac72b8e8edd003186530f8bd8688241b1df1311d075b77e433abc950097ea0a
+    image: ghcr.io/cloudnative-pg/postgresql:15.16-202602230816-standard-bullseye@sha256:a9f863b48d9a885f1f04c80c58815b3756b835e4cbd4ff8d4af1cf29c2c4ad5e
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.12-202602201511-standard-bullseye@sha256:38f559f896545362746bf2bd657caafb7133df9762b80d160e9bdcea053c0e35
+    image: ghcr.io/cloudnative-pg/postgresql:16.12-202602241232-standard-bullseye@sha256:288744589867096cbf3348a0ad956d966e16c4e1b9b444506205409e4e6bf162
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.8-202602201511-standard-bullseye@sha256:9cfef02689c86678488f068099951a91364012fa61763109c6e60ce0247d6ff3
+    image: ghcr.io/cloudnative-pg/postgresql:17.8-202602230816-standard-bullseye@sha256:9dcb143bfe7f9bc9d2142f738fb407bf08f619e1afa98509ddaaef33a206bc2e
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.2-202602201511-standard-bullseye@sha256:76ec67a4d655085207b2796f6bec70364137427dd91d67d45a4cd33ef4e06f44
+    image: ghcr.io/cloudnative-pg/postgresql:18.2-202602230816-standard-bullseye@sha256:5a3cc09a6fd1337441d6101265f42035a1282ce4ba36304cb779dc302b56b53f
