@@ -5,9 +5,6 @@
 This directory contains the **official `ClusterImageCatalog` manifests**
 maintained by [CloudNativePG](https://cloudnative-pg.io/).  
 
-See the [documentation](https://cloudnative-pg.io/documentation/current/image_catalog/)
-for full details.
-
 ## What they are
 
 Each catalog defines the latest container images for all supported PostgreSQL
@@ -55,3 +52,8 @@ cosign verify-blob \
   --certificate-identity-regexp "^https://github.com/cloudnative-pg/postgres-containers/.github/workflows/catalogs.yml@main" \
   --certificate-oidc-issuer "https://token.actions.githubusercontent.com"
 ```
+
+---
+
+For full details, please refer to the
+[official documentation](https://cloudnative-pg.io/documentation/current/image_catalog/).
