@@ -2,6 +2,17 @@
 
 # Cluster Image Catalogs
 
+> [!NOTE]
+> **CloudNativePG 1.29+ and the `extensions` Stanza**
+> The catalogs in this directory are currently the mainstream definitions for older CNPG versions.
+> - **For CNPG 1.29+**: Please use the manifests in the [`extensions/` > subdirectory](./extensions)
+> to leverage the new `extensions` stanza and PostgreSQL 18 support.
+> 
+> **Roadmap Note:** In the coming months, once CloudNativePG 1.28 reaches EOL,
+> the catalogs in this main folder will be updated to support the `extensions`
+> format directly, and the temporary `/extensions` directory will be
+> decommissioned.
+
 This directory contains the **official `ClusterImageCatalog` manifests**
 maintained by [CloudNativePG](https://cloudnative-pg.io/).  
 
