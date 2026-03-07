@@ -1,4 +1,4 @@
-[![CloudNativePG](../logo/cloudnativepg.png)](https://cloudnative-pg.io/)
+[![CloudNativePG](../../logo/cloudnativepg.png)](https://cloudnative-pg.io/)
 
 # Cluster Image Catalogs (v1.29+)
 
