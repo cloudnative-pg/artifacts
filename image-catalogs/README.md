@@ -5,9 +5,6 @@
 This directory contains the **official `ClusterImageCatalog` manifests**
 maintained by [CloudNativePG](https://cloudnative-pg.io/).  
 
-See the [documentation](https://cloudnative-pg.io/documentation/current/image_catalog/)
-for full details.
-
 ## What they are
 
 Each catalog defines the latest container images for all supported PostgreSQL
@@ -33,3 +30,8 @@ Install all catalogs at once:
 kubectl apply -k \
   https://github.com/cloudnative-pg/artifacts/image-catalogs?ref=main
 ```
+
+---
+
+For full details, please refer to the
+[official documentation](https://cloudnative-pg.io/documentation/current/image_catalog/).
