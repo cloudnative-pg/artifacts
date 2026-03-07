@@ -6,7 +6,8 @@
 > **CloudNativePG 1.29+ and the `extensions` Stanza**
 > The catalogs in this directory are currently the mainstream definitions for older CNPG versions.
 > - **For CNPG 1.29+**: Please use the manifests in the [`extensions/` > subdirectory](./extensions)
-> to leverage the new `extensions` stanza and PostgreSQL 18 support.
+> to leverage the new `extensions` stanza and PostgreSQL 18 support for
+> `extensions_control_path`.
 > 
 > **Roadmap Note:** In the coming months, once CloudNativePG 1.28 reaches EOL,
 > the catalogs in this main folder will be updated to support the `extensions`
