@@ -7,7 +7,7 @@
 > This is a temporary folder for **CloudNativePG 1.29+ only**.
 > Version 1.29 of the image catalogs introduced the `extensions` stanza, which
 > makes them incompatible with earlier versions of CloudNativePG. Note that
-> CNPG 1.28.2 and 1.27.4 will be compatible with the new format, but until
+> CNPG 1.28.2+ and 1.27.4+ are also compatible with the new format, but until
 > CloudNativePG 1.28 reaches End-of-Life (EOL), the mainstream catalogs in the
 > [parent folder](../) will serve those users. Once 1.28 is decommissioned,
 > these definitions will move to the main folder.
