@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260226'
+    images.cnpg.io/date: '20260310'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202602261636-standard-bullseye@sha256:4b3afc9d7bde7028189d7ca8f87e4c28ad3e20194795cb61484b16f500a13c23
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603090815-standard-bullseye@sha256:fdd3c9b4ee699c954d5410775adcf693cc157c29656db8d09c3799a374653dd4
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202602261636-standard-bullseye@sha256:3d5a15a65e497b945670ead0d1ceda71cea705df42f832b5b6f09cfa244d9430
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603090816-standard-bullseye@sha256:db60db53272fa967c67cf3728db3905bfe6c3fa7aa6d5e672b707c96b5463cc6
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202602261637-standard-bullseye@sha256:9ba95fa4f55d3de4ce320c1b1bb1fa70c816db853cce0c4d04753c2ec8963a41
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603090815-standard-bullseye@sha256:fe87c2b12f56e0de2b9b598862d772070334300ebdd49e330bf8cb64827a4027
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202602261636-standard-bullseye@sha256:411d611a57d1e252dc981de593a9cba0dfe7aaee1245c6c08c9e43bdd2ce105f
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603101238-standard-bullseye@sha256:0f7b49dea20e87ce7f331b1481fc6a379df138dbe1fa511bb434d42b3d00a1b0
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202602261638-standard-bullseye@sha256:366a82863dacc8948088dcb6bc90902d689df4cd2c6ca7adf5e81622ae8d2a94
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603090815-standard-bullseye@sha256:ed52b010297a1f94f6c814f939a75f52938f1db256bb5fbfa4d0e00908838465
