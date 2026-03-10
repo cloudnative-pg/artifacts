@@ -31,7 +31,7 @@ Install a single catalog (e.g. `minimal` images on Debian `trixie`):
 ```sh
 kubectl apply -f \
   https://raw.githubusercontent.com/cloudnative-pg/artifacts/refs/heads/main/image-catalogs-extensions/catalog-minimal-trixie.yaml
-````
+```
 
 Install all catalogs at once:
 
