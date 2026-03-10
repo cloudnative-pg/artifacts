@@ -1,4 +1,4 @@
-[![CloudNativePG](../../logo/cloudnativepg.png)](https://cloudnative-pg.io/)
+[![CloudNativePG](../logo/cloudnativepg.png)](https://cloudnative-pg.io/)
 
 # Cluster Image Catalogs (v1.29+)
 
@@ -30,14 +30,14 @@ Install a single catalog (e.g. `minimal` images on Debian `trixie`):
 
 ```sh
 kubectl apply -f \
-  https://raw.githubusercontent.com/cloudnative-pg/artifacts/refs/heads/main/image-catalogs/extensions/catalog-minimal-trixie.yaml
+  https://raw.githubusercontent.com/cloudnative-pg/artifacts/refs/heads/main/image-catalogs-extensions/catalog-minimal-trixie.yaml
 ````
 
 Install all catalogs at once:
 
 ```sh
 kubectl apply -k \
-  https://github.com/cloudnative-pg/artifacts/image-catalogs/extensions?ref=main
+  https://github.com/cloudnative-pg/artifacts/image-catalogs-extensions?ref=main
 ```
 
 ---
