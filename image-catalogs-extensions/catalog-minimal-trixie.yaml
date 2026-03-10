@@ -3,7 +3,7 @@ kind: ClusterImageCatalog
 metadata:
   name: postgresql-minimal-trixie
   labels:
-    images.cnpg.io/date: "20260226"
+    images.cnpg.io/date: "20260310"
     images.cnpg.io/family: postgresql
     images.cnpg.io/os: trixie
     images.cnpg.io/publisher: cnpg.io
@@ -13,15 +13,15 @@ spec:
     - major: 13
       image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-trixie@sha256:68703fc0579e2f93379f94628092b5bde55d676e546feab1251c243f414a6a20
     - major: 14
-      image: ghcr.io/cloudnative-pg/postgresql:14.22-202602261636-minimal-trixie@sha256:15a1e87f700549f5f256304880106ce0b7d24720a56e6d8ff89ec634d4681793
+      image: ghcr.io/cloudnative-pg/postgresql:14.22-202603090815-minimal-trixie@sha256:124b876cdfcaddb607ced37253635d51fea28e4e03245066f342906b5a696509
     - major: 15
-      image: ghcr.io/cloudnative-pg/postgresql:15.17-202602261636-minimal-trixie@sha256:f7fc02e51a386e28aa0a5a0bfeb9c3d210a62acc44dc42644b775c68cd7df66f
+      image: ghcr.io/cloudnative-pg/postgresql:15.17-202603090816-minimal-trixie@sha256:733e390e0967ba39977b43785ad4a1f5f6f04673a41d06175f23eef1631a3e04
     - major: 16
-      image: ghcr.io/cloudnative-pg/postgresql:16.13-202602261637-minimal-trixie@sha256:bb2beea175169387877c5714b615ab5abab07e08e4a29a9b8b35e22b85ce7a53
+      image: ghcr.io/cloudnative-pg/postgresql:16.13-202603090815-minimal-trixie@sha256:e597f8bfb594e80cfbcdc24e4be137b08825b8b71c0c0dd3609163258272b171
     - major: 17
-      image: ghcr.io/cloudnative-pg/postgresql:17.9-202602261636-minimal-trixie@sha256:54da37cc7b0e345ec6b7a5a14779674979672131aa4014a634a840f0f825fb2f
+      image: ghcr.io/cloudnative-pg/postgresql:17.9-202603101238-minimal-trixie@sha256:9234a973bf728dfa3d1381d0783c313efcc3730e5b7ad9170ac2c976fd09252f
     - major: 18
-      image: ghcr.io/cloudnative-pg/postgresql:18.3-202602261638-minimal-trixie@sha256:d91e1f352c563c1c20e3698bd9b5e9c280ded95b577f7608e8437b50fe55cd05
+      image: ghcr.io/cloudnative-pg/postgresql:18.3-202603090815-minimal-trixie@sha256:272e2abdfc20f437d60490276fe48c07ccbec90bc860f15574fe74468b8ff511
       extensions:
         - name: pgaudit
           image:
