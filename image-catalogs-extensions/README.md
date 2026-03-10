@@ -43,4 +43,4 @@ kubectl apply -k \
 ---
 
 For full details, please refer to the
-[official documentation](https://cloudnative-pg.io/documentation/current/image_catalog/).
+[official documentation](https://cloudnative-pg.io/docs/devel/image_catalog/).
