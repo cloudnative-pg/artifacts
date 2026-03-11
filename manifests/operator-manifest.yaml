@@ -9,7 +9,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -471,7 +471,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: clusterimagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -612,7 +612,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -7846,7 +7846,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: databases.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8440,7 +8440,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: failoverquorums.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8517,7 +8517,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8657,7 +8657,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18025,7 +18025,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: publications.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18220,7 +18220,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18411,7 +18411,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.0
+    controller-gen.kubebuilder.io/version: v0.20.1
   name: subscriptions.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -19495,7 +19495,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:f72eca352e8d20796c9c45720ed6d21287be668a91e96ebbec0680b45a7b0fa9
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e055f92e17d20219834fad44cace813ede27c2dbc2124240d67a1a87451def4e
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19505,7 +19505,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-dddb79fcmm
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:f72eca352e8d20796c9c45720ed6d21287be668a91e96ebbec0680b45a7b0fa9
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e055f92e17d20219834fad44cace813ede27c2dbc2124240d67a1a87451def4e
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
