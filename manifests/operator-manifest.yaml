@@ -536,6 +536,13 @@ spec:
                           ExtensionConfiguration is the configuration used to add
                           PostgreSQL extensions to the Cluster.
                         properties:
+                          bin_path:
+                            description: |-
+                              A list of directories within the image to be appended to the
+                              PostgreSQL process's `PATH` environment variable.
+                            items:
+                              type: string
+                            type: array
                           dynamic_library_path:
                             description: |-
                               The list of directories inside the image which should be added to dynamic_library_path.
@@ -4968,7 +4975,7 @@ spec:
                     PodSelectorRef defines a named pod label selector for use in pg_hba rules.
                     Pods matching the selector in the Cluster's namespace will have their IPs
                     resolved and made available for pg_hba address expansion via the
-                    ${podselector:NAME} syntax.
+                    `${podselector:NAME}` syntax.
                   properties:
                     name:
                       description: |-
@@ -5062,6 +5069,13 @@ spec:
                         ExtensionConfiguration is the configuration used to add
                         PostgreSQL extensions to the Cluster.
                       properties:
+                        bin_path:
+                          description: |-
+                            A list of directories within the image to be appended to the
+                            PostgreSQL process's `PATH` environment variable.
+                          items:
+                            type: string
+                          type: array
                         dynamic_library_path:
                           description: |-
                             The list of directories inside the image which should be added to dynamic_library_path.
@@ -6405,6 +6419,20 @@ spec:
                         type: string
                     type: object
                 type: object
+              serviceAccountName:
+                description: |-
+                  Name of an existing ServiceAccount in the same namespace to use for the cluster.
+                  When specified, the operator will not create a new ServiceAccount
+                  but will use the provided one. This is useful for sharing a single
+                  ServiceAccount across multiple clusters (e.g., for cloud IAM configurations).
+                  If not specified, a ServiceAccount will be created with the cluster name.
+                  Mutually exclusive with ServiceAccountTemplate.
+                maxLength: 253
+                pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                type: string
+                x-kubernetes-validations:
+                - message: serviceAccountName is immutable
+                  rule: self == oldSelf
               serviceAccountTemplate:
                 description: Configure the generation of the service account
                 properties:
@@ -7688,6 +7716,13 @@ spec:
                         ExtensionConfiguration is the configuration used to add
                         PostgreSQL extensions to the Cluster.
                       properties:
+                        bin_path:
+                          description: |-
+                            A list of directories within the image to be appended to the
+                            PostgreSQL process's `PATH` environment variable.
+                          items:
+                            type: string
+                          type: array
                         dynamic_library_path:
                           description: |-
                             The list of directories inside the image which should be added to dynamic_library_path.
@@ -8745,6 +8780,13 @@ spec:
                           ExtensionConfiguration is the configuration used to add
                           PostgreSQL extensions to the Cluster.
                         properties:
+                          bin_path:
+                            description: |-
+                              A list of directories within the image to be appended to the
+                              PostgreSQL process's `PATH` environment variable.
+                            items:
+                              type: string
+                            type: array
                           dynamic_library_path:
                             description: |-
                               The list of directories inside the image which should be added to dynamic_library_path.
@@ -9231,6 +9273,19 @@ spec:
                     - name
                     type: object
                 type: object
+              serviceAccountName:
+                description: |-
+                  Name of an existing ServiceAccount in the same namespace to use for the pooler.
+                  When specified, the operator will not create a new ServiceAccount
+                  but will use the provided one. This is useful for sharing a single
+                  ServiceAccount across multiple poolers (e.g., for cloud IAM configurations).
+                  If not specified, a ServiceAccount will be created with the pooler name.
+                maxLength: 253
+                pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                type: string
+                x-kubernetes-validations:
+                - message: serviceAccountName is immutable
+                  rule: self == oldSelf
               serviceTemplate:
                 description: Template for the Service to be created
                 properties:
@@ -19669,7 +19724,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:e09fd5acd2d568abec8938f454e9998b4cef2aa63c1684244c06c743ae2b1168
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:053e64eace2130d5aec3039db54759772ab856828df0b91911324c3eef16e1a3
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19679,7 +19734,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-dddb79fcmm
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:e09fd5acd2d568abec8938f454e9998b4cef2aa63c1684244c06c743ae2b1168
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:053e64eace2130d5aec3039db54759772ab856828df0b91911324c3eef16e1a3
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
