@@ -526,6 +526,13 @@ spec:
                           ExtensionConfiguration is the configuration used to add
                           PostgreSQL extensions to the Cluster.
                         properties:
+                          bin_path:
+                            description: |-
+                              A list of directories within the image to be appended to the
+                              PostgreSQL process's `PATH` environment variable.
+                            items:
+                              type: string
+                            type: array
                           dynamic_library_path:
                             description: |-
                               The list of directories inside the image which should be added to dynamic_library_path.
@@ -4692,6 +4699,13 @@ spec:
                         ExtensionConfiguration is the configuration used to add
                         PostgreSQL extensions to the Cluster.
                       properties:
+                        bin_path:
+                          description: |-
+                            A list of directories within the image to be appended to the
+                            PostgreSQL process's `PATH` environment variable.
+                          items:
+                            type: string
+                          type: array
                         dynamic_library_path:
                           description: |-
                             The list of directories inside the image which should be added to dynamic_library_path.
@@ -7863,6 +7877,13 @@ spec:
                           ExtensionConfiguration is the configuration used to add
                           PostgreSQL extensions to the Cluster.
                         properties:
+                          bin_path:
+                            description: |-
+                              A list of directories within the image to be appended to the
+                              PostgreSQL process's `PATH` environment variable.
+                            items:
+                              type: string
+                            type: array
                           dynamic_library_path:
                             description: |-
                               The list of directories inside the image which should be added to dynamic_library_path.
@@ -18730,7 +18751,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:5b26868bce7f1eaac2765e2f0055b74b50029af895e0638ab749ff3efc99d8ad
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:396ce573edd4a70f3b81e7fe1a7a0ddf1fc88af6c45043e4194ff2ae7a4695bf
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -18740,7 +18761,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-dddb79fcmm
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:5b26868bce7f1eaac2765e2f0055b74b50029af895e0638ab749ff3efc99d8ad
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.27@sha256:396ce573edd4a70f3b81e7fe1a7a0ddf1fc88af6c45043e4194ff2ae7a4695bf
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
