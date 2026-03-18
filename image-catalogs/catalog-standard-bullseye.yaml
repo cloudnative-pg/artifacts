@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260310'
+    images.cnpg.io/date: '20260318'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603090815-standard-bullseye@sha256:fdd3c9b4ee699c954d5410775adcf693cc157c29656db8d09c3799a374653dd4
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603160825-standard-bullseye@sha256:c2689ea7d5282bf76d2a64afc72186017d752b70b7ecf7b104e64f3c64b6245c
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603090816-standard-bullseye@sha256:db60db53272fa967c67cf3728db3905bfe6c3fa7aa6d5e672b707c96b5463cc6
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603160825-standard-bullseye@sha256:d3726cbcd92e8d90f80f6912383f142e2729dcfef986f1378d894ca990f0b3d6
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603090815-standard-bullseye@sha256:fe87c2b12f56e0de2b9b598862d772070334300ebdd49e330bf8cb64827a4027
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603160825-standard-bullseye@sha256:1e565b67a16fdef3bfef74ec14819f313451028920dfc834c7d13df233ca856b
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603101238-standard-bullseye@sha256:0f7b49dea20e87ce7f331b1481fc6a379df138dbe1fa511bb434d42b3d00a1b0
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603160825-standard-bullseye@sha256:9395e3ee6a4fd771ce625ca8329555f77a42856873845a874b6882378b20a085
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603090815-standard-bullseye@sha256:ed52b010297a1f94f6c814f939a75f52938f1db256bb5fbfa4d0e00908838465
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603181216-standard-bullseye@sha256:1d207340377072b452254de822a8a509f9a2bdc214a157514178b071ed167394
