@@ -3,7 +3,7 @@ kind: ClusterImageCatalog
 metadata:
   name: postgresql-minimal-trixie
   labels:
-    images.cnpg.io/date: "20260310"
+    images.cnpg.io/date: "20260318"
     images.cnpg.io/family: postgresql
     images.cnpg.io/os: trixie
     images.cnpg.io/publisher: cnpg.io
@@ -13,15 +13,15 @@ spec:
     - major: 13
       image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-trixie@sha256:68703fc0579e2f93379f94628092b5bde55d676e546feab1251c243f414a6a20
     - major: 14
-      image: ghcr.io/cloudnative-pg/postgresql:14.22-202603090815-minimal-trixie@sha256:124b876cdfcaddb607ced37253635d51fea28e4e03245066f342906b5a696509
+      image: ghcr.io/cloudnative-pg/postgresql:14.22-202603160825-minimal-trixie@sha256:4d24cf3c50210ec448c6a778203a7c22f1bb700fe73f9a2d9806b6dfa6adaa13
     - major: 15
-      image: ghcr.io/cloudnative-pg/postgresql:15.17-202603090816-minimal-trixie@sha256:733e390e0967ba39977b43785ad4a1f5f6f04673a41d06175f23eef1631a3e04
+      image: ghcr.io/cloudnative-pg/postgresql:15.17-202603160825-minimal-trixie@sha256:9e994f243fa44b4cede2bd55b43aa6713cbcee80ee60a83a40838e36417ab5f4
     - major: 16
-      image: ghcr.io/cloudnative-pg/postgresql:16.13-202603090815-minimal-trixie@sha256:e597f8bfb594e80cfbcdc24e4be137b08825b8b71c0c0dd3609163258272b171
+      image: ghcr.io/cloudnative-pg/postgresql:16.13-202603160825-minimal-trixie@sha256:0c85a43d81def4be549e694eb06c071f374e1d28f12d6948accd40575fcc2e98
     - major: 17
-      image: ghcr.io/cloudnative-pg/postgresql:17.9-202603101238-minimal-trixie@sha256:9234a973bf728dfa3d1381d0783c313efcc3730e5b7ad9170ac2c976fd09252f
+      image: ghcr.io/cloudnative-pg/postgresql:17.9-202603160825-minimal-trixie@sha256:c31dadb03987ad6e8b0b8148b2a3168c90ad11862bba7344f3859edd7062ddef
     - major: 18
-      image: ghcr.io/cloudnative-pg/postgresql:18.3-202603090815-minimal-trixie@sha256:272e2abdfc20f437d60490276fe48c07ccbec90bc860f15574fe74468b8ff511
+      image: ghcr.io/cloudnative-pg/postgresql:18.3-202603181216-minimal-trixie@sha256:d526f80732df82e0cdebda7e6eafd43587f35d1605baab1fcf9fc8171e0b0d74
       extensions:
         - name: pg-crash
           image:
