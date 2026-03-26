@@ -25,15 +25,15 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202603181150-18-bookworm@sha256:40cf26cc3b56c4ea09906eafed81641bbd691f84bfbb0117bd02ddfc69ce7d87
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202603260837-18-bookworm@sha256:6dc981bbb94efecc81095cddf071b5c40f7b3df99ecc924fbc1180de74fc7252
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202603181150-18-bookworm@sha256:9e7fb3e435bcc146d92698169313f62e96c0df2b5dd0a97f74005484b4c943e4
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202603260837-18-bookworm@sha256:8e8f28d35cb08bb5926a794f7a00ef7da354f58e4a8fa1808874a6dccc855181
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.2-202603181150-18-bookworm@sha256:4db7db145d749689bcb3cc796bb856257de59def1bf6b7a7dbb9cf81a4d19611
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.2-202603260837-18-bookworm@sha256:612c1c028413c3b6882cc4a02a9751f0859b8d1ff83c60d7d0af3adaf80f4995
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202603181150-18-bookworm@sha256:4b66571da51d91b47e5563a75d264145145871ac3a9101a22b1212bfaca86d97
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202603260837-18-bookworm@sha256:429cb6990e228575ba067d34d10cf717c1eabcf9cd666dd7711980314cf90357
           ld_library_path:
             - system
