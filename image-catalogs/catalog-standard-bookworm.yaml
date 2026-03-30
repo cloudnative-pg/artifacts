@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260318'
+    images.cnpg.io/date: '20260330'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603160825-standard-bookworm@sha256:d88f77f0cc9bfa4493ffefd8df84866f30082d09e7ab3b25079b7023de8d8858
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603300834-standard-bookworm@sha256:821d79353c61ed1a395a68ab66b627cb601766e6b8eb5030e67d854450a67e86
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603160825-standard-bookworm@sha256:45737a695f2e7026a68e91e514dbd5a5e57de03643bd9a83f1ae7fe600a108f5
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603300835-standard-bookworm@sha256:0de6154c359e7d27a3e62876d2ec364f13b3b6fad5f7425bdd95e2964f80a594
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603160825-standard-bookworm@sha256:c9fedadd41670251939c9e4aaa0d0d697bee602c3514108bdda078fdd118867c
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603300836-standard-bookworm@sha256:2bd3372c6c7afaca7769c25ed972e243a0a0405eb352ba9297f00b09decb5546
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603160825-standard-bookworm@sha256:bc45cd03c67bf6603109181d23d6f7c9a7f3bc9af71848c91743e732a715538c
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603300836-standard-bookworm@sha256:c17be84ac0d7970784a22d25520b495dddf594d9468eaff6615dbb3420871856
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603181216-standard-bookworm@sha256:9126de93145b9e445292a2e271f9b92cd5aff665ac5bc3d3f1c19d9fba3a0852
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603300834-standard-bookworm@sha256:3e22663bd743ccd40f4b719c8d77463dda905f918b7640fb53dadc61a1fe1387

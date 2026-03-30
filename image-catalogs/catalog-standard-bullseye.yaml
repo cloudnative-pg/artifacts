@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260318'
+    images.cnpg.io/date: '20260330'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603160825-standard-bullseye@sha256:c2689ea7d5282bf76d2a64afc72186017d752b70b7ecf7b104e64f3c64b6245c
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603300834-standard-bullseye@sha256:5aa668caa08f10eb6b6e38b019ff14d49453b12d86ca61611f58f93f27868dd4
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603160825-standard-bullseye@sha256:d3726cbcd92e8d90f80f6912383f142e2729dcfef986f1378d894ca990f0b3d6
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603300835-standard-bullseye@sha256:cb94a75f04f4472f87fcfe270198ad099ac750e103e4024299225e6f7e871201
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603160825-standard-bullseye@sha256:1e565b67a16fdef3bfef74ec14819f313451028920dfc834c7d13df233ca856b
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603300836-standard-bullseye@sha256:528df93b4a1d6a9ec0e4ec78064c9dd031931be96c31560af4b49b279cc20e79
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603160825-standard-bullseye@sha256:9395e3ee6a4fd771ce625ca8329555f77a42856873845a874b6882378b20a085
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603300836-standard-bullseye@sha256:925d7fbfe2351f1be62c9a0085b1909753cd85d2e1cd8619eaa5eaefa6d0a614
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603181216-standard-bullseye@sha256:1d207340377072b452254de822a8a509f9a2bdc214a157514178b071ed167394
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603300834-standard-bullseye@sha256:59b2ca85df7ce9d71893f2b75d21c0039f4c08169b572cd156bcfc383574a9d2
