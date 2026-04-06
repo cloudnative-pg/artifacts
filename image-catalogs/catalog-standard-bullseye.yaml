@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260330'
+    images.cnpg.io/date: '20260406'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603300834-standard-bullseye@sha256:5aa668caa08f10eb6b6e38b019ff14d49453b12d86ca61611f58f93f27868dd4
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604060836-standard-bullseye@sha256:ceaaacd5ad8ce5a57226d796870d15bcfd5005ff020835a46c9b4de5c4743d86
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603300835-standard-bullseye@sha256:cb94a75f04f4472f87fcfe270198ad099ac750e103e4024299225e6f7e871201
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604060834-standard-bullseye@sha256:dfbf91d275aa958ba62fbb42fb90c4f0fc2b90cb32c49f21127991c8f118d3ee
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603300836-standard-bullseye@sha256:528df93b4a1d6a9ec0e4ec78064c9dd031931be96c31560af4b49b279cc20e79
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604060836-standard-bullseye@sha256:3a952d2d858770c4808b489ef47a4ef338d3194a7d2fa4b58a0911f1cdc6f767
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603300836-standard-bullseye@sha256:925d7fbfe2351f1be62c9a0085b1909753cd85d2e1cd8619eaa5eaefa6d0a614
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604060836-standard-bullseye@sha256:436549e72810f49041a614d36debf3c77a806ea660f70fdf04c3503a1177418c
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603300834-standard-bullseye@sha256:59b2ca85df7ce9d71893f2b75d21c0039f4c08169b572cd156bcfc383574a9d2
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604060836-standard-bullseye@sha256:d433796596b55bbe392c6c79046469f02e6ac2865b83282ea6e23828122c39e2

@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260330'
+    images.cnpg.io/date: '20260406'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202603300834-standard-bookworm@sha256:821d79353c61ed1a395a68ab66b627cb601766e6b8eb5030e67d854450a67e86
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604060836-standard-bookworm@sha256:520831b1115377aedf2370f565da88688b5df89f55478130be88e5dabc54d71b
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202603300835-standard-bookworm@sha256:0de6154c359e7d27a3e62876d2ec364f13b3b6fad5f7425bdd95e2964f80a594
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604060834-standard-bookworm@sha256:147e208ec48768a5db6b008015a91d8c65859ab5201f96a3240b4b20d54a462b
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202603300836-standard-bookworm@sha256:2bd3372c6c7afaca7769c25ed972e243a0a0405eb352ba9297f00b09decb5546
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604060836-standard-bookworm@sha256:ad1312a89f2c85f507647e6cb47401fc5265c17dd38b4d5bc511b1ce47e98989
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202603300836-standard-bookworm@sha256:c17be84ac0d7970784a22d25520b495dddf594d9468eaff6615dbb3420871856
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604060836-standard-bookworm@sha256:22b5b918265328349d2e99e1d0bfe8851712b92a32739962b852b1428a33874a
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202603300834-standard-bookworm@sha256:3e22663bd743ccd40f4b719c8d77463dda905f918b7640fb53dadc61a1fe1387
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604060836-standard-bookworm@sha256:8f91f58742a0d1db24a0ce477edc1eed90d738d4779cd97fd1242f553243f3f7
