@@ -25,16 +25,16 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202604130011-18-trixie@sha256:e5b4e7e3c01135005cbee19a021bf7d14c165326d6e0bf926985e555d8138616
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202604130106-18-trixie@sha256:bb74f4fc74a1e5891808eb4022a22369a2b06def1dbf98a402145750697217f2
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202604130011-18-trixie@sha256:55d35c5a61cae9a2bc3e21b861ee54343b769d95e6de12c04ea81818260ec8fb
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202604130106-18-trixie@sha256:09338dc90108f99db72f4970856e488c14d66b34e098f26ae399219525ee7451
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.2-202604130010-18-trixie@sha256:3a6d1c9e0e83de4635e053a2e3e482cb8bd2e37e6d258812aaf80fad0f8183c0
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.2-202604130108-18-trixie@sha256:269eaefc92f2ed07259b06749af4ec2cd289069ef2c32643998f52adbae51c64
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202604130010-18-trixie@sha256:b64413a643cdb6490149fa373d1b2c891453f117464885f8b27aa38dda1e0a8d
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.2-202604130107-18-trixie@sha256:1a1e7fbee6ba83773b1c040a5b130dc874e92633582eb8ae50026c5492e2312c
           ld_library_path:
             - system
           env:
