@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260406'
+    images.cnpg.io/date: '20260413'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604060836-standard-bookworm@sha256:520831b1115377aedf2370f565da88688b5df89f55478130be88e5dabc54d71b
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604131157-standard-bookworm@sha256:8deceab118f862adbc793a7a1be610653793b12b625adecdfb62f0f569ebe6fb
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604060834-standard-bookworm@sha256:147e208ec48768a5db6b008015a91d8c65859ab5201f96a3240b4b20d54a462b
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604131159-standard-bookworm@sha256:99dae54dd65a3d4f4d1e938d74ed0b58e9524bcc64dd70ee48ca5c8aca867483
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604060836-standard-bookworm@sha256:ad1312a89f2c85f507647e6cb47401fc5265c17dd38b4d5bc511b1ce47e98989
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604131156-standard-bookworm@sha256:d80381f90d3a48a8b0b3d03d2311c1774940c7eee852e18f50c8edccf479a826
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604060836-standard-bookworm@sha256:22b5b918265328349d2e99e1d0bfe8851712b92a32739962b852b1428a33874a
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604131158-standard-bookworm@sha256:4811e40677e3993d0c625ec3d19c00eab03c20dedc8d56bea2c51313e4dfed1d
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604060836-standard-bookworm@sha256:8f91f58742a0d1db24a0ce477edc1eed90d738d4779cd97fd1242f553243f3f7
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604131157-standard-bookworm@sha256:fc6eaedf6bd43cd2012f89f114569002e03c6683521d49461e6bd396fad8dc84

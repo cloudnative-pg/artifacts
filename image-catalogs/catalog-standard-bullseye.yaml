@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260406'
+    images.cnpg.io/date: '20260413'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604060836-standard-bullseye@sha256:ceaaacd5ad8ce5a57226d796870d15bcfd5005ff020835a46c9b4de5c4743d86
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604131157-standard-bullseye@sha256:5ccc72db0dc74ca235572b2d97cfe3ef62a7af9493fb93d165dcdb10a6d8b4b8
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604060834-standard-bullseye@sha256:dfbf91d275aa958ba62fbb42fb90c4f0fc2b90cb32c49f21127991c8f118d3ee
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604131159-standard-bullseye@sha256:651d9198e21c0177ce8ae4501e5f2f618e1130f804841167fafe721a0111fc9b
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604060836-standard-bullseye@sha256:3a952d2d858770c4808b489ef47a4ef338d3194a7d2fa4b58a0911f1cdc6f767
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604131156-standard-bullseye@sha256:0a04e0b3d943aba633924ecae118b560682288ebff5aaca5c17920a48cd6f1ec
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604060836-standard-bullseye@sha256:436549e72810f49041a614d36debf3c77a806ea660f70fdf04c3503a1177418c
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604131158-standard-bullseye@sha256:37eb25b887ac24eb2a43f0814eb94c14588b8d6ab4c015fbd9fc22e02ab60ca0
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604060836-standard-bullseye@sha256:d433796596b55bbe392c6c79046469f02e6ac2865b83282ea6e23828122c39e2
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604131157-standard-bullseye@sha256:8413794eaa8db26ba65b23880dd8f9b288f69e862af84969817f7d5fac4c2043
