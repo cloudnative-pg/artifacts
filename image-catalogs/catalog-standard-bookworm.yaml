@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260413'
+    images.cnpg.io/date: '20260420'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604131157-standard-bookworm@sha256:8deceab118f862adbc793a7a1be610653793b12b625adecdfb62f0f569ebe6fb
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604200858-standard-bookworm@sha256:c5f6bfc529bbe29605efe9eab19b92ef4a14dd59726ff74f3007a3f22ba3e064
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604131159-standard-bookworm@sha256:99dae54dd65a3d4f4d1e938d74ed0b58e9524bcc64dd70ee48ca5c8aca867483
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604200853-standard-bookworm@sha256:6d8107fd96a96b5851409d4b60906603c8188705c99ce9ecdd2052282999d2a1
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604131156-standard-bookworm@sha256:d80381f90d3a48a8b0b3d03d2311c1774940c7eee852e18f50c8edccf479a826
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604200852-standard-bookworm@sha256:8963ef9c99429a0590d170b45ddc7c75bc3170a07d3073ea3c7e5dbb43f476f6
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604131158-standard-bookworm@sha256:4811e40677e3993d0c625ec3d19c00eab03c20dedc8d56bea2c51313e4dfed1d
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604200854-standard-bookworm@sha256:2e058412899198f882bdb93955d6e0d90fc4fd2aa04176929747dd1c74754ba3
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604131157-standard-bookworm@sha256:fc6eaedf6bd43cd2012f89f114569002e03c6683521d49461e6bd396fad8dc84
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604200849-standard-bookworm@sha256:4765b84d7c148475cb6ed32765448ad15592b71981a7d98c63e580a058cf7340

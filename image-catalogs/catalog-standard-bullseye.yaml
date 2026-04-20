@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260413'
+    images.cnpg.io/date: '20260420'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604131157-standard-bullseye@sha256:5ccc72db0dc74ca235572b2d97cfe3ef62a7af9493fb93d165dcdb10a6d8b4b8
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604200858-standard-bullseye@sha256:9e378bdf8ab98b509b60c1dee34c343b03a3c7229bfc610d89693e2d72a83920
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604131159-standard-bullseye@sha256:651d9198e21c0177ce8ae4501e5f2f618e1130f804841167fafe721a0111fc9b
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604200853-standard-bullseye@sha256:359b676ba23fcc6c9101f0f5f0548b99690d672c31a48c3d91ccf3ced7f77ac0
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604131156-standard-bullseye@sha256:0a04e0b3d943aba633924ecae118b560682288ebff5aaca5c17920a48cd6f1ec
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604200852-standard-bullseye@sha256:3116e9fd37c1b4ff0f3b3eba452853cca4ced52a301e29ca0a7ca72926865bdf
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604131158-standard-bullseye@sha256:37eb25b887ac24eb2a43f0814eb94c14588b8d6ab4c015fbd9fc22e02ab60ca0
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604200854-standard-bullseye@sha256:fedc4635fb013a52b1b27ca9e2b482d85e6615bfa1fbeefc831609d3e316b2a3
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604131157-standard-bullseye@sha256:8413794eaa8db26ba65b23880dd8f9b288f69e862af84969817f7d5fac4c2043
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604200849-standard-bullseye@sha256:222b85fdfb0a82354119329ede96c248ecc6d4eb2788538dc493d506842feaa7
