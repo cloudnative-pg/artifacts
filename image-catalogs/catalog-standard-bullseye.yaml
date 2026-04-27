@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260420'
+    images.cnpg.io/date: '20260427'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604200858-standard-bullseye@sha256:9e378bdf8ab98b509b60c1dee34c343b03a3c7229bfc610d89693e2d72a83920
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604270853-standard-bullseye@sha256:5da55511162bff60c2d51f54f59d1778fe97fabe4b4a1a37fd482800e31e55cd
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604200853-standard-bullseye@sha256:359b676ba23fcc6c9101f0f5f0548b99690d672c31a48c3d91ccf3ced7f77ac0
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604270853-standard-bullseye@sha256:c85d0fdd3f38105bac909f341dba76fb3a51c5e8b55c20c8a8f91a794ab0e9f0
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604200852-standard-bullseye@sha256:3116e9fd37c1b4ff0f3b3eba452853cca4ced52a301e29ca0a7ca72926865bdf
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604270853-standard-bullseye@sha256:66e4251072231bdfe7578f66693a11ea5f42b5a73004236b21bac181e3e5f45d
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604200854-standard-bullseye@sha256:fedc4635fb013a52b1b27ca9e2b482d85e6615bfa1fbeefc831609d3e316b2a3
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604270853-standard-bullseye@sha256:93bd8f7f21ec29f960629148299dc740d4b4315457e40dbaf295ba45f1553e84
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604200849-standard-bullseye@sha256:222b85fdfb0a82354119329ede96c248ecc6d4eb2788538dc493d506842feaa7
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604270853-standard-bullseye@sha256:b9aa14ceb67138b9d561d649e516699f5d476a81bf1e4d3d3ce435b6493d26cd
