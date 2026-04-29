@@ -9142,19 +9142,23 @@ spec:
                 format: int32
                 type: integer
               monitoring:
-                description: |-
-                  The configuration of the monitoring infrastructure of this pooler.
-
-                  Deprecated: This feature will be removed in an upcoming release. If
-                  you need this functionality, you can create a PodMonitor manually.
+                description: The configuration of the monitoring infrastructure of
+                  this pooler.
                 properties:
                   enablePodMonitor:
                     default: false
-                    description: Enable or disable the `PodMonitor`
+                    description: |-
+                      Enable or disable the `PodMonitor`
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     type: boolean
                   podMonitorMetricRelabelings:
-                    description: The list of metric relabelings for the `PodMonitor`.
-                      Applied to samples before ingestion.
+                    description: |-
+                      The list of metric relabelings for the `PodMonitor`. Applied to samples before ingestion.
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     items:
                       description: |-
                         RelabelConfig allows dynamic rewriting of the label set for targets, alerts,
@@ -9241,8 +9245,11 @@ spec:
                       type: object
                     type: array
                   podMonitorRelabelings:
-                    description: The list of relabelings for the `PodMonitor`. Applied
-                      to samples before scraping.
+                    description: |-
+                      The list of relabelings for the `PodMonitor`. Applied to samples before scraping.
+
+                      Deprecated: This feature will be removed in an upcoming release. If
+                      you need this functionality, you can create a PodMonitor manually.
                     items:
                       description: |-
                         RelabelConfig allows dynamic rewriting of the label set for targets, alerts,
@@ -9328,6 +9335,18 @@ spec:
                           type: string
                       type: object
                     type: array
+                  tls:
+                    description: |-
+                      Configure TLS communication for the metrics endpoint.
+                      Changing tls.enabled option will force a rollout of all instances.
+                    properties:
+                      enabled:
+                        default: false
+                        description: |-
+                          Enable TLS for the monitoring endpoint.
+                          Changing this option will force a rollout of all instances.
+                        type: boolean
+                    type: object
                 type: object
               pgbouncer:
                 description: The PgBouncer configuration
@@ -19880,7 +19899,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4f0965a7d2c97a5f6a61e6b74c75fd3a62e629a5ca4b959d9602d5fe396ba5c8
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:d51c60746859b5d905b1657a2dcffed36d44dd1349b0111d04a395109effd021
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19890,7 +19909,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-dddb79fcmm
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4f0965a7d2c97a5f6a61e6b74c75fd3a62e629a5ca4b959d9602d5fe396ba5c8
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:d51c60746859b5d905b1657a2dcffed36d44dd1349b0111d04a395109effd021
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
