@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260427'
+    images.cnpg.io/date: '20260511'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202604270853-standard-bullseye@sha256:5da55511162bff60c2d51f54f59d1778fe97fabe4b4a1a37fd482800e31e55cd
+    image: ghcr.io/cloudnative-pg/postgresql:14.22-202605110912-standard-bullseye@sha256:7356bf3ead0a3acbdb013d9d4504964a6b7adcced19f9077d37d18c1c619baa3
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202604270853-standard-bullseye@sha256:c85d0fdd3f38105bac909f341dba76fb3a51c5e8b55c20c8a8f91a794ab0e9f0
+    image: ghcr.io/cloudnative-pg/postgresql:15.17-202605110912-standard-bullseye@sha256:f8e1e3cdca960bb539561520511beb3c12f1c5afd69827d9212e705781365890
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202604270853-standard-bullseye@sha256:66e4251072231bdfe7578f66693a11ea5f42b5a73004236b21bac181e3e5f45d
+    image: ghcr.io/cloudnative-pg/postgresql:16.13-202605110913-standard-bullseye@sha256:2c3b1fe474d1b916aa40f218a8e7a231fd7d3d937828ad6ecb77554456b25ff9
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202604270853-standard-bullseye@sha256:93bd8f7f21ec29f960629148299dc740d4b4315457e40dbaf295ba45f1553e84
+    image: ghcr.io/cloudnative-pg/postgresql:17.9-202605110912-standard-bullseye@sha256:cea889508d37dea028d49f8f9e4f2828b285af539c6edd769c969762778df977
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202604270853-standard-bullseye@sha256:b9aa14ceb67138b9d561d649e516699f5d476a81bf1e4d3d3ce435b6493d26cd
+    image: ghcr.io/cloudnative-pg/postgresql:18.3-202605110912-standard-bullseye@sha256:9679d93a224ccf0c1d381069cf149ebc867557508bd53393b38c571b21b33c95
