@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260511'
+    images.cnpg.io/date: '20260518'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.22-202605110912-standard-bookworm@sha256:5b2048ff2ea5ceb991705283286c57d1285717d2da520435336933ee3f3f27b6
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202605180814-standard-bookworm@sha256:199816b44666b631a0cc1c8debac48a9498d8cb77c2c24cc7d4464d570d8a0aa
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.17-202605110912-standard-bookworm@sha256:5c956bdad8099caaf795f59312fd03c5e84bd07efdf1c069e51423dcb373444b
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202605180839-standard-bookworm@sha256:3a601cf524242f338d727501ada9bacfa5572f8ef09d1217317d8c306b75edaa
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.13-202605110913-standard-bookworm@sha256:99b3c3731cc560c1d91a98c8004230d62c6c5cf403d92e5ba5f75c11da896700
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202605180814-standard-bookworm@sha256:d24fea22f1b49b44e6e4d9c65464b372f4c37c9de73f7b66edc9da01b69072b3
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.9-202605110912-standard-bookworm@sha256:e6ef7cc6ef88c0936b1ae3893dfa5b779c03390b27c17efac6e88854a95f21f3
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202605180839-standard-bookworm@sha256:485f773031eb1ff42acaf67035eef9992f3b055380a489022df06b2ab28b47d9
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.3-202605110912-standard-bookworm@sha256:d26af590b150163fb3706220c21485c64fb975132e76bc3e196521c17015b7e4
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202605180839-standard-bookworm@sha256:9bb913855950652dccf9429958fb39276ce54ad52ba26c115ae81e3a008cbf81
