@@ -9,7 +9,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -481,7 +481,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: clusterimagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -668,7 +668,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -1817,10 +1817,11 @@ spec:
                             description: |-
                               Compress a backup file (a tar file per tablespace) while streaming it
                               to the object store. Available options are empty string (no
-                              compression, default), `gzip`, `bzip2`, and `snappy`.
+                              compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
                             enum:
                             - bzip2
                             - gzip
+                            - lz4
                             - snappy
                             type: string
                           encryption:
@@ -3409,10 +3410,11 @@ spec:
                               description: |-
                                 Compress a backup file (a tar file per tablespace) while streaming it
                                 to the object store. Available options are empty string (no
-                                compression, default), `gzip`, `bzip2`, and `snappy`.
+                                compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
                               enum:
                               - bzip2
                               - gzip
+                              - lz4
                               - snappy
                               type: string
                             encryption:
@@ -8171,7 +8173,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: databases.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8765,7 +8767,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: failoverquorums.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8842,7 +8844,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9028,7 +9030,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18427,7 +18429,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: publications.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18622,7 +18624,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18813,7 +18815,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: subscriptions.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -19897,7 +19899,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1ea92c4df83c72ce5ddb58e285f9f9041b15d7f693a3c8f72a6398d8f9a8279f
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:96564d2591fe5a450e39e79bbd1b60e0d219f22d34dc75493f87379ed132ae39
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19907,7 +19909,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1ea92c4df83c72ce5ddb58e285f9f9041b15d7f693a3c8f72a6398d8f9a8279f
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:96564d2591fe5a450e39e79bbd1b60e0d219f22d34dc75493f87379ed132ae39
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
