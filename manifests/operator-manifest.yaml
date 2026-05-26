@@ -9,7 +9,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -481,7 +481,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: clusterimagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -524,6 +524,35 @@ spec:
               Specification of the desired behavior of the ClusterImageCatalog.
               More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
             properties:
+              componentImages:
+                description: |-
+                  ComponentImages is a list of named images for components other than PostgreSQL
+                  (e.g. pgbouncer). Keys must be unique within a catalog.
+                items:
+                  description: CatalogComponentImage is a named image entry for a
+                    non-PostgreSQL component.
+                  properties:
+                    image:
+                      description: Image is the container image reference.
+                      type: string
+                    key:
+                      description: Key is the unique identifier for this image within
+                        the catalog.
+                      maxLength: 63
+                      pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                      type: string
+                  required:
+                  - image
+                  - key
+                  type: object
+                maxItems: 32
+                type: array
+                x-kubernetes-list-map-keys:
+                - key
+                x-kubernetes-list-type: map
+                x-kubernetes-validations:
+                - message: Component image keys must be unique
+                  rule: self.all(e, self.filter(f, f.key==e.key).size() == 1)
               images:
                 description: List of CatalogImages available in the catalog
                 items:
@@ -668,7 +697,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -1817,10 +1846,11 @@ spec:
                             description: |-
                               Compress a backup file (a tar file per tablespace) while streaming it
                               to the object store. Available options are empty string (no
-                              compression, default), `gzip`, `bzip2`, and `snappy`.
+                              compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
                             enum:
                             - bzip2
                             - gzip
+                            - lz4
                             - snappy
                             type: string
                           encryption:
@@ -3409,10 +3439,11 @@ spec:
                               description: |-
                                 Compress a backup file (a tar file per tablespace) while streaming it
                                 to the object store. Available options are empty string (no
-                                compression, default), `gzip`, `bzip2`, and `snappy`.
+                                compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
                               enum:
                               - bzip2
                               - gzip
+                              - lz4
                               - snappy
                               type: string
                             encryption:
@@ -8171,7 +8202,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: databases.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8255,6 +8286,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               collationVersion:
                 description: |-
                   Maps to the `COLLATION_VERSION` parameter of `CREATE DATABASE`. This
@@ -8765,7 +8799,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: failoverquorums.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8842,7 +8876,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8884,6 +8918,35 @@ spec:
               Specification of the desired behavior of the ImageCatalog.
               More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
             properties:
+              componentImages:
+                description: |-
+                  ComponentImages is a list of named images for components other than PostgreSQL
+                  (e.g. pgbouncer). Keys must be unique within a catalog.
+                items:
+                  description: CatalogComponentImage is a named image entry for a
+                    non-PostgreSQL component.
+                  properties:
+                    image:
+                      description: Image is the container image reference.
+                      type: string
+                    key:
+                      description: Key is the unique identifier for this image within
+                        the catalog.
+                      maxLength: 63
+                      pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                      type: string
+                  required:
+                  - image
+                  - key
+                  type: object
+                maxItems: 32
+                type: array
+                x-kubernetes-list-map-keys:
+                - key
+                x-kubernetes-list-type: map
+                x-kubernetes-validations:
+                - message: Component image keys must be unique
+                  rule: self.all(e, self.filter(f, f.key==e.key).size() == 1)
               images:
                 description: List of CatalogImages available in the catalog
                 items:
@@ -9028,7 +9091,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9087,6 +9150,9 @@ spec:
                 required:
                 - name
                 type: object
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               deploymentStrategy:
                 description: The deployment strategy to use for pgbouncer to replace
                   existing pods with new ones
@@ -18408,7 +18474,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: publications.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18476,6 +18542,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               dbname:
                 description: |-
                   The name of the database where the publication will be installed in
@@ -18603,7 +18672,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18672,6 +18741,9 @@ spec:
                 required:
                 - name
                 type: object
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               immediate:
                 description: If the first backup has to be immediately start after
                   creation or not
@@ -18794,7 +18866,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.20.1
+    controller-gen.kubebuilder.io/version: v0.21.0
   name: subscriptions.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18862,6 +18934,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               dbname:
                 description: |-
                   The name of the database where the publication will be installed in
@@ -19878,7 +19953,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:c09063b6d042b234bb25e21e388ffc2694147ff565e7dcf2eedc9ccb4cf4959f
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:6904bc5f8e4fd2a233bf154fa7c2a2c888a2c1eb7f75407cee21a27b5d5f26a9
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19888,7 +19963,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:c09063b6d042b234bb25e21e388ffc2694147ff565e7dcf2eedc9ccb4cf4959f
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:6904bc5f8e4fd2a233bf154fa7c2a2c888a2c1eb7f75407cee21a27b5d5f26a9
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
