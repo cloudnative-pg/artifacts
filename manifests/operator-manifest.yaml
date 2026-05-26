@@ -8286,6 +8286,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               collationVersion:
                 description: |-
                   Maps to the `COLLATION_VERSION` parameter of `CREATE DATABASE`. This
@@ -9150,6 +9153,9 @@ spec:
                 required:
                 - name
                 type: object
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               deploymentStrategy:
                 description: The deployment strategy to use for pgbouncer to replace
                   existing pods with new ones
@@ -18622,6 +18628,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               dbname:
                 description: |-
                   The name of the database where the publication will be installed in
@@ -18818,6 +18827,9 @@ spec:
                 required:
                 - name
                 type: object
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               immediate:
                 description: If the first backup has to be immediately start after
                   creation or not
@@ -19008,6 +19020,9 @@ spec:
                     type: string
                 type: object
                 x-kubernetes-map-type: atomic
+                x-kubernetes-validations:
+                - message: cluster reference is immutable after creation
+                  rule: self == oldSelf
               dbname:
                 description: |-
                   The name of the database where the publication will be installed in
@@ -20024,7 +20039,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:d3825c3bcc47df86ff93fab345f22bf43e22733a8b13ee524276f05ef802a10b
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:60165f29d775a7da9a81b2df169b4c5fcdd3c9be679b20d51259270f29e9a6ea
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20034,7 +20049,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:d3825c3bcc47df86ff93fab345f22bf43e22733a8b13ee524276f05ef802a10b
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:60165f29d775a7da9a81b2df169b4c5fcdd3c9be679b20d51259270f29e9a6ea
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
