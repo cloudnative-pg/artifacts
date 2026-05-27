@@ -4015,8 +4015,10 @@ spec:
                           type: string
                         passwordSecret:
                           description: |-
-                            Secret containing the password of the role (if present)
-                            If null, the password will be ignored unless DisablePassword is set
+                            Secret containing the password of the role (if present).
+                            If null, the password will be ignored unless DisablePassword is set.
+                            When set, the secret must follow the `kubernetes.io/basic-auth` format
+                            and contain both a `username` and a `password` field.
                           properties:
                             name:
                               description: Name of the referent.
@@ -7787,8 +7789,10 @@ spec:
                         type: string
                       type: array
                     description: |-
-                      CannotReconcile lists roles that cannot be reconciled in PostgreSQL,
-                      with an explanation of the cause
+                      CannotReconcile lists roles that cannot be reconciled, with an
+                      explanation of the cause. Failures may originate in PostgreSQL
+                      (e.g. dropping a role that owns objects) or in Kubernetes (e.g.
+                      the referenced password Secret cannot be fetched).
                     type: object
                   passwordStatus:
                     additionalProperties:
@@ -20039,7 +20043,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:60165f29d775a7da9a81b2df169b4c5fcdd3c9be679b20d51259270f29e9a6ea
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:7dffa3777fb075c09e0d276eff4d082711d299e63739c0015aa52d45bf1db23e
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20049,7 +20053,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:60165f29d775a7da9a81b2df169b4c5fcdd3c9be679b20d51259270f29e9a6ea
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:7dffa3777fb075c09e0d276eff4d082711d299e63739c0015aa52d45bf1db23e
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
