@@ -42,3 +42,9 @@ spec:
               value: ${image_root}/share/gdal
             - name: PROJ_DATA
               value: ${image_root}/share/proj
+        - name: timescaledb-oss
+          image:
+            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.27.1-202605281124-18-trixie@sha256:b28ecbe0de8a68763699ef92cd462e828275bf69f9b9bc9b30816ccd8cc4b14c
+        - name: wal2json
+          image:
+            reference: ghcr.io/cloudnative-pg/wal2json:2.6-202605281127-18-trixie@sha256:659bd9d561afc85bc78c370689cd810a333b155fd18334958c17607ef35053ac
