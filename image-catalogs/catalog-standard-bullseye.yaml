@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260518'
+    images.cnpg.io/date: '20260605'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202605180814-standard-bullseye@sha256:16b8fdeb79c45c36ca44cd2652cb49838819a968e2873deaa088f40126d486ce
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202606050113-standard-bullseye@sha256:98fe5e4fd6c8a9b115b6218fdb51d22d1c5aa8b515799b6d708c8bbce8036482
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202605180839-standard-bullseye@sha256:f0242e17962d4d55cb718b6ac9963f6f4d72b747e2ed2c860d5c56b21c2b8b23
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202606050103-standard-bullseye@sha256:714504ab52899b61a8abd842873212d5c51d697d0e397d84a565c15d1cca6cf8
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202605180814-standard-bullseye@sha256:764c8a85c33e3a017c073dc55acb0dea11d26256cee0ead210a7b3064f8997a6
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202606050113-standard-bullseye@sha256:cb557831296507d84b0257d647e61b40609b9329ea6f8ae84a2863d761f1e55d
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202605180839-standard-bullseye@sha256:3a9db2ece7d1191fbb68c088f9b38e2b0cd8d869369a604a8fb68b17658964b9
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202606050113-standard-bullseye@sha256:caba656063694b3c2316c4770091a5bdf5fabed0f0b1f705b06c6f18260b9c82
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202605180839-standard-bullseye@sha256:be31d059666fe12753f2febec9b155dfec2536d26d3678ad7ef52613a1adcc08
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202606050102-standard-bullseye@sha256:76613340b0cd65968312981072c837c2f14999091f516148f8ae79fcdac890f7
