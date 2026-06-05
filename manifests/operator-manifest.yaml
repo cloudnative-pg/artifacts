@@ -8105,6 +8105,13 @@ spec:
                     description: The resource version of the "postgres" user secret
                     type: string
                 type: object
+              selector:
+                description: |-
+                  Selector is the serialized form of the label selector that identifies
+                  the pods managed by this cluster. Populated by the operator and exposed
+                  through the scale sub-resource so an autoscaler (such as HPA or VPA)
+                  can discover the managed instance pods.
+                type: string
               switchReplicaClusterStatus:
                 description: SwitchReplicaClusterStatus is the status of the switch
                   to replica cluster
@@ -8198,6 +8205,7 @@ spec:
     storage: true
     subresources:
       scale:
+        labelSelectorPath: .status.selector
         specReplicasPath: .spec.instances
         statusReplicasPath: .status.instances
       status: {}
@@ -20043,7 +20051,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:3ad8ca657576e328d6433e4b76fe9ec7efbd44683be5bae34de8c12ff1058fe2
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f2581e295533f34c51f81a190d98532288b6c72be9624c1b2424488c8fe7ff01
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20053,7 +20061,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:3ad8ca657576e328d6433e4b76fe9ec7efbd44683be5bae34de8c12ff1058fe2
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f2581e295533f34c51f81a190d98532288b6c72be9624c1b2424488c8fe7ff01
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
