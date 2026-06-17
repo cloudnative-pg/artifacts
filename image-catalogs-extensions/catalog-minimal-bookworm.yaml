@@ -34,7 +34,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.2-202606160934-18-bookworm@sha256:7ce759ba5c6505165891c8736cc39ec41712eb2a7a2d75b43bc9ce46bbbb1489
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.3-202606160934-18-bookworm@sha256:f50064a39bb6b5296b188d2ba33a44ce1fff080928721b2253b38addcb6cf778
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.3-202606170719-18-bookworm@sha256:1ca4701a5e058eb0d1ec91cbf0acca5d02318ac36f9741f185a3fad54ec0bc3f
           ld_library_path:
             - system
           env:
