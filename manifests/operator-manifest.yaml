@@ -18948,6 +18948,14 @@ rules:
   - get
   - update
 - apiGroups:
+  - discovery.k8s.io
+  resources:
+  - endpointslices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
   - monitoring.coreos.com
   resources:
   - podmonitors
@@ -19718,7 +19726,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:2f8833c17d7877925596fdc5e3a8c95dc2acce4afe51e2f17d862be4ac69e601
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:5ebce973f5de0f29b7682050adbc7dffb28b4de7f6f1243d2be4735d1abec800
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -19728,7 +19736,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:2f8833c17d7877925596fdc5e3a8c95dc2acce4afe51e2f17d862be4ac69e601
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:5ebce973f5de0f29b7682050adbc7dffb28b4de7f6f1243d2be4735d1abec800
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
