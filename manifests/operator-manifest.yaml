@@ -5449,6 +5449,53 @@ spec:
                         || self.standbyNamesPre.size()==0) && (!has(self.standbyNamesPost)
                         || self.standbyNamesPost.size()==0))
                 type: object
+              primaryLease:
+                description: |-
+                  Configuration of the Kubernetes `Lease` used to coordinate safe primary
+                  election within the cluster. When omitted, the operator applies built-in
+                  defaults; tune these values only if you understand the consequences for
+                  failover timing.
+                properties:
+                  leaseDurationSeconds:
+                    default: 15
+                    description: |-
+                      How long, in seconds, the primary lease is considered valid before it
+                      expires and another instance may acquire it. It must be greater than
+                      `renewDeadlineSeconds`.
+                      Defaults to 15.
+                    format: int32
+                    minimum: 1
+                    type: integer
+                  releasedLeaseDurationSeconds:
+                    default: 1
+                    description: |-
+                      The TTL, in seconds, written when the primary explicitly releases the
+                      lease on a clean shutdown, allowing a replica to promote without waiting
+                      for the full lease duration to expire.
+                      Defaults to 1.
+                    format: int32
+                    minimum: 1
+                    type: integer
+                  renewDeadlineSeconds:
+                    default: 10
+                    description: |-
+                      How long, in seconds, the current primary keeps retrying to renew the
+                      lease before giving up and stopping. It must be smaller than
+                      `leaseDurationSeconds`.
+                      Defaults to 10.
+                    format: int32
+                    minimum: 1
+                    type: integer
+                  retryPeriodSeconds:
+                    default: 5
+                    description: |-
+                      How frequently, in seconds, a non-holder instance retries acquiring or
+                      renewing the lease.
+                      Defaults to 5.
+                    format: int32
+                    minimum: 1
+                    type: integer
+                type: object
               primaryUpdateMethod:
                 default: restart
                 description: |-
@@ -8412,6 +8459,20 @@ spec:
                   Whether a role bypasses every row-level security (RLS) policy.
                   Default is `false`.
                 type: boolean
+              clientCertificate:
+                description: |-
+                  ClientCertificate configures the operator to generate and renew a TLS client
+                  certificate for this role, signed by the cluster's client CA. The certificate
+                  is stored in a Secret named `<databaserole-name>-client-cert`.
+                  Requires login to be true.
+                properties:
+                  enabled:
+                    default: true
+                    description: |-
+                      Enabled turns on client certificate issuance for this role. When true,
+                      the role must have login enabled. Defaults to true when the block is present.
+                    type: boolean
+                type: object
               cluster:
                 description: The corresponding cluster
                 properties:
@@ -8553,6 +8614,9 @@ spec:
               rule: self.name.size() != 0
             - message: passwordSecret and disablePassword are mutually exclusive
               rule: '!has(self.passwordSecret) || !has(self.disablePassword) || !self.disablePassword'
+            - message: clientCertificate requires the role to have login enabled
+              rule: '!has(self.clientCertificate) || !self.clientCertificate.enabled
+                || self.login'
           status:
             description: |-
               Most recently observed status of the DatabaseRole. This data may not be up
@@ -8562,6 +8626,21 @@ spec:
               applied:
                 description: Applied is true if the role was reconciled correctly
                 type: boolean
+              clientCertificate:
+                description: |-
+                  ClientCertificate holds the observed state of the generated TLS client
+                  certificate, when client certificate issuance is enabled.
+                properties:
+                  expiration:
+                    description: Expiration is the expiration time of the generated
+                      client certificate, in RFC3339 format.
+                    type: string
+                  message:
+                    description: |-
+                      Message contains a human-readable explanation of the current certificate status,
+                      such as why issuance was skipped or why an existing Secret was left untouched.
+                    type: string
+                type: object
               conditions:
                 description: Conditions for the DatabaseRole object
                 items:
@@ -19716,7 +19795,17 @@ rules:
   verbs:
   - create
   - get
+  - list
   - update
+  - watch
+- apiGroups:
+  - discovery.k8s.io
+  resources:
+  - endpointslices
+  verbs:
+  - get
+  - list
+  - watch
 - apiGroups:
   - monitoring.coreos.com
   resources:
@@ -20490,7 +20579,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:b9c0e44f739f4c1c571a83a350b8098338eeeccfaa1af8e800b112b3c73eea45
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:936425b63dd30d1266ddcd441b516922f6c4273ae0a648cdf2b1466e3b2e6ea0
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20500,7 +20589,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:b9c0e44f739f4c1c571a83a350b8098338eeeccfaa1af8e800b112b3c73eea45
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:936425b63dd30d1266ddcd441b516922f6c4273ae0a648cdf2b1466e3b2e6ea0
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
