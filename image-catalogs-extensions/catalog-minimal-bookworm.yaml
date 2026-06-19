@@ -44,7 +44,7 @@ spec:
               value: ${image_root}/share/proj
         - name: timescaledb-oss
           image:
-            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.27.2-202606160936-18-bookworm@sha256:0329466c66b0c730bd5c3f0ac30c379078585b815f46fd712793e5bf2fd94dab
+            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.28.0-202606190315-18-bookworm@sha256:482e040333f002cdf4356aa58ecb57668c4b19075c513d2f5c69a8e805c933f9
         - name: wal2json
           image:
             reference: ghcr.io/cloudnative-pg/wal2json:2.6-202606160934-18-bookworm@sha256:f400e499833011cb48f18ae9c6aec0d6240ab7ad9444b0d5f06d94de31389c1f
