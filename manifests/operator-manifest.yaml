@@ -7826,8 +7826,10 @@ spec:
                   Deprecated: the field is not set for backup plugins.
                 type: object
               latestGeneratedNode:
-                description: ID of the latest generated node (used to avoid node name
-                  clashing)
+                description: |-
+                  ID of the latest generated node (used to avoid node name clashing)
+
+                  Deprecated: this field is not set anymore
                 type: integer
               managedRolesStatus:
                 description: ManagedRolesStatus reports the state of the managed roles
@@ -7873,6 +7875,12 @@ spec:
                 description: OnlineUpdateEnabled shows if the online upgrade is enabled
                   inside the cluster
                 type: boolean
+              operatorCertificateFingerprint:
+                description: |-
+                  OperatorCertificateFingerprint is the SHA256 fingerprint of the operator's
+                  in-memory client certificate public key. The instance manager pins this
+                  fingerprint to authenticate requests from the operator.
+                type: string
               pgDataImageInfo:
                 description: PGDataImageInfo contains the details of the latest image
                   that has run on the current data directory.
@@ -18988,6 +18996,9 @@ spec:
               date. Populated by the system. Read-only.
               More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
             properties:
+              error:
+                description: Error is the latest admission validation error
+                type: string
               image:
                 description: |-
                   Image is the resolved pgbouncer container image that the operator is
@@ -19453,6 +19464,9 @@ spec:
               to date. Populated by the system. Read-only.
               More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#spec-and-status
             properties:
+              error:
+                description: Error is the latest admission validation error
+                type: string
               lastCheckTime:
                 description: The latest time the schedule
                 format: date-time
@@ -20579,7 +20593,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:936425b63dd30d1266ddcd441b516922f6c4273ae0a648cdf2b1466e3b2e6ea0
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1370d0337fb9d3215c2c717891cf681c5ead755dc974acda1d164c2886c46c21
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20589,7 +20603,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:936425b63dd30d1266ddcd441b516922f6c4273ae0a648cdf2b1466e3b2e6ea0
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1370d0337fb9d3215c2c717891cf681c5ead755dc974acda1d164c2886c46c21
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
