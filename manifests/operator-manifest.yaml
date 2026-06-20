@@ -5487,11 +5487,11 @@ spec:
                     minimum: 1
                     type: integer
                   retryPeriodSeconds:
-                    default: 5
+                    default: 2
                     description: |-
                       How frequently, in seconds, a non-holder instance retries acquiring or
                       renewing the lease.
-                      Defaults to 5.
+                      Defaults to 2.
                     format: int32
                     minimum: 1
                     type: integer
@@ -20593,7 +20593,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1370d0337fb9d3215c2c717891cf681c5ead755dc974acda1d164c2886c46c21
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f0d1b81226b1b0addd48fdb3a8a1216964980e1f7795f4d18b4d15da49a74d32
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20603,7 +20603,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:1370d0337fb9d3215c2c717891cf681c5ead755dc974acda1d164c2886c46c21
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:f0d1b81226b1b0addd48fdb3a8a1216964980e1f7795f4d18b4d15da49a74d32
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
