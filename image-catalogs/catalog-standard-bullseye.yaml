@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260615'
+    images.cnpg.io/date: '20260622'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202606151231-standard-bullseye@sha256:95f3626757e39724290318f022da46ae0c9145a671b3c6049d45b6f37e38e337
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202606221003-standard-bullseye@sha256:3e7f440ade815a06f2f3c68e5f96b41348ee5da4a1c42a550f182391caebe423
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202606151154-standard-bullseye@sha256:db92be56f4d5ddcf21c31f6fefee887f6cae53082fb999f1c9c767ae6d6fad6f
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202606221003-standard-bullseye@sha256:8f1bdcb616051f7bf679002d3487595d6ad8132637bcd42300b8869073b10b3b
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202606151355-standard-bullseye@sha256:5ea0a1059a57f563c7b3ad210b35b91ab850dffa16de1c0ebc822da3e0c3f31d
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202606221003-standard-bullseye@sha256:37f5d56786d4a11b5f6a404da4b23d8ee34ac1a5fdeee983b4849cbd34d5ba53
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202606151230-standard-bullseye@sha256:8a6b8ea3e811f5699283fe262c077fa3c6604fc72f040988c9775d771aed7a5a
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202606221003-standard-bullseye@sha256:2e7449566be28c058572a571f37250b163f6478dd89d59431c8ca3d779f37b74
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202606151012-standard-bullseye@sha256:3750de264db61a550e7bdcdfc5e463e425854258be39cb48c93c2a13d7dd3965
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202606221003-standard-bullseye@sha256:f5d1cd5b7718e011bb97de3ea43714877291a3f22da7ba1b3df524f42cc7c71c
