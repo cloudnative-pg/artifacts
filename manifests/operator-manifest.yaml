@@ -19887,6 +19887,7 @@ rules:
   - postgresql.cnpg.io
   resources:
   - clusters/finalizers
+  - databaseroles/finalizers
   - poolers/finalizers
   verbs:
   - update
@@ -20593,7 +20594,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4ebcda5b11c0a237ff4a85d3d01c20cf00efebbc8b1e7e10fd72d2dc7cffcfcf
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a341f6086f63ee19a94b404a169766681aef94882b509c5f9e41895d31e6fb1b
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20603,7 +20604,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-h2mdfk29t2
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:4ebcda5b11c0a237ff4a85d3d01c20cf00efebbc8b1e7e10fd72d2dc7cffcfcf
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:a341f6086f63ee19a94b404a169766681aef94882b509c5f9e41895d31e6fb1b
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
