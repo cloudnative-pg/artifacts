@@ -26,6 +26,9 @@ spec:
         - name: pg-crash
           image:
             reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202607130911-18-bookworm@sha256:38422d1f450ae91e548ef4957773975cbe729bdbf5ea6c6f5c76236bc98d6e09
+        - name: pg-ivm
+          image:
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.13-202607131211-18-bookworm@sha256:e2f340e90741b878421e24666f390acb32b81a444767859bc20732569ad94eab
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202607130911-18-bookworm@sha256:136f18c569b7fa84161cd5005c965e7855320c08110589dac31bfadb9d12caf7
