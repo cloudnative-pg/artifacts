@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260622'
+    images.cnpg.io/date: '20260717'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202606221003-standard-bullseye@sha256:3e7f440ade815a06f2f3c68e5f96b41348ee5da4a1c42a550f182391caebe423
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607170949-standard-bullseye@sha256:8cbd5a461af78c3d451ebfe3091836f15185769793e3258c34dea373f0c299aa
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202606221003-standard-bullseye@sha256:8f1bdcb616051f7bf679002d3487595d6ad8132637bcd42300b8869073b10b3b
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607170948-standard-bullseye@sha256:7c361643bbbb482910d9c09d683a1ffdd6ada87b6621cffa48efc4f44a1d023a
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202606221003-standard-bullseye@sha256:37f5d56786d4a11b5f6a404da4b23d8ee34ac1a5fdeee983b4849cbd34d5ba53
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607170949-standard-bullseye@sha256:18efcce83ef5580123fa1b2271defdfaf26aebd58eaaa0a28e0ad138b3950b1f
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202606221003-standard-bullseye@sha256:2e7449566be28c058572a571f37250b163f6478dd89d59431c8ca3d779f37b74
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607171029-standard-bullseye@sha256:5b6af5ceb541d42aabcfc893a6a458557588aaa50cd852ba40a68d8ac70aa67b
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202606221003-standard-bullseye@sha256:f5d1cd5b7718e011bb97de3ea43714877291a3f22da7ba1b3df524f42cc7c71c
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607170948-standard-bullseye@sha256:c1cdf1f6374eba79073fd0e454bda6fb0d71305c12c4f89f5ba2deae9aaaa58d
