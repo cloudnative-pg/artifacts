@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260717'
+    images.cnpg.io/date: '20260720'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607170949-standard-bullseye@sha256:8cbd5a461af78c3d451ebfe3091836f15185769793e3258c34dea373f0c299aa
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607200905-standard-bullseye@sha256:27b1a585e05d282edbedd8e75f605750d61f05a093a3d0082d3a895643af5851
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607170948-standard-bullseye@sha256:7c361643bbbb482910d9c09d683a1ffdd6ada87b6621cffa48efc4f44a1d023a
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607200904-standard-bullseye@sha256:234e204e97226dcbb9e467d51b0c4b1a04d2ad28dc5e57e00654511dcb01746e
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607170949-standard-bullseye@sha256:18efcce83ef5580123fa1b2271defdfaf26aebd58eaaa0a28e0ad138b3950b1f
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607200906-standard-bullseye@sha256:b37ecfb3f206254cf05e3a0f4178c7c1bdead13f9c42328d837f48c721f9e5ae
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607171029-standard-bullseye@sha256:5b6af5ceb541d42aabcfc893a6a458557588aaa50cd852ba40a68d8ac70aa67b
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607200905-standard-bullseye@sha256:52129df84fa92576dc113a171a0f7229377b8acdb466373d0a16ae0ee454a079
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607170948-standard-bullseye@sha256:c1cdf1f6374eba79073fd0e454bda6fb0d71305c12c4f89f5ba2deae9aaaa58d
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607200905-standard-bullseye@sha256:9ae467069d836c96adf055de790633ee81fe9c0cee450a860a1633eddb87618e

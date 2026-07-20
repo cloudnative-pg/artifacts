@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260717'
+    images.cnpg.io/date: '20260720'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607170949-standard-bookworm@sha256:f649a061f4444e3426258affd50cd8ff2cc5d726db28011e4781983b5e7d8a60
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607200905-standard-bookworm@sha256:3e8f4de7fdfe4901dd53b6ad6a654f9f049bad80c1fc6094f1ecfa29470ef9d6
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607170948-standard-bookworm@sha256:7f8a2d028d0cb7fa8cff15ec46b44a8b4cc0dc315e046f045e19e4e2f51d49c6
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607200904-standard-bookworm@sha256:7aa611c5636bcebe8ff8137831aaefdea32e238a4c9a3ae1f44ba5127330fd3d
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607170949-standard-bookworm@sha256:b12d93b161e58f9179262b3077b074afee30d44e48fc861aa81f8fa7a1bb1eef
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607200906-standard-bookworm@sha256:dc92cb5f3cf5719f33ad465ae17b752f03c152b47c03a8e90be6aefc5641b91f
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607171029-standard-bookworm@sha256:e1a27cc94ac3dde5b2bbf332a2789de90e168b53dc575059cc6ed94a461a0dfd
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607200905-standard-bookworm@sha256:4bfd774b9376190945c85b930fc168e088dc7a5544e136d1a164d0a31318581d
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607170948-standard-bookworm@sha256:99668ca66725131c777b00198c1b82750286c6ae620ce45f06f0955dc4173a7f
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607200905-standard-bookworm@sha256:4f509244f04dfa58e880ae4f9eca3e904acecc56489094f474529c0ccc6abb8e
