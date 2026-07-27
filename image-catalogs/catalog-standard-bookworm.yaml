@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260720'
+    images.cnpg.io/date: '20260727'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607200905-standard-bookworm@sha256:3e8f4de7fdfe4901dd53b6ad6a654f9f049bad80c1fc6094f1ecfa29470ef9d6
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607270908-standard-bookworm@sha256:87bea18400f258f4f384bbc3854e6d164ad859695397037fb68c7e3c10092d8a
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607200904-standard-bookworm@sha256:7aa611c5636bcebe8ff8137831aaefdea32e238a4c9a3ae1f44ba5127330fd3d
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607270909-standard-bookworm@sha256:5c8e968039ad85cfe8887aa1eb0c8eb28df569a0cc3e4b94f12e226c1a63f9a7
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607200906-standard-bookworm@sha256:dc92cb5f3cf5719f33ad465ae17b752f03c152b47c03a8e90be6aefc5641b91f
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607270908-standard-bookworm@sha256:e76b7b4bcb4b1614ea815fa34106591a405b9308891bef61a0c8425c582a5d95
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607200905-standard-bookworm@sha256:4bfd774b9376190945c85b930fc168e088dc7a5544e136d1a164d0a31318581d
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607271318-standard-bookworm@sha256:41aacb72108c86315ee553f8f8f926f4940858c98485b811c4a97e787e32e32b
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607200905-standard-bookworm@sha256:4f509244f04dfa58e880ae4f9eca3e904acecc56489094f474529c0ccc6abb8e
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607270910-standard-bookworm@sha256:0ec6b32ab5b644aa51da58443c5ac2c1724d97de0d2a88961920d437b71b9ad8

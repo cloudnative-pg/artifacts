@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260720'
+    images.cnpg.io/date: '20260727'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607200905-standard-bullseye@sha256:27b1a585e05d282edbedd8e75f605750d61f05a093a3d0082d3a895643af5851
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607270908-standard-bullseye@sha256:266998a733b5cf02fd26142464976f57f7aedad84ed46b066d8e8ceb84a52712
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607200904-standard-bullseye@sha256:234e204e97226dcbb9e467d51b0c4b1a04d2ad28dc5e57e00654511dcb01746e
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607270909-standard-bullseye@sha256:33223844b772955fa114623a9aaf85fba01d32b654f307d3cf45da980198101a
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607200906-standard-bullseye@sha256:b37ecfb3f206254cf05e3a0f4178c7c1bdead13f9c42328d837f48c721f9e5ae
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607270908-standard-bullseye@sha256:6cbe89abeaad7a1dcd8ba7a7e3fce75b7446f143c385d2a16bd7e251418b3a60
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607200905-standard-bullseye@sha256:52129df84fa92576dc113a171a0f7229377b8acdb466373d0a16ae0ee454a079
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607271318-standard-bullseye@sha256:7761af8be78a0144bad2c296b475029248281d6a37d7bae2333fa88d70833ae1
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607200905-standard-bullseye@sha256:9ae467069d836c96adf055de790633ee81fe9c0cee450a860a1633eddb87618e
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607270910-standard-bullseye@sha256:d2b2aca95ba5ae659604b0219dd5f7d9cc08ecfe5a9575b3c07de02e5d45d675
