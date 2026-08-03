@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260727'
+    images.cnpg.io/date: '20260803'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202607270908-standard-bullseye@sha256:266998a733b5cf02fd26142464976f57f7aedad84ed46b066d8e8ceb84a52712
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202608030910-standard-bullseye@sha256:74a15fba9ff5ee50f64d2f155fb793f760d8c8d076c8d400d4bdee599629e7dd
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202607270909-standard-bullseye@sha256:33223844b772955fa114623a9aaf85fba01d32b654f307d3cf45da980198101a
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202608031127-standard-bullseye@sha256:dbaedff0b15361f6335144d934e762a4b0898a043d99048a9d622b2c4661ca4a
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202607270908-standard-bullseye@sha256:6cbe89abeaad7a1dcd8ba7a7e3fce75b7446f143c385d2a16bd7e251418b3a60
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202608030910-standard-bullseye@sha256:f0ab2dba03538456f5a444bc28985b8b6fea8dbdd6466f9ea72c899bd6a36015
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202607271318-standard-bullseye@sha256:7761af8be78a0144bad2c296b475029248281d6a37d7bae2333fa88d70833ae1
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202608030910-standard-bullseye@sha256:c7a6565c17a74ecfb095a880f283823ad1e516fa088c705e0b8a4eb0a35f3d59
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202607270910-standard-bullseye@sha256:d2b2aca95ba5ae659604b0219dd5f7d9cc08ecfe5a9575b3c07de02e5d45d675
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202608030910-standard-bullseye@sha256:26b54894fd0761b8065b972a1ce22c130590cc3f6737c9bd477bcbbcf0d5cb6c
