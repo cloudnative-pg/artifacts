@@ -44,6 +44,8 @@ repository:
         comment: ClusterImageCatalog/ImageCatalog manifests for PostgreSQL operand images
       - uri: https://github.com/cloudnative-pg/artifacts/tree/main/image-catalogs-extensions
         comment: ClusterImageCatalog/ImageCatalog manifests for PostgreSQL extension images
+      - uri: https://github.com/cloudnative-pg/artifacts/tree/main/bundles
+        comment: OLM (Operator Lifecycle Manager) bundles, one directory per released version
 
   security:
     tools:
