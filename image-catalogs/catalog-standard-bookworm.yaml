@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260803'
+    images.cnpg.io/date: '20260813'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202608030910-standard-bookworm@sha256:07e2db69574e4f826c075735637382bcd5fc6e464364cb33e1fcd90d6b5cc536
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202608130737-standard-bookworm@sha256:e22bbea9d1da0d5db922f4f973d5ecb86a1f936c78898e9976a4aa075e903a1d
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202608031127-standard-bookworm@sha256:7340ef91edb6c7055ce0b1a49fd3fb07e006ce8092645aabfaa29b2a603a5216
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202608100833-standard-bookworm@sha256:bd9a36f2ac5e827578d7d1c793d3779a78835462eb3f6ce1a8eb910f7058c7c2
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202608030910-standard-bookworm@sha256:d463aa35bce3f341cfda239741a2c0164e934836ff863c5d31543465ebe06388
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202608100833-standard-bookworm@sha256:b459345655ea1a0438a219f599cbae509c3132dc8faad6d729d6957e70a618bb
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202608030910-standard-bookworm@sha256:eaf7f17fb4004f3c9e18b0cfd9a6b0257b3adc0d610b4593165603b173fb1426
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202608100833-standard-bookworm@sha256:f94c0eea2a7e9d40880adebd27a912d8473d5805a99c4dbc6eb6244ad9770620
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202608030910-standard-bookworm@sha256:3ab4190c9a6d92dc9902bb05863c609f5dde3ea336bdf3adf7b45f8c01096b9e
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202608130737-standard-bookworm@sha256:702a5fd1e2de98afc72965149e90a633082df964087697b9cf89a81f21e343a7

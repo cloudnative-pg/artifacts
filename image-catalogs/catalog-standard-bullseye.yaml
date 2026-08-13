@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260803'
+    images.cnpg.io/date: '20260813'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.23-202608030910-standard-bullseye@sha256:74a15fba9ff5ee50f64d2f155fb793f760d8c8d076c8d400d4bdee599629e7dd
+    image: ghcr.io/cloudnative-pg/postgresql:14.23-202608130737-standard-bullseye@sha256:c22b403e612aeaa32d298fe92d67e478eb559ed4207e866b448decfe43be1616
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.18-202608031127-standard-bullseye@sha256:dbaedff0b15361f6335144d934e762a4b0898a043d99048a9d622b2c4661ca4a
+    image: ghcr.io/cloudnative-pg/postgresql:15.18-202608100833-standard-bullseye@sha256:b867e6a498a0ede45ab8412a48edeefe1ed339fff20b01daec20c892d15ff203
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.14-202608030910-standard-bullseye@sha256:f0ab2dba03538456f5a444bc28985b8b6fea8dbdd6466f9ea72c899bd6a36015
+    image: ghcr.io/cloudnative-pg/postgresql:16.14-202608100833-standard-bullseye@sha256:164f198a2214c3a098863925d1d8aae7311bc81a1f6c8867a09838ae5511ecb2
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.10-202608030910-standard-bullseye@sha256:c7a6565c17a74ecfb095a880f283823ad1e516fa088c705e0b8a4eb0a35f3d59
+    image: ghcr.io/cloudnative-pg/postgresql:17.10-202608100833-standard-bullseye@sha256:cb9bbf4e3139709c2eeb27434f67ea505cbb0e378498f6a3c15f564a9ca1ecef
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.4-202608030910-standard-bullseye@sha256:26b54894fd0761b8065b972a1ce22c130590cc3f6737c9bd477bcbbcf0d5cb6c
+    image: ghcr.io/cloudnative-pg/postgresql:18.4-202608130737-standard-bullseye@sha256:65701fdb5b51dca202002e68dba23c8f99069d4c57660e1e32314bb3b1c38f28
