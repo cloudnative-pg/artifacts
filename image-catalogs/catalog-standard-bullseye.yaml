@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260815'
+    images.cnpg.io/date: '20260817'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608131513-standard-bullseye@sha256:946c97e0df6fec9acb0781ad04749d6393360d518b90a1e13783453e9e6c37f9
+    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608170814-standard-bullseye@sha256:29a95bb5173a6c3685f6c3937476b343256d6e9ea0f4c44e0d5d0d942d48faae
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608131515-standard-bullseye@sha256:15c43213b9466e1e6c40192e529313c353b6afad331dcdbcc089e654e4589785
+    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608170814-standard-bullseye@sha256:afdbd66c3cd72b2f2bfcdc54ce0af408306ae25e454cbf0dc15870817158b5c2
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608131515-standard-bullseye@sha256:dfb8d1468ad567ea4073342ebc3ab31266749e60111261929ee0218e988d404b
+    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608170814-standard-bullseye@sha256:658a1735a728ca2119b72a1dacc8babeb7271225c96d4e06fe277ef3d3b88609
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608131515-standard-bullseye@sha256:dfb2ad684630092ed98d8b2d494b3c5756722072a2cf0f8361c0378fca06f634
+    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608170816-standard-bullseye@sha256:0a15f239d293a067e515d735e5441ece814087988939dac853efcc43a8f40080
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608131513-standard-bullseye@sha256:ceeffe6147a334d2cb8cd1b0f5e1dc91dfe6fe83489e28de875db1f6e3fba3b7
+    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608170814-standard-bullseye@sha256:7cf547dead4e9c755ae939c5f4c6feae25c2e2f5ad611fc24e7cce26503ae805
