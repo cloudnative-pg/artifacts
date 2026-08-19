@@ -1882,6 +1882,25 @@ spec:
                             format: int32
                             minimum: 1
                             type: integer
+                          restoreAdditionalCommandArgs:
+                            description: |-
+                              Additional arguments that can be appended to the 'barman-cloud-restore'
+                              command-line invocation. These arguments provide flexibility to customize
+                              the data restore process further, according to specific requirements or
+                              configurations.
+
+                              Example:
+                              In a scenario where specialized restore options are required, such as setting
+                              a specific read timeout or defining custom behavior, users can use this field
+                              to specify additional command arguments.
+
+                              Note:
+                              It's essential to ensure that the provided arguments are valid and supported
+                              by the 'barman-cloud-restore' command, to avoid potential errors or unintended
+                              behavior during execution.
+                            items:
+                              type: string
+                            type: array
                         type: object
                       destinationPath:
                         description: |-
@@ -3475,6 +3494,25 @@ spec:
                               format: int32
                               minimum: 1
                               type: integer
+                            restoreAdditionalCommandArgs:
+                              description: |-
+                                Additional arguments that can be appended to the 'barman-cloud-restore'
+                                command-line invocation. These arguments provide flexibility to customize
+                                the data restore process further, according to specific requirements or
+                                configurations.
+
+                                Example:
+                                In a scenario where specialized restore options are required, such as setting
+                                a specific read timeout or defining custom behavior, users can use this field
+                                to specify additional command arguments.
+
+                                Note:
+                                It's essential to ensure that the provided arguments are valid and supported
+                                by the 'barman-cloud-restore' command, to avoid potential errors or unintended
+                                behavior during execution.
+                              items:
+                                type: string
+                              type: array
                           type: object
                         destinationPath:
                           description: |-
@@ -20594,7 +20632,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:eca75d266e5cd707dfda28ecf4e7ad45b100d562f70fe22f8e29f49ce08f79c1
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:cb23f581a02fe74561b6c48524134156db965e76bb8a4d34e587c9263aa9f53b
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20604,7 +20642,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-hf6f82mk69
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:eca75d266e5cd707dfda28ecf4e7ad45b100d562f70fe22f8e29f49ce08f79c1
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:cb23f581a02fe74561b6c48524134156db965e76bb8a4d34e587c9263aa9f53b
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
