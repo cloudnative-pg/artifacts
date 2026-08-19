@@ -32,6 +32,9 @@ spec:
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202608180956-18-bookworm@sha256:e990a6eab2e68108d9f98be94287e9c8fc7794e2102f99549c35533d2eeb2c9b
+        - name: pgrouting
+          image:
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.1-202608190007-18-bookworm@sha256:a1eb58d075ee479c925da8b00fb0c466c398c4eb0d19ff4c1375c40c401ffae7
         - name: pgvector
           image:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.6-202608180955-18-bookworm@sha256:3021be84c560223329b18a79a9e2cb7e8ed73ad782bd6423d6dc0c98feac0d4c
