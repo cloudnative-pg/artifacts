@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260817'
+    images.cnpg.io/date: '20260824'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608170814-standard-bullseye@sha256:29a95bb5173a6c3685f6c3937476b343256d6e9ea0f4c44e0d5d0d942d48faae
+    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608240816-standard-bullseye@sha256:54ffb7f86c8df4096899f720be379e08859620d10d701649f733b127d5383162
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608170814-standard-bullseye@sha256:afdbd66c3cd72b2f2bfcdc54ce0af408306ae25e454cbf0dc15870817158b5c2
+    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608240816-standard-bullseye@sha256:85f53a86d6ebcd0c9987a7c5ce41c3029d9b1ae3e17f11fd6f194200cdac164f
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608170814-standard-bullseye@sha256:658a1735a728ca2119b72a1dacc8babeb7271225c96d4e06fe277ef3d3b88609
+    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608240846-standard-bullseye@sha256:300ab23409d86ff11434ea7f30970d69b4dcbf731dd0455e11fe6fdd8ae41755
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608170816-standard-bullseye@sha256:0a15f239d293a067e515d735e5441ece814087988939dac853efcc43a8f40080
+    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608240816-standard-bullseye@sha256:b1b65017a993d9ca672840d002630dcb13609b414495b54b8302aede0071ba59
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608170814-standard-bullseye@sha256:7cf547dead4e9c755ae939c5f4c6feae25c2e2f5ad611fc24e7cce26503ae805
+    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608240816-standard-bullseye@sha256:3d28760c4a11202f3f2e78c0d40266b811cbf49426b732e9ce4f02f56f432df8
