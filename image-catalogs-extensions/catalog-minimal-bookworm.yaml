@@ -3,7 +3,7 @@ kind: ClusterImageCatalog
 metadata:
   name: postgresql-minimal-bookworm
   labels:
-    images.cnpg.io/date: "20260817"
+    images.cnpg.io/date: "20260824"
     images.cnpg.io/family: postgresql
     images.cnpg.io/os: bookworm
     images.cnpg.io/publisher: cnpg.io
@@ -13,15 +13,15 @@ spec:
     - major: 13
       image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-bookworm@sha256:02e8ffc71aec2768ca177711278d3c0e6ceb5403df5fa6d3780cd590332e3a5d
     - major: 14
-      image: ghcr.io/cloudnative-pg/postgresql:14.24-202608170814-minimal-bookworm@sha256:af2163003e7ba915bc496242ae50b30033707ff29009e52acbd5406277d9bcec
+      image: ghcr.io/cloudnative-pg/postgresql:14.24-202608240816-minimal-bookworm@sha256:7b8ba20df84ba011369d54be8467ead144f0acd411e5677b4c1aabe755f8ff11
     - major: 15
-      image: ghcr.io/cloudnative-pg/postgresql:15.19-202608170814-minimal-bookworm@sha256:f4ca039bd74f695116d1f11a50b3b327c6c2736493666a37e568618423862083
+      image: ghcr.io/cloudnative-pg/postgresql:15.19-202608240816-minimal-bookworm@sha256:57e99a43ea3eb3045391b30f0ece83a8ffc4d060b226c5e3c2959ae94a1b6047
     - major: 16
-      image: ghcr.io/cloudnative-pg/postgresql:16.15-202608170814-minimal-bookworm@sha256:dff2379ad8dad1b32aa9876ed3f651c3e5f1b5bb8bb5a818d15f168f9ea6f0e0
+      image: ghcr.io/cloudnative-pg/postgresql:16.15-202608240846-minimal-bookworm@sha256:99827424f188d60fa636897e604520f4c06b697446ef5ed32686c1f54e643527
     - major: 17
-      image: ghcr.io/cloudnative-pg/postgresql:17.11-202608170816-minimal-bookworm@sha256:45a1fedcb858051a2a8aaf2ac0c4c835f39de1b1fec9c6651027b3dde95fe541
+      image: ghcr.io/cloudnative-pg/postgresql:17.11-202608240816-minimal-bookworm@sha256:cd9e62f50193bfe9515603a40938648f4a6d3675b6ff85bccb94aa298483b61a
     - major: 18
-      image: ghcr.io/cloudnative-pg/postgresql:18.6-202608170814-minimal-bookworm@sha256:871114baa586e4c396c95f0a8976fa74762ec2b2a0b5520d3246cee6496315b9
+      image: ghcr.io/cloudnative-pg/postgresql:18.6-202608240816-minimal-bookworm@sha256:9198cb3ce1ae7bc7ae1b71e00907a97dea6821df2515f1625c0eab84cc2be0bb
       extensions:
         - name: pg-crash
           image:
