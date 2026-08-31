@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bullseye
-    images.cnpg.io/date: '20260824'
+    images.cnpg.io/date: '20260831'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bullseye@sha256:bdf11cbefce25a4cdad91dbd30caf00d7efc2fd54319e7ab6195814b41ba8f66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608240816-standard-bullseye@sha256:54ffb7f86c8df4096899f720be379e08859620d10d701649f733b127d5383162
+    image: ghcr.io/cloudnative-pg/postgresql:14.24-202608310817-standard-bullseye@sha256:cfeaf532608bf1c164e94b41b80b0a6388676a68e57167da428b95677c5e040a
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608240816-standard-bullseye@sha256:85f53a86d6ebcd0c9987a7c5ce41c3029d9b1ae3e17f11fd6f194200cdac164f
+    image: ghcr.io/cloudnative-pg/postgresql:15.19-202608310817-standard-bullseye@sha256:b218730950e5bcf1059822397e6a8018df73298bd3064d20a5ec42092cfca88c
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608240846-standard-bullseye@sha256:300ab23409d86ff11434ea7f30970d69b4dcbf731dd0455e11fe6fdd8ae41755
+    image: ghcr.io/cloudnative-pg/postgresql:16.15-202608310817-standard-bullseye@sha256:5dac6f57826663d4eb55011a9083603f7e871ffbec9a4650b5588c3177d3f9df
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608240816-standard-bullseye@sha256:b1b65017a993d9ca672840d002630dcb13609b414495b54b8302aede0071ba59
+    image: ghcr.io/cloudnative-pg/postgresql:17.11-202608310816-standard-bullseye@sha256:59b79f1df91c735caaf1a1a224c07bcd2dbba7c65cf73769ac94607f11cfb6da
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608240816-standard-bullseye@sha256:3d28760c4a11202f3f2e78c0d40266b811cbf49426b732e9ce4f02f56f432df8
+    image: ghcr.io/cloudnative-pg/postgresql:18.6-202608310817-standard-bullseye@sha256:511da06a50a90340d7587ef117bc580c0687bd2cba60e872d6b5de2aa269eb09
