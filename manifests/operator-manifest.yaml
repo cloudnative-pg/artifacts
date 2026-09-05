@@ -4661,6 +4661,7 @@ spec:
 
                             Only applicable when the action is `HashMod`.
                           format: int64
+                          minimum: 0
                           type: integer
                         regex:
                           description: regex defines the regular expression against
@@ -4752,6 +4753,7 @@ spec:
 
                             Only applicable when the action is `HashMod`.
                           format: int64
+                          minimum: 0
                           type: integer
                         regex:
                           description: regex defines the regular expression against
@@ -9949,6 +9951,7 @@ spec:
 
                             Only applicable when the action is `HashMod`.
                           format: int64
+                          minimum: 0
                           type: integer
                         regex:
                           description: regex defines the regular expression against
@@ -10040,6 +10043,7 @@ spec:
 
                             Only applicable when the action is `HashMod`.
                           format: int64
+                          minimum: 0
                           type: integer
                         regex:
                           description: regex defines the regular expression against
@@ -21068,7 +21072,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:b9043459d60507fb791b6740053bbdc18db1f1b7bd4b437df98106b5f0b47025
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:72f5bb10074eb7e91cba3262dbb30b94909870f7835ab803626c84867b88c018
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21078,7 +21082,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-hf6f82mk69
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:b9043459d60507fb791b6740053bbdc18db1f1b7bd4b437df98106b5f0b47025
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:72f5bb10074eb7e91cba3262dbb30b94909870f7835ab803626c84867b88c018
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
