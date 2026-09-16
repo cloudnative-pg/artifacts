@@ -8065,6 +8065,13 @@ spec:
                       items:
                         type: string
                       type: array
+                    postgresCapabilities:
+                      description: |-
+                        PostgresCapabilities are the list of capabilities of the
+                        plugin regarding the PostgreSQL configuration
+                      items:
+                        type: string
+                      type: array
                     restoreJobHookCapabilities:
                       description: |-
                         RestoreJobHookCapabilities are the list of capabilities of the
@@ -20533,7 +20540,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:60c8c01bff15b35926977a7eb60eb206e40516d5b91df9483cb092c0ac4b5cf6
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:23331e38a0458cebd58b7528c07e61952aa61c1eb7e4c8f4ebad5c16ad7ee76d
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20543,7 +20550,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-hf6f82mk69
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:60c8c01bff15b35926977a7eb60eb206e40516d5b91df9483cb092c0ac4b5cf6
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:23331e38a0458cebd58b7528c07e61952aa61c1eb7e4c8f4ebad5c16ad7ee76d
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
