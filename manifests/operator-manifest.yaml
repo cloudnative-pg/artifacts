@@ -5538,10 +5538,12 @@ spec:
                       isolationCheck:
                         description: |-
                           Configure the feature that extends the liveness probe for a primary
-                          instance. In addition to the basic checks, this verifies whether the
+                          instance. In addition to the basic checks, this reports whether the
                           primary is isolated from the Kubernetes API server and from its
-                          replicas, ensuring that it can be safely shut down if network
-                          partition or API unavailability is detected. Enabled by default.
+                          replicas, so the kubelet restarts it through the normal
+                          container-termination path (a smart shutdown, bounded by
+                          `.spec.smartShutdownTimeout`) when a network partition or API
+                          unavailability is detected. Enabled by default.
                         properties:
                           connectionTimeout:
                             default: 1000
@@ -19997,11 +19999,11 @@ subjects:
 ---
 apiVersion: v1
 data:
-  PGBOUNCER_IMAGE_NAME: ghcr.io/cloudnative-pg/pgbouncer:1.25.1
+  PGBOUNCER_IMAGE_NAME: ghcr.io/cloudnative-pg/pgbouncer:1.25.2
   POSTGRES_IMAGE_NAME: ghcr.io/cloudnative-pg/postgresql:18.6-system-trixie
 kind: ConfigMap
 metadata:
-  name: cnpg-controller-manager-env-hf6f82mk69
+  name: cnpg-controller-manager-env-chttd88k2t
   namespace: cnpg-system
 ---
 apiVersion: v1
@@ -20540,7 +20542,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:d88bdecc7522e466a71c889eb6f10f0d5bf09f8f4d6286ba66e5d6be88195eca
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:b6f2fa771e9bb430781642655bfda0b7594089e3186f7721f2bfc79ee075cb16
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20549,8 +20551,8 @@ spec:
           value: cnpg-default-monitoring
         envFrom:
         - configMapRef:
-            name: cnpg-controller-manager-env-hf6f82mk69
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:d88bdecc7522e466a71c889eb6f10f0d5bf09f8f4d6286ba66e5d6be88195eca
+            name: cnpg-controller-manager-env-chttd88k2t
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.29@sha256:b6f2fa771e9bb430781642655bfda0b7594089e3186f7721f2bfc79ee075cb16
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
