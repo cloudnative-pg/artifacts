@@ -2225,8 +2225,10 @@ spec:
                         type: string
                       dataChecksums:
                         description: |-
-                          Whether the `-k` option should be passed to initdb,
-                          enabling checksums on data pages (default: `false`)
+                          Whether data checksums are enabled on data pages, to help detect
+                          corruption by the I/O system that would otherwise be silent
+                          (default: `false` before PostgreSQL 18, `true` from PostgreSQL 18 on,
+                          matching the initdb default in each case).
                         type: boolean
                       database:
                         description: 'Name of the database used by the application.
@@ -21023,7 +21025,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:5e291865238d928438b5db5384774af1c0d8007b9c0683115551425b8eec4936
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:262665c4839315937307f29a3c45410427fa33484f885ffd2f2c21f56977c5cb
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21033,7 +21035,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-chttd88k2t
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:5e291865238d928438b5db5384774af1c0d8007b9c0683115551425b8eec4936
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:262665c4839315937307f29a3c45410427fa33484f885ffd2f2c21f56977c5cb
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
