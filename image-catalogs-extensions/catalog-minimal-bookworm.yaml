@@ -37,7 +37,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgrouting:4.0.1-202609251307-18-bookworm@sha256:87b09bb495ba2640f34ec699ca507282e3ef3456a931dff1796a92f1f3f3c08d
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.6-202609251305-18-bookworm@sha256:1ca714748ccdb46a0f2e5a31466889bcf5d5c195fea05b36588b2f19f45d80b0
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.6-202609251417-18-bookworm@sha256:f0f606461a5078403cb00e201f8f8ab798d6fb76ea615742d548dd2c66993268
         - name: postgis
           image:
             reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202609251307-18-bookworm@sha256:f480c8683c75a8ee38a0505897c096909498fc82f6bfbf30fd5e1fca21f1d62e
