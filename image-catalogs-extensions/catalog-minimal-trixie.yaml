@@ -25,7 +25,7 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202609251305-18-trixie@sha256:9baab4fd681ba03dc462a33b9a8d90dbb6c137ca584ae5778972e3e9c4ad28c7
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202609251425-18-trixie@sha256:292b5dbbb2af96ac78e3c6debad6efd7c1526e11e8b76635b2c66fcb72f1cc74
         - name: pg-ivm
           image:
             reference: ghcr.io/cloudnative-pg/pg-ivm:1.15-202609251307-18-trixie@sha256:83cdb64b1c3f16cace2a6733ae79e9f1ce40d6cd7d33987962fe86b6c302d6d1
