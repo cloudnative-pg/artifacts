@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20260928'
+    images.cnpg.io/date: '20261005'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202609281634-standard-bookworm@sha256:92d4a5dbcbd0c0c79305e12a555820058d4c2e0d28806579eaf0582bcbb0d20a
+    image: ghcr.io/cloudnative-pg/postgresql:14.24-202610050823-standard-bookworm@sha256:c9010aca5376dffd164cc57bac077a9ab89d4d63b7900e93228885a9eb1fb965
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202609281634-standard-bookworm@sha256:bf81a4a50c1a63a73131736755dd2f2c5e060c56a8587b5fc4af6f11ed8682af
+    image: ghcr.io/cloudnative-pg/postgresql:15.19-202610050823-standard-bookworm@sha256:9f25ff66311d4d1f9ece22c1087be26670a329ec4fe4be270e3f7057dba94d22
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202609281634-standard-bookworm@sha256:dd78d1b1a8cedb259d27a9718b92855c37c60bbcf16eca827d434d6d3a90ab45
+    image: ghcr.io/cloudnative-pg/postgresql:16.15-202610050823-standard-bookworm@sha256:370eae69bfd20329909b1510671a201e566b89d8f9880d09ae4e8f3d9bac64d0
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202609281634-standard-bookworm@sha256:61207ab4e051645dcb9901e1ec9358b01e4adb45624cb4425be1eab27eac6508
+    image: ghcr.io/cloudnative-pg/postgresql:17.11-202610050823-standard-bookworm@sha256:49c1dd79092d7d8dad03d07151ef7157416e233576c639af8d60ec02c4ae297d
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202609281634-standard-bookworm@sha256:2257decb7de100886c14262e646a6dc10b70057005dbc7cae4b6693282727e2b
+    image: ghcr.io/cloudnative-pg/postgresql:18.6-202610050823-standard-bookworm@sha256:94aa172fc7ce295d482f5fe8bcf8d1e3423f30c15ba40c7d34114b68dc152b0a
