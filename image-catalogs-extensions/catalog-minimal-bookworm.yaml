@@ -25,7 +25,7 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202610011124-18-bookworm@sha256:e5c28e3715601e635f83da4e6da115c857d73cbac9a3661cddaa6241a209c7a9
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202610071431-18-bookworm@sha256:5fb484cb8fc54fe488c7c65735b3f3cdbde02fb2279296ef6c0cca4962a4f62c
         - name: pg-ivm
           image:
             reference: ghcr.io/cloudnative-pg/pg-ivm:1.15-202610071431-18-bookworm@sha256:f49183b0e9bdd02a5bc339d3cffefafb29bfafb7b0ffa66105da2d952540c0f7
@@ -40,7 +40,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202610071437-18-bookworm@sha256:0d989179006dabf428286586103b5fc517ac0ad84ffbfc1d292c07cf53678b6e
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202610011122-18-bookworm@sha256:27a78d6b2942d5e966f03045ba64b4225ccab7fa17f66f3246ad6dc36e000bac
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202610071429-18-bookworm@sha256:2b3d0dd12e035b8da7711a80eb386facfcf73a0aaecad6fcbef84ba2ec2a1cb0
           ld_library_path:
             - system
           env:
@@ -50,7 +50,7 @@ spec:
               value: ${image_root}/share/proj
         - name: timescaledb-oss
           image:
-            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.30.1-202610071431-18-bookworm@sha256:976de8325cc404df646d0693810fa72df6e74fd5f1c87b40b049f7318cdee7c3
+            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.30.2-202610071445-18-bookworm@sha256:51bed7e2d2f21e267439e5ae5849bc57ac88b73ba31276d107b2ceb423d63699
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.6-202610011122-18-bookworm@sha256:c4847516916f5b413f69dba0f607056ff2982f9db769455fc07fc224935d0d25
+            reference: ghcr.io/cloudnative-pg/wal2json:2.6-202610071429-18-bookworm@sha256:9df4d8d26973295689602d8591adffd5f0b332724a2ffd50cff78aa0b36c4d92
