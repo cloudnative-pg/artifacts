@@ -20157,7 +20157,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:8edd8a30027616db270376add34429c6bb100fe9c0d6d9f174b7b1b03af077b1
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:8c504993d6c5385bd777b239578c8caf970a844d7ded99899e585bd6a5de7b6c
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20167,7 +20167,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-76dff68ck5
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:8edd8a30027616db270376add34429c6bb100fe9c0d6d9f174b7b1b03af077b1
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:8c504993d6c5385bd777b239578c8caf970a844d7ded99899e585bd6a5de7b6c
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
