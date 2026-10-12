@@ -25,7 +25,7 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202610110023-18-bookworm@sha256:5e608f780f8c16a93bc64c8caefcc069fd53f4ccb9b05ec230eda7ceebcfd563
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202610110422-18-bookworm@sha256:eb8f3fe07018bfd7709603dcdc109eb83c4c779d3d5da70bebbc6f64962539fc
         - name: pg-ivm
           image:
             reference: ghcr.io/cloudnative-pg/pg-ivm:1.15-202610110422-18-bookworm@sha256:8f7f8cb6ec80bcb9fde059f702196d308fa53b5135748e42c79696075d11dd4f
@@ -37,7 +37,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgrouting:4.0.1-202610110422-18-bookworm@sha256:6b7047b2833b1dea5930cf75205c938ca155a9993ab544ee618c28853f540e8b
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202610110023-18-bookworm@sha256:7b28c933ec9090fea2bb132d433663790cc0f584feed96234fea96aed9c5c57c
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202610110422-18-bookworm@sha256:eb1f6b0b1adaf2c66d9da88412b33c405441b25dc9b0648d58d20b8f858d68ce
         - name: postgis
           image:
             reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202610110422-18-bookworm@sha256:8c3be3cfa0fee05a8a64e49e8b4b58c83023e51aeb642de09ad0f60b39b206cc
