@@ -2601,6 +2601,19 @@ spec:
                       Bootstrap the cluster taking a physical backup of another compatible
                       PostgreSQL instance
                     properties:
+                      additionalArgs:
+                        description: |-
+                          List of custom options to pass to the `pg_basebackup` command.
+
+                          IMPORTANT: Use with caution. The operator rejects the options it relies on,
+                          as listed in the bootstrap documentation, but it does not validate the
+                          others, and some of them may still interfere with its intended
+                          functionality or design.
+                          You are responsible for ensuring that the provided options are compatible
+                          with your environment and PostgreSQL version.
+                        items:
+                          type: string
+                        type: array
                       database:
                         description: 'Name of the database used by the application.
                           Default: `app`.'
@@ -21083,7 +21096,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:5cc97693294533ad5eb384c1153c820f13f4abf5fec38ceafc6eb02faf315711
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:0c71365a908cc59725cf93ebc350b0b3970d8e4b66e741e76a3490a549954350
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21093,7 +21106,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-76dff68ck5
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:5cc97693294533ad5eb384c1153c820f13f4abf5fec38ceafc6eb02faf315711
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:0c71365a908cc59725cf93ebc350b0b3970d8e4b66e741e76a3490a549954350
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
