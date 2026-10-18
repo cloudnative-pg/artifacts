@@ -5688,13 +5688,13 @@ spec:
                         type: integer
                       isolationCheck:
                         description: |-
-                          Configure the feature that extends the liveness probe for a primary
-                          instance. In addition to the basic checks, this reports whether the
-                          primary is isolated from the Kubernetes API server and from its
-                          replicas, so the kubelet restarts it through the normal
-                          container-termination path (a smart shutdown, bounded by
-                          `.spec.smartShutdownTimeout`) when a network partition or API
-                          unavailability is detected. Enabled by default.
+                          Configure the primary isolation check, which stops a primary whose
+                          primary lease has gone past its renew deadline without a successful
+                          renewal, when at least one other instance is unreachable or names a
+                          different target primary, so that it stops accepting writes it can no
+                          longer safely serve. Its reaction time is set by the `primaryLease`
+                          timings and by `requestTimeout`, not by the liveness probe settings this
+                          stanza lives under. Enabled by default.
                         properties:
                           connectionTimeout:
                             default: 1000
@@ -5704,7 +5704,6 @@ spec:
                           enabled:
                             default: true
                             description: Whether primary isolation checking is enabled
-                              for the liveness probe
                             type: boolean
                           requestTimeout:
                             default: 1000
@@ -21125,7 +21124,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:fd07c62be793afa08ef2c4c41326c19a14f2d0ed6301399b3560cec56302119c
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:48a79abc089c1473cc98129dc98d994a07b00911738202a812bde8d11d9dc0d2
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21135,7 +21134,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-76dff68ck5
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:fd07c62be793afa08ef2c4c41326c19a14f2d0ed6301399b3560cec56302119c
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:48a79abc089c1473cc98129dc98d994a07b00911738202a812bde8d11d9dc0d2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
