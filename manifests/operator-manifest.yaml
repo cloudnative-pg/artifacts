@@ -419,6 +419,26 @@ spec:
                     - key
                     - name
                     type: object
+                  sseCustomerKey:
+                    description: |-
+                      Reference to the secret holding the key for Server-Side Encryption with
+                      Customer-provided keys (SSE-C): a base64-encoded 256-bit AES key.
+                      barman-cloud uses it to encrypt the objects it uploads and to read them
+                      back. Meant for S3-compatible providers that only support SSE-C
+                      (e.g. Hetzner Object Storage). Cannot be combined with `encryption`.
+                      Works with any authentication method. Changing the key makes the
+                      existing objects unreadable: use a new `destinationPath` or `serverName`.
+                    properties:
+                      key:
+                        description: The key to select
+                        type: string
+                      name:
+                        description: Name of the referent.
+                        type: string
+                    required:
+                    - key
+                    - name
+                    type: object
                 type: object
               serverName:
                 description: |-
@@ -1850,12 +1870,13 @@ spec:
                             description: |-
                               Compress a backup file (a tar file per tablespace) while streaming it
                               to the object store. Available options are empty string (no
-                              compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
+                              compression, default), `gzip`, `bzip2`, `lz4`, `snappy`, and `zstd`.
                             enum:
                             - bzip2
                             - gzip
                             - lz4
                             - snappy
+                            - zstd
                             type: string
                           encryption:
                             description: |-
@@ -1961,6 +1982,16 @@ spec:
                           HistoryTags is a list of key value pairs that will be passed to the
                           Barman --history-tags option.
                         type: object
+                      s3AddressingStyle:
+                        description: |-
+                          How bucket names appear in S3 requests: `virtual` (bucket.endpoint/key),
+                          `path` (endpoint/bucket/key) or `auto` (boto3 decides, same as unset).
+                          Requires s3Credentials and Barman 3.18 or later.
+                        enum:
+                        - auto
+                        - virtual
+                        - path
+                        type: string
                       s3Credentials:
                         description: The credentials to use to upload data to S3
                         properties:
@@ -2010,6 +2041,26 @@ spec:
                             type: object
                           sessionToken:
                             description: The references to the session key
+                            properties:
+                              key:
+                                description: The key to select
+                                type: string
+                              name:
+                                description: Name of the referent.
+                                type: string
+                            required:
+                            - key
+                            - name
+                            type: object
+                          sseCustomerKey:
+                            description: |-
+                              Reference to the secret holding the key for Server-Side Encryption with
+                              Customer-provided keys (SSE-C): a base64-encoded 256-bit AES key.
+                              barman-cloud uses it to encrypt the objects it uploads and to read them
+                              back. Meant for S3-compatible providers that only support SSE-C
+                              (e.g. Hetzner Object Storage). Cannot be combined with `encryption`.
+                              Works with any authentication method. Changing the key makes the
+                              existing objects unreadable: use a new `destinationPath` or `serverName`.
                             properties:
                               key:
                                 description: The key to select
@@ -2113,6 +2164,11 @@ spec:
                     required:
                     - destinationPath
                     type: object
+                    x-kubernetes-validations:
+                    - fieldPath: .s3AddressingStyle
+                      message: s3AddressingStyle requires s3Credentials
+                      reason: FieldValueForbidden
+                      rule: '!has(self.s3AddressingStyle) || has(self.s3Credentials)'
                   retentionPolicy:
                     description: |-
                       RetentionPolicy is the retention policy to be used for backups
@@ -3465,12 +3521,13 @@ spec:
                               description: |-
                                 Compress a backup file (a tar file per tablespace) while streaming it
                                 to the object store. Available options are empty string (no
-                                compression, default), `gzip`, `bzip2`, `lz4`, and `snappy`.
+                                compression, default), `gzip`, `bzip2`, `lz4`, `snappy`, and `zstd`.
                               enum:
                               - bzip2
                               - gzip
                               - lz4
                               - snappy
+                              - zstd
                               type: string
                             encryption:
                               description: |-
@@ -3576,6 +3633,16 @@ spec:
                             HistoryTags is a list of key value pairs that will be passed to the
                             Barman --history-tags option.
                           type: object
+                        s3AddressingStyle:
+                          description: |-
+                            How bucket names appear in S3 requests: `virtual` (bucket.endpoint/key),
+                            `path` (endpoint/bucket/key) or `auto` (boto3 decides, same as unset).
+                            Requires s3Credentials and Barman 3.18 or later.
+                          enum:
+                          - auto
+                          - virtual
+                          - path
+                          type: string
                         s3Credentials:
                           description: The credentials to use to upload data to S3
                           properties:
@@ -3625,6 +3692,26 @@ spec:
                               type: object
                             sessionToken:
                               description: The references to the session key
+                              properties:
+                                key:
+                                  description: The key to select
+                                  type: string
+                                name:
+                                  description: Name of the referent.
+                                  type: string
+                              required:
+                              - key
+                              - name
+                              type: object
+                            sseCustomerKey:
+                              description: |-
+                                Reference to the secret holding the key for Server-Side Encryption with
+                                Customer-provided keys (SSE-C): a base64-encoded 256-bit AES key.
+                                barman-cloud uses it to encrypt the objects it uploads and to read them
+                                back. Meant for S3-compatible providers that only support SSE-C
+                                (e.g. Hetzner Object Storage). Cannot be combined with `encryption`.
+                                Works with any authentication method. Changing the key makes the
+                                existing objects unreadable: use a new `destinationPath` or `serverName`.
                               properties:
                                 key:
                                   description: The key to select
@@ -3728,6 +3815,11 @@ spec:
                       required:
                       - destinationPath
                       type: object
+                      x-kubernetes-validations:
+                      - fieldPath: .s3AddressingStyle
+                        message: s3AddressingStyle requires s3Credentials
+                        reason: FieldValueForbidden
+                        rule: '!has(self.s3AddressingStyle) || has(self.s3Credentials)'
                     connectionParameters:
                       additionalProperties:
                         type: string
@@ -21025,7 +21117,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:b582d02abab0a1bc2b73ecf594979a5595e4012fcbbbddf1351843533154b1d3
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:1da0c90f136ed79f09a199cdae40436339fdd0adf6b4b9c5f2faffb520bfc373
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21035,7 +21127,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:b582d02abab0a1bc2b73ecf594979a5595e4012fcbbbddf1351843533154b1d3
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:1da0c90f136ed79f09a199cdae40436339fdd0adf6b4b9c5f2faffb520bfc373
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
