@@ -20331,6 +20331,7 @@ rules:
   - leases
   verbs:
   - create
+  - delete
   - get
   - list
   - update
@@ -21117,7 +21118,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:1da0c90f136ed79f09a199cdae40436339fdd0adf6b4b9c5f2faffb520bfc373
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:819bca3da297c324fa40b9cd3435d9486dced4b7e166be60140e51d645d81871
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21127,7 +21128,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:1da0c90f136ed79f09a199cdae40436339fdd0adf6b4b9c5f2faffb520bfc373
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.30@sha256:819bca3da297c324fa40b9cd3435d9486dced4b7e166be60140e51d645d81871
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
