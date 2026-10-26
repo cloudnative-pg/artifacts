@@ -6,19 +6,19 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: standard
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20261019'
+    images.cnpg.io/date: '20261026'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-standard-bookworm@sha256:e65cbf9ba18d313acde4bcdc1bc8eb636b0e005f83f23b44aba3f957ecca1e66
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202610190957-standard-bookworm@sha256:1456828cc50408ff4b4d138484683f259394fdb6c2609d6a5f07c38295b5c257
+    image: ghcr.io/cloudnative-pg/postgresql:14.24-202610260820-standard-bookworm@sha256:3c51dc303c523df57cf5e74b1ba63fb7ca298d2da980260ca456c9dbcaced8c3
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202610190958-standard-bookworm@sha256:5705805b15d2eb4f851d2939b06f6dc49de31e2481d086b93d5aa824d53e9618
+    image: ghcr.io/cloudnative-pg/postgresql:15.19-202610260819-standard-bookworm@sha256:95c26188dbb8ce26f465925c73e1a6aa5f658e717314c050ecd8ee30e402abff
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202610190958-standard-bookworm@sha256:83124abd70e1b11ab3be2f53fc15acb46ffcf00f19332a5dba7ac2779b9dc571
+    image: ghcr.io/cloudnative-pg/postgresql:16.15-202610260820-standard-bookworm@sha256:aa7ee18e6206790e58ca69d0b08b373eafe222817df75731a90f1bd9550be4f8
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202610190957-standard-bookworm@sha256:0d0e407ca1d986022651671e830022ccfe496994a8b99fe925b5ae3f0264cb1a
+    image: ghcr.io/cloudnative-pg/postgresql:17.11-202610260819-standard-bookworm@sha256:fef8075b97b11a1fc12b387b9576809dbcda26a8fc68cb9416581f16856920f3
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202610190957-standard-bookworm@sha256:a8042813b0d1abe564bebb129479f9a865fb9d78a322edc36c204ac1ea9e5ddd
+    image: ghcr.io/cloudnative-pg/postgresql:18.6-202610260820-standard-bookworm@sha256:ff50547e391c0df0ff64726962e816effcfd85b4ea42040a70cc502e8ff45d49
