@@ -8,8 +8,6 @@ metadata:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -500,8 +498,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: clusterimagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -720,8 +716,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8706,8 +8700,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: databaseroles.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9239,8 +9231,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: databases.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9836,8 +9826,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: failoverquorums.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9913,8 +9901,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -10132,8 +10118,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -15228,6 +15212,7 @@ spec:
                                 Domain names *.k8s.io and *.kubernetes.io are reserved.
                                 This field must be unique for each responder.
                                 This field is required.
+                              minLength: 1
                               type: string
                             priority:
                               description: |-
@@ -15244,12 +15229,15 @@ spec:
                                 The interval 0-999 is reserved for responders with *.k8s.io suffix.
                                 This field is required.
                               format: int32
+                              maximum: 100000
+                              minimum: 0
                               type: integer
                           required:
                           - name
                           - priority
                           type: object
                           x-kubernetes-map-type: atomic
+                        maxItems: 10
                         type: array
                         x-kubernetes-list-map-keys:
                         - name
@@ -19940,8 +19928,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: publications.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -20138,8 +20124,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -20335,8 +20319,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: subscriptions.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -20878,6 +20860,32 @@ rules:
   - subscriptions/status
   verbs:
   - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: cloudnative-pg
+  name: cnpg-viewer-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - barmancloud.cnpg.io
+  - klio.cnpg.io
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+  - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -21437,7 +21445,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c53025764ffd707887b9822803a5ecf56d4b31484c76a7ea7855ea47f8c1843e
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:dff2d99807eba53eb07e716ac184801b56d97a56877446f87f32e54bd140ed64
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21447,7 +21455,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c53025764ffd707887b9822803a5ecf56d4b31484c76a7ea7855ea47f8c1843e
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:dff2d99807eba53eb07e716ac184801b56d97a56877446f87f32e54bd140ed64
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
