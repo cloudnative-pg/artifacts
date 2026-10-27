@@ -8,8 +8,6 @@ metadata:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: backups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -490,8 +488,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: clusterimagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -706,8 +702,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: clusters.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8166,8 +8160,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: databases.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8763,8 +8755,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: failoverquorums.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -8840,8 +8830,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: imagecatalogs.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -9055,8 +9043,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: poolers.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -14073,6 +14059,7 @@ spec:
                                 Domain names *.k8s.io and *.kubernetes.io are reserved.
                                 This field must be unique for each responder.
                                 This field is required.
+                              minLength: 1
                               type: string
                             priority:
                               description: |-
@@ -14089,12 +14076,15 @@ spec:
                                 The interval 0-999 is reserved for responders with *.k8s.io suffix.
                                 This field is required.
                               format: int32
+                              maximum: 100000
+                              minimum: 0
                               type: integer
                           required:
                           - name
                           - priority
                           type: object
                           x-kubernetes-map-type: atomic
+                        maxItems: 10
                         type: array
                         x-kubernetes-list-map-keys:
                         - name
@@ -18761,8 +18751,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: publications.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -18959,8 +18947,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: scheduledbackups.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -19153,8 +19139,6 @@ spec:
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.22.0
   name: subscriptions.postgresql.cnpg.io
 spec:
   group: postgresql.cnpg.io
@@ -20249,7 +20233,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e3297c908b2be42c411e4f3ba0e0066df6db4687eb2a9487bb3176bd751f0217
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:5e74637b5952388f7fef691013ea3d98312626d6a03e36642c3664691ded021c
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -20259,7 +20243,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:e3297c908b2be42c411e4f3ba0e0066df6db4687eb2a9487bb3176bd751f0217
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:release-1.28@sha256:5e74637b5952388f7fef691013ea3d98312626d6a03e36642c3664691ded021c
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
