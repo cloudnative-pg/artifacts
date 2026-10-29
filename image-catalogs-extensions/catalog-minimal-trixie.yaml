@@ -53,4 +53,4 @@ spec:
             reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.31.0-202610271250-18-trixie@sha256:29726f94369664e283dbcc232b6c965e8443b91cec2fd1657ad7b4d022c38f98
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.6-202610271034-18-trixie@sha256:8f1960f06f81e012d949e02a9df7887efe20400caabec36a342aedce9f8c1b9e
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202610292025-18-trixie@sha256:80f0c5400a419791c9337d70013444b844add06565e0b63f5c57cd88d89f6353
