@@ -25,22 +25,22 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202610271034-18-trixie@sha256:f9f7f8958937abdc36778c3eb605b5db2101a2ba7ac94e1625ebed02bbb3a38d
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611010816-18-trixie@sha256:63faf4e15ed85f7757c24a1402d3cb64eb3cefd69853412191d4719825a1424c
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.15-202610271034-18-trixie@sha256:c0028e411881b19c9b5e00983eaca0ff62b6fe6a133e40e0d831b76a36d9364d
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611010816-18-trixie@sha256:126bc686c5839e37a0c4f90cc3fee9862895af6b91d6bfcbbb76dd166aa3356b
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202610271034-18-trixie@sha256:dbe1bda6c428f1af057467600d72c3e5c7f6c9c325a61c0e21d257bc957b6329
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611010816-18-trixie@sha256:f6fde3db0bcd8498761399bf8c11594f5621dc8cc48fd44f4edff59843ad3da1
         - name: pgrouting
           image:
-            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202610301428-18-trixie@sha256:2db553920ce1fe9144b6696287def1ef764f3f5db069363207483995bbf86d77
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611010814-18-trixie@sha256:fafe20bca2a53abe22f71a6c42668ffa367ab3b46f3f2f06e0432876bed5e949
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202610271035-18-trixie@sha256:03fbe8ed2ab2f1d9966fa563ff9c776a2d2dce57d34c73b0aca4f7d24ddb3a2b
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611010816-18-trixie@sha256:a389cc3c326fd1367a33df8e72b9b2cea151ad4e0f006fd06260ecb88036dd14
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202610271035-18-trixie@sha256:b01272f460f5b8b53a3d25bb7515a15db4bc5f66b6d1c9b8340c0027e03aef9b
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.6.4-202611010816-18-trixie@sha256:058357def0109b06dcb975a5f8a49d67baa218a9f50fd7315323f6bc3eeb858d
           ld_library_path:
             - system
           env:
@@ -50,7 +50,7 @@ spec:
               value: ${image_root}/share/proj
         - name: timescaledb-oss
           image:
-            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.31.0-202610271250-18-trixie@sha256:29726f94369664e283dbcc232b6c965e8443b91cec2fd1657ad7b4d022c38f98
+            reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.31.0-202611010816-18-trixie@sha256:d311a4beb6c8090e33080d26f44c3f175f92d3dab9422ae70813d55ff89f5ff3
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202610292025-18-trixie@sha256:80f0c5400a419791c9337d70013444b844add06565e0b63f5c57cd88d89f6353
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611010816-18-trixie@sha256:57684ff8412d5881b26ef2a386e3fcabef7f70b631509fd27b1babb16d625d6d
