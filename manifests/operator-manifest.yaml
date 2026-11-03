@@ -8774,13 +8774,48 @@ spec:
                   is stored in a Secret named `<databaserole-name>-client-cert`.
                   Requires login to be true.
                 properties:
+                  duration:
+                    description: |-
+                      Duration is the lifetime of the generated client certificate, at least one
+                      minute. Expressed in Go duration units, so a day has to be written as
+                      hours: 90 days is `2160h`. Defaults to the operator's
+                      `CERTIFICATE_DURATION` setting (90 days).
+                    type: string
                   enabled:
                     default: true
                     description: |-
                       Enabled turns on client certificate issuance for this role. When true,
                       the role must have login enabled. Defaults to true when the block is present.
                     type: boolean
+                  renewBefore:
+                    description: |-
+                      RenewBefore is how long before expiry the certificate is renewed, in Go
+                      duration units, at most half of `duration` and only accepted together with
+                      it. Defaults to the operator's `EXPIRING_CHECK_THRESHOLD` setting (7 days),
+                      capped at half the lifetime. Renewal generates a new private key along with
+                      the new certificate.
+                    type: string
                 type: object
+                x-kubernetes-validations:
+                - message: 'duration must be expressed in Go duration units, where
+                    a day is not a unit: 90 days is 2160h'
+                  rule: '!has(self.duration) || self.duration.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')'
+                - message: 'renewBefore must be expressed in Go duration units, where
+                    a day is not a unit: 7 days is 168h'
+                  rule: '!has(self.renewBefore) || self.renewBefore.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')'
+                - message: renewBefore requires duration to be set
+                  rule: '!has(self.renewBefore) || has(self.duration)'
+                - message: renewBefore must be at most half of duration
+                  rule: '!has(self.renewBefore) || !has(self.duration) || !self.renewBefore.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')
+                    || !self.duration.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')
+                    || duration(self.renewBefore) + duration(self.renewBefore) <=
+                    duration(self.duration)'
+                - message: duration must be at least 1m
+                  rule: '!has(self.duration) || !self.duration.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')
+                    || duration(self.duration) >= duration(''1m'')'
+                - message: renewBefore must be at least 30s
+                  rule: '!has(self.renewBefore) || !self.renewBefore.matches(''^([0-9]+([.][0-9]+)?(ns|us|ms|s|m|h))+$'')
+                    || duration(self.renewBefore) >= duration(''30s'')'
               cluster:
                 description: The corresponding cluster
                 properties:
@@ -9587,8 +9622,67 @@ spec:
                       description: |-
                         The role name of the user who owns the schema inside PostgreSQL.
                         It maps to the `AUTHORIZATION` parameter of `CREATE SCHEMA` and the
-                        `OWNER TO` command of `ALTER SCHEMA`.
+                        `OWNER TO` command of `ALTER SCHEMA`. If left empty, the schema is
+                        owned by `postgres`, the role CloudNativePG uses to connect to the
+                        database.
                       type: string
+                    permissions:
+                      description: |-
+                        Permissions defines the privileges to grant or revoke on the schema,
+                        keyed by privilege. Each entry carries a role name and a type of
+                        `grant` (default) or `revoke`, mirroring the existing usage model.
+                      properties:
+                        create:
+                          description: |-
+                            List of roles for which the `CREATE` privilege on the schema is granted or revoked.
+                            Maps to `GRANT CREATE ON SCHEMA ... TO ...` / `REVOKE CREATE ON SCHEMA ... FROM ...`.
+                          items:
+                            description: UsageSpec configures a usage for a foreign
+                              data wrapper
+                            properties:
+                              name:
+                                description: Name of the usage
+                                type: string
+                                x-kubernetes-validations:
+                                - message: name is required
+                                  rule: self != ''
+                              type:
+                                default: grant
+                                description: The type of usage
+                                enum:
+                                - grant
+                                - revoke
+                                type: string
+                            required:
+                            - name
+                            type: object
+                          type: array
+                        usage:
+                          description: |-
+                            List of roles for which the `USAGE` privilege on the schema is granted or revoked.
+                            Maps to `GRANT USAGE ON SCHEMA ... TO ...` / `REVOKE USAGE ON SCHEMA ... FROM ...`.
+                          items:
+                            description: UsageSpec configures a usage for a foreign
+                              data wrapper
+                            properties:
+                              name:
+                                description: Name of the usage
+                                type: string
+                                x-kubernetes-validations:
+                                - message: name is required
+                                  rule: self != ''
+                              type:
+                                default: grant
+                                description: The type of usage
+                                enum:
+                                - grant
+                                - revoke
+                                type: string
+                            required:
+                            - name
+                            type: object
+                          type: array
+                      type: object
                   required:
                   - name
                   type: object
@@ -21445,7 +21539,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ffdb345f2339eb76b21356d5b77b2335a2f0de3956c7cc255e901636dbb369f5
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:57008457f3598572f35993c220043f4326b57f2837097f2c1b8857301ed626c2
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21455,7 +21549,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ffdb345f2339eb76b21356d5b77b2335a2f0de3956c7cc255e901636dbb369f5
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:57008457f3598572f35993c220043f4326b57f2837097f2c1b8857301ed626c2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
