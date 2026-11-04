@@ -5803,7 +5803,10 @@ spec:
                             type: integer
                           enabled:
                             default: true
-                            description: Whether primary isolation checking is enabled
+                            description: |-
+                              Whether primary isolation checking is enabled. When disabled, an
+                              isolated primary is not stopped, but a primary that reaches a peer
+                              reporting a different target primary still is.
                             type: boolean
                           requestTimeout:
                             default: 1000
@@ -21539,7 +21542,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:57008457f3598572f35993c220043f4326b57f2837097f2c1b8857301ed626c2
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:5a1ccfe5a979173d1bfaf72308379d9c44bdd1b3d11de40c04152aa2686951db
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21549,7 +21552,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-742g66fh6c
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:57008457f3598572f35993c220043f4326b57f2837097f2c1b8857301ed626c2
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:5a1ccfe5a979173d1bfaf72308379d9c44bdd1b3d11de40c04152aa2686951db
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
