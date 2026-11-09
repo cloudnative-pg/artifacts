@@ -3,7 +3,7 @@ kind: ClusterImageCatalog
 metadata:
   name: postgresql-minimal-bookworm
   labels:
-    images.cnpg.io/date: "20261103"
+    images.cnpg.io/date: "20261109"
     images.cnpg.io/family: postgresql
     images.cnpg.io/os: bookworm
     images.cnpg.io/publisher: cnpg.io
@@ -13,34 +13,34 @@ spec:
     - major: 13
       image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-bookworm@sha256:02e8ffc71aec2768ca177711278d3c0e6ceb5403df5fa6d3780cd590332e3a5d
     - major: 14
-      image: ghcr.io/cloudnative-pg/postgresql:14.24-202611020810-minimal-bookworm@sha256:06dfba7dec1927675984d35aeb10902cf7706d1007f49296b8ed97788a3172fa
+      image: ghcr.io/cloudnative-pg/postgresql:14.24-202611090810-minimal-bookworm@sha256:159634517daf63cb159bf97ba44cb6de075b49cb2339473347622e15672908e5
     - major: 15
-      image: ghcr.io/cloudnative-pg/postgresql:15.19-202611020810-minimal-bookworm@sha256:2cb69ad2175a13ce88c7b9e42f788fc74a0890a21440159ba9eda2a2958cfbd8
+      image: ghcr.io/cloudnative-pg/postgresql:15.19-202611090810-minimal-bookworm@sha256:c9617002f5b5ff6463143b15708f80b1c03a3730d8914724443bf513f6d9fbea
     - major: 16
-      image: ghcr.io/cloudnative-pg/postgresql:16.15-202611020810-minimal-bookworm@sha256:edc22fbc8e3eef2dd6ca5a72b1d0aca8b6d05874e3c423d6bc0d6c744a2144ce
+      image: ghcr.io/cloudnative-pg/postgresql:16.15-202611090810-minimal-bookworm@sha256:ab5f69206dbe09f2b88480cae6d537510e21561ab15c580658fdfaf51efa7884
     - major: 17
-      image: ghcr.io/cloudnative-pg/postgresql:17.11-202611020810-minimal-bookworm@sha256:a0e0102f166e7aee0d461ef9edf64bc98c851bbff5bd4a75447cd0e634608709
+      image: ghcr.io/cloudnative-pg/postgresql:17.11-202611090810-minimal-bookworm@sha256:7f46c7b31bee3cd641d84ad0887cf35a968141fbd9b75d8d29897b08379b0842
     - major: 18
-      image: ghcr.io/cloudnative-pg/postgresql:18.6-202611030838-minimal-bookworm@sha256:fe6fae9baefd10996c8c02af5d3d2231cb38cd614f5fb8e68a4d404a0623a378
+      image: ghcr.io/cloudnative-pg/postgresql:18.6-202611090812-minimal-bookworm@sha256:a335de56b20fa57f7820034699868594b7beb23a9cf447eed7d76c5d659176ce
       extensions:
         - name: pg-crash
           image:
             reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611061245-18-bookworm@sha256:52d124bc3dd7fd38ae4c2d9c7be0428da8f444a3ac57767a39fcea8f513c60f8
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611061246-18-bookworm@sha256:bf9847b573fb037d196aa34817efca094cfe2310d002e33cc60ea2fe033fb04a
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611061304-18-bookworm@sha256:d18bd799c96b51e9171249d351fe98340e66470f7f6265f15deca8fc9c466b11
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611061245-18-bookworm@sha256:d1055b44e293df00fa72f43ee3c487dce6ac4c7a5be7a88c1ef27339bd35080c
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611061304-18-bookworm@sha256:72014762739af8fbe9d1396ec4689c326d87dbcbaf92761f35b8b9e4de38e486
         - name: pgrouting
           image:
-            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611061245-18-bookworm@sha256:433988fa95193c85ae2f56d8dab956923126dc92d08d3e3fcd8a9ab4dd7196b2
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611061304-18-bookworm@sha256:e0b066843f13d9882282513b6ca116ef628cbbd8ef6c5efe211705033887f58d
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611061245-18-bookworm@sha256:72dc342d7d284c26824b308749399813e27170f2f9064de8aa77a82f0acb7b5e
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611061304-18-bookworm@sha256:cbb00337200e7e95bb09041a1574fbbc557fdc9f5e13226f86c06f5044a7630a
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611061246-18-bookworm@sha256:f408a538c7f77d0f2fd396fb14af3af0f5f1c322c9a45740ff85f1a5842bc463
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611061304-18-bookworm@sha256:95461a90d20aeb3e18b63b6fde242f4afe9aaa217abddcd13e33879aea913d37
           ld_library_path:
             - system
           env:

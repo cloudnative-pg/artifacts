@@ -3,7 +3,7 @@ kind: ClusterImageCatalog
 metadata:
   name: postgresql-minimal-trixie
   labels:
-    images.cnpg.io/date: "20261103"
+    images.cnpg.io/date: "20261109"
     images.cnpg.io/family: postgresql
     images.cnpg.io/os: trixie
     images.cnpg.io/publisher: cnpg.io
@@ -13,34 +13,34 @@ spec:
     - major: 13
       image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-trixie@sha256:68703fc0579e2f93379f94628092b5bde55d676e546feab1251c243f414a6a20
     - major: 14
-      image: ghcr.io/cloudnative-pg/postgresql:14.24-202611020810-minimal-trixie@sha256:93063d1ffbe67a99dabd0ac1442b44b3995eab751a2bb2dd0b715fd7ad826178
+      image: ghcr.io/cloudnative-pg/postgresql:14.24-202611090810-minimal-trixie@sha256:948f314b0d3ee54842f63ac58235c87beaa80b26b59b7b09b0034358e2df9c8b
     - major: 15
-      image: ghcr.io/cloudnative-pg/postgresql:15.19-202611020810-minimal-trixie@sha256:dbfac3fea4498e987258cb1ef02a3902d6475c01a66a93041c9ccd3e887e201e
+      image: ghcr.io/cloudnative-pg/postgresql:15.19-202611090810-minimal-trixie@sha256:c765aec78593a00b48cdda336fd1c4d0518a723d1bd13552efc20c6c3f0adf7b
     - major: 16
-      image: ghcr.io/cloudnative-pg/postgresql:16.15-202611020810-minimal-trixie@sha256:1549a11f6f17d6402dd266af10fbcd6a63e2686979d767682667b469f53a2cb6
+      image: ghcr.io/cloudnative-pg/postgresql:16.15-202611090810-minimal-trixie@sha256:ead87f904c8f46e16fa9e809d2635d1cb39cfadbfe5c60e72c764633e4769775
     - major: 17
-      image: ghcr.io/cloudnative-pg/postgresql:17.11-202611020810-minimal-trixie@sha256:7c680fc840a9ea6bd04399f1aeea06bb3180df3f0969f18833925b6df3d7dc87
+      image: ghcr.io/cloudnative-pg/postgresql:17.11-202611090810-minimal-trixie@sha256:eb06deb9dab3706c9dc8dce4b24677f0b55a8887918cd26d2a3cc59b2c12c3ee
     - major: 18
-      image: ghcr.io/cloudnative-pg/postgresql:18.6-202611030838-minimal-trixie@sha256:26d15a12723510b0b416e8aec2bc65f2da7ac9b77ef3182a0911e4b8b991420a
+      image: ghcr.io/cloudnative-pg/postgresql:18.6-202611090812-minimal-trixie@sha256:ec2ed3404e89fff99643901b58a2a34c46a46345fe69a3d96500b82f995c327b
       extensions:
         - name: pg-crash
           image:
             reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611061245-18-trixie@sha256:39a0059816ae48c388a42a427685449b26aa6666fb19c0a57020c85a844a7ccc
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611061246-18-trixie@sha256:4894a977ba99abaef46edb0eb65f60ab0754006c0967485615ab95a63b20bcd4
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611061304-18-trixie@sha256:53ab4e1d4ae567aab57b67d381880fe09177c23ac84065a400a3c35d4bec7d14
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611061245-18-trixie@sha256:e0499c4777664239541ec9bd391eb12aa409a2329a1932d971e2f8f0d58c4e20
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611061304-18-trixie@sha256:bcb6b86d4a4772a170b97ab177f88fb78e0d597a8ca1a4561fc2f77b4b1a9d9d
         - name: pgrouting
           image:
-            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611061245-18-trixie@sha256:16da53ba0dbf2dac7882ba0cb04a521480315e02cfe9455d777661c10700a8ed
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611061304-18-trixie@sha256:e7a548d96662c6957828947ae485d5e4071baf4f498a4eaad421452318ebebd1
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611061245-18-trixie@sha256:1fffa33049f42be491ed4d928fc2a0da400a6f9fadd068e106195e6d6c0e4215
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611061304-18-trixie@sha256:36dd07720447813c0659c6d8a961e1bc79a4324c6d6de46cd57f6201b70db53a
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611061246-18-trixie@sha256:45000efee4ccba301ca74147c8d213bdf9903eb48e1a8164810c22ce15059eca
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611061304-18-trixie@sha256:094af4bd2db0541c15a57f00609a6837a0d2100ae9ea6f2de3be53200e3e77bd
           ld_library_path:
             - system
           env:
