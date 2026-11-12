@@ -13,12 +13,12 @@ spec:
   - major: 13
     image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-trixie@sha256:68703fc0579e2f93379f94628092b5bde55d676e546feab1251c243f414a6a20
   - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.24-202611090810-minimal-trixie@sha256:948f314b0d3ee54842f63ac58235c87beaa80b26b59b7b09b0034358e2df9c8b
+    image: ghcr.io/cloudnative-pg/postgresql:14.25-202611122305-minimal-trixie@sha256:c3c62fb81ef26f60ad0a04e374aca6c5ae58f76d788c9786d3e19fe8013ea69b
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.19-202611090810-minimal-trixie@sha256:c765aec78593a00b48cdda336fd1c4d0518a723d1bd13552efc20c6c3f0adf7b
+    image: ghcr.io/cloudnative-pg/postgresql:15.20-202611122305-minimal-trixie@sha256:8b00131cea7769e387c66b3bd9fdad43e0474c10b3d43d414a0d93b78a754ed0
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.15-202611090810-minimal-trixie@sha256:ead87f904c8f46e16fa9e809d2635d1cb39cfadbfe5c60e72c764633e4769775
+    image: ghcr.io/cloudnative-pg/postgresql:16.16-202611122305-minimal-trixie@sha256:b51a1204a6978da0eeea8273181c002ce1f6da3001323ca80f74b054e3cb3d4a
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.11-202611090810-minimal-trixie@sha256:eb06deb9dab3706c9dc8dce4b24677f0b55a8887918cd26d2a3cc59b2c12c3ee
+    image: ghcr.io/cloudnative-pg/postgresql:17.12-202611122305-minimal-trixie@sha256:4ae89311e5031155a139a5c6d31a80f6deb135443711e61ff7df41cb549fdcaa
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.6-202611090812-minimal-trixie@sha256:ec2ed3404e89fff99643901b58a2a34c46a46345fe69a3d96500b82f995c327b
+    image: ghcr.io/cloudnative-pg/postgresql:18.7-202611122305-minimal-trixie@sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1
