@@ -28,10 +28,10 @@ spec:
             reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611122345-18-bookworm@sha256:b80971189f21e4644b4fc9b1ec60d2dafad24189fe6337b7fad1696403b1f53e
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611121012-18-bookworm@sha256:196d0a8fbf67c85d14cd0e62c0275976f7faed1800e14a47e1d78d2846c630fc
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611122346-18-bookworm@sha256:0aa24c7b2348d98c7a4891ecd0d358b8ef7ffa6b16c5f0eef470010ce62517ed
         - name: pgaudit
           image:
-            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611121012-18-bookworm@sha256:e4733443fbcccdd9f044baf669a5cb33d2f3eb4419de01307f955efa570cd590
+            reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611122347-18-bookworm@sha256:25be61ec9f7875807054415185cc488c6ab45c2746d6946232c839a5d945e538
         - name: pgrouting
           image:
             reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611121012-18-bookworm@sha256:e7bd96da92e808fafa6d1c2dc9ce67f7308e7634625f9ec3b8f2f016bcf0eec4
