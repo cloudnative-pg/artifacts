@@ -53,4 +53,4 @@ spec:
             reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.31.0-202611121012-18-bookworm@sha256:6b38785f7f42b2b70dca61b7b44e2212942c3a0fa8bf29cdd541393eddd9be28
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611121012-18-bookworm@sha256:1c1eb60251c509285a565518f33d74b9bc2be9c9d5dc7699d6e9bac2408e28d7
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611122353-18-bookworm@sha256:c68120ddaa2b8a5c98cdc7d4446cb5ae4b1d68e498d1f2d24afff852fdd1ae0e
