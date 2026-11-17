@@ -6656,6 +6656,15 @@ spec:
                       More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
                     type: object
                 type: object
+              resourcesUpdateStrategy:
+                description: |-
+                  How changes to `resources` reach running instances: `recreate`
+                  (default) rolls the Pods, `inPlace` resizes them when possible and
+                  rolls them otherwise. `inPlace` requires Kubernetes 1.33 or later.
+                enum:
+                - recreate
+                - inPlace
+                type: string
               schedulerName:
                 description: |-
                   If specified, the pod will be dispatched by specified Kubernetes
@@ -20572,6 +20581,80 @@ metadata:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  name: cnpg-backup-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - backups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - backups/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cnpg-cluster-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - clusters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - clusters/status
+  verbs:
+  - get
+  - patch
+  - update
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cnpg-clusterimagecatalog-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - clusterimagecatalogs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - clusterimagecatalogs/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
   labels:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: cloudnative-pg-kubebuilderv4
@@ -20616,6 +20699,104 @@ rules:
   - postgresql.cnpg.io
   resources:
   - databases/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cnpg-databaserole-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - databaseroles
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - databaseroles/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: cloudnative-pg
+  name: cnpg-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - backups
+  - clusters
+  - databaseroles
+  - databases
+  - imagecatalogs
+  - poolers
+  - publications
+  - scheduledbackups
+  - subscriptions
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - clusters/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - backups/status
+  - databaseroles/status
+  - databases/status
+  - imagecatalogs/status
+  - poolers/status
+  - publications/status
+  - scheduledbackups/status
+  - subscriptions/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cnpg-imagecatalog-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - imagecatalogs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - imagecatalogs/status
   verbs:
   - get
 ---
@@ -20675,6 +20856,12 @@ rules:
   - list
   - patch
   - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/resize
+  verbs:
+  - patch
 - apiGroups:
   - ""
   resources:
@@ -20861,6 +21048,30 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
+  name: cnpg-pooler-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - poolers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - poolers/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
   labels:
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/name: cloudnative-pg-kubebuilderv4
@@ -20905,6 +21116,30 @@ rules:
   - postgresql.cnpg.io
   resources:
   - publications/status
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: cnpg-scheduledbackup-editor-role
+rules:
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - scheduledbackups
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - postgresql.cnpg.io
+  resources:
+  - scheduledbackups/status
   verbs:
   - get
 ---
@@ -21542,7 +21777,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ef5a66a06b321a502b939e6fb9f6069ce15afb46ce152b1bdbd5ebcdfdc6e43a
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ed6182c5947ae26d8b2456dae8309d6120654c4f2f2b0b63d716311c7033d58f
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21552,7 +21787,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-c8k8ckc67h
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ef5a66a06b321a502b939e6fb9f6069ce15afb46ce152b1bdbd5ebcdfdc6e43a
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:ed6182c5947ae26d8b2456dae8309d6120654c4f2f2b0b63d716311c7033d58f
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
