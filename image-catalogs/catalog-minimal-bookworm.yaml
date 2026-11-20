@@ -6,19 +6,17 @@ metadata:
     images.cnpg.io/family: postgresql
     images.cnpg.io/type: minimal
     images.cnpg.io/os: bookworm
-    images.cnpg.io/date: '20261116'
+    images.cnpg.io/date: '20261120'
     images.cnpg.io/publisher: cnpg.io
 spec:
   images:
-  - major: 13
-    image: ghcr.io/cloudnative-pg/postgresql:13.22-202511100817-minimal-bookworm@sha256:02e8ffc71aec2768ca177711278d3c0e6ceb5403df5fa6d3780cd590332e3a5d
-  - major: 14
-    image: ghcr.io/cloudnative-pg/postgresql:14.25-202611160820-minimal-bookworm@sha256:4143b80db43b42adb397edcb93e51ae788ee61ffb285123fc8a9ecbf6e0511d3
   - major: 15
-    image: ghcr.io/cloudnative-pg/postgresql:15.20-202611160820-minimal-bookworm@sha256:d4db608413d2c467ed7da19c11cb0a6c21688cec0367aeb73eff2a327f61742f
+    image: ghcr.io/cloudnative-pg/postgresql:15.20-202611201710-minimal-bookworm@sha256:843a1c0b111f34489385f22a04452434c4bcaa6186fd2c792ae0a72dfd3aedc4
   - major: 16
-    image: ghcr.io/cloudnative-pg/postgresql:16.16-202611160820-minimal-bookworm@sha256:699d9c5dde8405029f0a54eea074e45d34ade36ac83f1f30bd8ce57102f71568
+    image: ghcr.io/cloudnative-pg/postgresql:16.16-202611201711-minimal-bookworm@sha256:f6481a8ae13b91405b088df506f528a91817646bf9c9b93653ab01be48ee1566
   - major: 17
-    image: ghcr.io/cloudnative-pg/postgresql:17.12-202611160820-minimal-bookworm@sha256:49f777eeea1d50f9f477cc9283e91928238abee8be021ba8d2ca84ef41780c65
+    image: ghcr.io/cloudnative-pg/postgresql:17.12-202611201711-minimal-bookworm@sha256:f63e6d16c4e452e63477b437b70568e1e59b2c636ba3831530022e45d1398941
   - major: 18
-    image: ghcr.io/cloudnative-pg/postgresql:18.7-202611160820-minimal-bookworm@sha256:447d86c0f35e232f88c91dc397cbaa72b1a42c8fb12172bc6e4413095c8310c2
+    image: ghcr.io/cloudnative-pg/postgresql:18.7-202611201711-minimal-bookworm@sha256:485d620e25d58a262a71e333cb3237bdf5a2ef97f5351d0e4300b7245450834e
+  - major: 19
+    image: ghcr.io/cloudnative-pg/postgresql:19.0-202611201710-minimal-bookworm@sha256:dab926da474ab83231be780f15baeb60d0685f97608a8f9b83dfe631ed03b25b
