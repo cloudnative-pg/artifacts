@@ -30,7 +30,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611231502-18-trixie@sha256:045cb80a34a3c5706c2db4e00ae9c461e63c526f896e0b9506bd8077283c58f1
         - name: pgrouting
           image:
-            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231502-18-trixie@sha256:a58ec48c6809167bd90525cfb6b4f38ff2202601fab118f2a278bd57e1b20b6a
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231632-18-trixie@sha256:f4cfdf8d68571bc72ae69e14ab6f502354035a5b5c33ee91ad245fcd390818f5
         - name: pgvector
           image:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611231502-18-trixie@sha256:7b3f7366129a4ddc22ba391d31135b76d122d82a3c5c6147c2f45dec16235bbb
@@ -62,6 +62,9 @@ spec:
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:19.0-202611231502-19-trixie@sha256:9b3f18e6caf51215f7b2177735d2b258044423eebde44745074a19ff0669af3d
+        - name: pgrouting
+          image:
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231632-19-trixie@sha256:cbe7ec81ad789436cd9fc01ff3c1f2479cd2debab46af52fae14412c93f05674
         - name: pgvector
           image:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611231502-19-trixie@sha256:226c893aa3acdd26741ffedad91f4351c9973eb7e521d9f392efde1ec95b36f3

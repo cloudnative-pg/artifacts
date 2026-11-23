@@ -30,7 +30,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgaudit:18.0-202611231502-18-bookworm@sha256:3e819eda4ce787d515618912dcbe399f165aaf1034542467b2dc4decb498ebed
         - name: pgrouting
           image:
-            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231502-18-bookworm@sha256:d72d821a8fb581ca942670853c0d02e80ffdc80cc1b8ae74189245422409a53a
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231632-18-bookworm@sha256:23dc0d9e3f180a04e13921f728bad090f3a0fbb1778aa513bf30dda3903958c3
         - name: pgvector
           image:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611231502-18-bookworm@sha256:0c98b474fca6902285372cf508ee853486cec7946e77d4b44b9883168048920a
@@ -62,6 +62,9 @@ spec:
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:19.0-202611231502-19-bookworm@sha256:60985d15020caab00f84b0c91be579733113524796544bd2c7f9a98b12f8ce54
+        - name: pgrouting
+          image:
+            reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611231632-19-bookworm@sha256:d1f1763533eafca766a7b172d93c049ef486fcfd38ba5edb0bbb63d40510fb6b
         - name: pgvector
           image:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611231502-19-bookworm@sha256:f5a9fdf0c49492f87769a1f5a3544376c322c1f2f68852de138d62161212a66d
