@@ -2272,6 +2272,14 @@ spec:
                   initdb:
                     description: Bootstrap the cluster via initdb
                     properties:
+                      allowPublicConnectToPostgres:
+                        description: |-
+                          Allows the `PUBLIC` pseudo-role to keep the `CONNECT` privilege on the
+                          `postgres` database, as PostgreSQL grants it by default. When `false`
+                          (the default), the operator revokes it when the cluster is bootstrapped.
+                          It only applies when the cluster is bootstrapped with `initdb`: the
+                          privileges of existing databases are never changed.
+                        type: boolean
                       builtinLocale:
                         description: |-
                           Specifies the locale name when the builtin provider is used.
@@ -22010,7 +22018,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:bf595ed8ac15aca861dcd5d65f6112a8d69eb4efb31254567b76277b8e6698d0
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c8d2e7c24600572100a9f9e7ae3d34f8c819cea95de2dbf4ce4045e46d6576c2
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -22020,7 +22028,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-tg99k647m8
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:bf595ed8ac15aca861dcd5d65f6112a8d69eb4efb31254567b76277b8e6698d0
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c8d2e7c24600572100a9f9e7ae3d34f8c819cea95de2dbf4ce4045e46d6576c2
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
