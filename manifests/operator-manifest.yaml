@@ -4680,6 +4680,9 @@ spec:
                   The target value for the synchronous replication quorum, that can be
                   decreased if the number of ready standbys is lower than this.
                   Undefined or 0 disable synchronous replication.
+
+                  Deprecated: this field will be removed in CloudNativePG 1.33.0.
+                  Use `.spec.postgresql.synchronous` instead.
                 minimum: 0
                 type: integer
               minSyncReplicas:
@@ -4688,6 +4691,9 @@ spec:
                   Minimum number of instances required in synchronous replication with the
                   primary. Undefined or 0 allow writes to complete when no standby is
                   available.
+
+                  Deprecated: this field will be removed in CloudNativePG 1.33.0.
+                  Use `.spec.postgresql.synchronous` instead.
                 minimum: 0
                 type: integer
               monitoring:
@@ -5548,6 +5554,12 @@ spec:
                     description: |-
                       Requirements to be met by sync replicas. This will affect how the "synchronous_standby_names" parameter will be
                       set up.
+
+                      This field only applies to the legacy synchronous replication method.
+
+                      Deprecated: this field will be removed in CloudNativePG 1.33.0, along
+                      with the method. Use the failure domain options of
+                      `.spec.postgresql.synchronous` instead.
                     properties:
                       enabled:
                         description: This flag enables the constraints for sync replicas
@@ -21936,7 +21948,7 @@ spec:
         - name: PULL_SECRET_NAME
           value: cnpg-pull-secret
         - name: OPERATOR_IMAGE_NAME
-          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:9bdb974bae31fe7ed73c99cfe81e5afac6234245b00db12fe69ae49c03609601
+          value: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c8ad0b9fdc9ffabf519852a018ec86a3edeb4c0c17106efd486b43e6c6d4b6b7
         - name: OPERATOR_NAMESPACE
           valueFrom:
             fieldRef:
@@ -21946,7 +21958,7 @@ spec:
         envFrom:
         - configMapRef:
             name: cnpg-controller-manager-env-c8k8ckc67h
-        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:9bdb974bae31fe7ed73c99cfe81e5afac6234245b00db12fe69ae49c03609601
+        image: ghcr.io/cloudnative-pg/cloudnative-pg-testing:main@sha256:c8ad0b9fdc9ffabf519852a018ec86a3edeb4c0c17106efd486b43e6c6d4b6b7
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
