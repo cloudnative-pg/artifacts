@@ -21,7 +21,7 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271407-18-trixie@sha256:6119daf3e2e194fd0059dde3f4f12bc678944a984308e5f24fb3c539d8a8e81a
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271443-18-trixie@sha256:26c9d6151c2fdecf5ee777c93c831a1d792f3335e94c155412c9e1154c936360
         - name: pg-ivm
           image:
             reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611271405-18-trixie@sha256:97256bf33fc7aa07864e2c22850346ca9e3f34f74e22534c86ce60df64ca14eb
@@ -55,7 +55,7 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271407-19-trixie@sha256:e2421e6bb1341c6406029a96e7476624915c589eec60ba7a13d004078ab93921
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271443-19-trixie@sha256:47883fadc6f101afd2758a70f33e85ce53209114d81340691846fe3f3241f1be
         - name: pg-ivm
           image:
             reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611271405-19-trixie@sha256:c5ce3cd5d98ece87cd168cc356d6b1fdbf474376a66ce97c23f57cacf899162d
