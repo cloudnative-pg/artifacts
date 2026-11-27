@@ -49,7 +49,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.32.0-202611251238-18-bookworm@sha256:c7bd8800f0b3e6b082ae648441f0a6a723d577cf8bf9fc6d1e421afa2f258cb2
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271433-18-bookworm@sha256:dc547d41a5100ca0f72923fcb085d3eccecde5479a881072b467a6661848d70d
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271800-18-bookworm@sha256:154ee15cba1adaeee1bbe2f0a05bc77f87b141e7783d922dac95a42e9373895c
     - major: 19
       image: ghcr.io/cloudnative-pg/postgresql:19.0-202611230809-minimal-bookworm@sha256:e0313e18039b961f77e318c0cf207c529fab0f64aa91590db8de3cbaacfe48b5
       extensions:
@@ -80,4 +80,4 @@ spec:
               value: ${image_root}/share/proj
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271433-19-bookworm@sha256:966a47e7963403d5672a6b2d69d3f15ce2269d3cd2b018fadf33f27f4ef6e36e
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271800-19-bookworm@sha256:025c1bb78dffee1002b8fbdcc587907b933419ba8bb5ca8d87e1aba1232d084d

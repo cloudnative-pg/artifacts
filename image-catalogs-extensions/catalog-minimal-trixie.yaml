@@ -49,7 +49,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/timescaledb-oss:2.32.0-202611251238-18-trixie@sha256:724fdbe39a7cd4a18862ccc316ecc442c079ac4e6daff8a32556948f15904c49
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271433-18-trixie@sha256:b3bc681dae50d32438a24454a5865f3e6ff3d295ff3560dcc86ce1e9cedd6671
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271800-18-trixie@sha256:b7b1145ce798f3f30c1987628c249a7d29acc9a0562e6a11110d9efe9db41b88
     - major: 19
       image: ghcr.io/cloudnative-pg/postgresql:19.0-202611230809-minimal-trixie@sha256:12688a494f25aa0b7e1e3cd1800abe85b427fd1a09c991668a48162e3431a2af
       extensions:
@@ -80,4 +80,4 @@ spec:
               value: ${image_root}/share/proj
         - name: wal2json
           image:
-            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271433-19-trixie@sha256:d0b35c6da50f39f2ba6e5e3dc684377e5438f6ed41444d2127ff0e16b2975828
+            reference: ghcr.io/cloudnative-pg/wal2json:2.7-202611271800-19-trixie@sha256:2e83a95be0eb3f8e4c9ede90110d6a126bab50cb318a898e650fd727729dada1
