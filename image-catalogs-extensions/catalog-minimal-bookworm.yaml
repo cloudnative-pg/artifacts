@@ -36,7 +36,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611271502-18-bookworm@sha256:325b939902a7023acf93c49437c886dcb0837df4f07057c23ccfbcbff548b4bc
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271501-18-bookworm@sha256:eaf82717dd893931de2655ac37854d39519b9d78231b71f59af7c0cc4f6b6de8
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271657-18-bookworm@sha256:4f0beb742a30bcb56153e7f83883bd1f1402329ac3fdb8ff51b6bc43046f7f20
           ld_library_path:
             - system
           env:
@@ -70,7 +70,7 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611271502-19-bookworm@sha256:da45701d44a16bfd34f99d33e4362c278736d97e2a3a37cd90da79321e56e088
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271501-19-bookworm@sha256:f69ed6846d376518f1591c45022f910c15fe04ea1d99bf41be8fe75cd4c15f7d
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271657-19-bookworm@sha256:44ea47be629488665b19676497ccfa42091d206f7ad74fe08a92b98e23cf8eec
           ld_library_path:
             - system
           env:
