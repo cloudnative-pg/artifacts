@@ -21,10 +21,10 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611251238-18-trixie@sha256:205b80d6715ee77696000c1add7aae7bf7b0e7dc334cbfbdbee2e7474ad0995a
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271407-18-trixie@sha256:6119daf3e2e194fd0059dde3f4f12bc678944a984308e5f24fb3c539d8a8e81a
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611251238-18-trixie@sha256:5866033df1f3cf0668ae1d15a556a8f84c6f1a380771d5f823c67063ae3d8a84
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611271405-18-trixie@sha256:97256bf33fc7aa07864e2c22850346ca9e3f34f74e22534c86ce60df64ca14eb
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:18.1-202611251238-18-trixie@sha256:6c64b0c731e55d79ebca58465062922648a928016988b589018c2cbfc693ced6
@@ -55,10 +55,10 @@ spec:
       extensions:
         - name: pg-crash
           image:
-            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611251238-19-trixie@sha256:60abe5b3cb8ee5dd97c3c53a831df14f2ed99951eb1eb1f551ee044eb7ffa8f2
+            reference: ghcr.io/cloudnative-pg/pg-crash:0.3-202611271407-19-trixie@sha256:e2421e6bb1341c6406029a96e7476624915c589eec60ba7a13d004078ab93921
         - name: pg-ivm
           image:
-            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611251238-19-trixie@sha256:93138ce6c58ab0b8c6052f8ecfee352154d51a2eb8f1bb03bf50c670121bc4cd
+            reference: ghcr.io/cloudnative-pg/pg-ivm:1.17-202611271405-19-trixie@sha256:c5ce3cd5d98ece87cd168cc356d6b1fdbf474376a66ce97c23f57cacf899162d
         - name: pgaudit
           image:
             reference: ghcr.io/cloudnative-pg/pgaudit:19.0-202611251238-19-trixie@sha256:682ff333bfbcdbffe658fe8e3ebcf5694a642d23d4685b84f72f352697569aeb
