@@ -33,10 +33,10 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgrouting:4.0.3-202611271420-18-bookworm@sha256:13182309af7291cf314719ee8c8684d0dba837e47f79f123f061e4ad06482f77
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611251238-18-bookworm@sha256:c4e0c04f51258adc24064284ad7c8a922f7298a05049f27a783f185c974cc1cf
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611271502-18-bookworm@sha256:325b939902a7023acf93c49437c886dcb0837df4f07057c23ccfbcbff548b4bc
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271432-18-bookworm@sha256:72b21fe20115da45e56ea633da4aa7932637057812bef0515f1aae7f7ef9987d
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271501-18-bookworm@sha256:eaf82717dd893931de2655ac37854d39519b9d78231b71f59af7c0cc4f6b6de8
           ld_library_path:
             - system
           env:
@@ -67,10 +67,10 @@ spec:
             reference: ghcr.io/cloudnative-pg/pgrouting:4.0.2-202611271420-19-bookworm@sha256:72e34d99d8ed23c01ebe6ec62bf723428956386c2369336f2237166969383eef
         - name: pgvector
           image:
-            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611251238-19-bookworm@sha256:106da17f58967eddea2e18144ab56e7086aef8c3d26c72142332dc84d8492c82
+            reference: ghcr.io/cloudnative-pg/pgvector:0.8.7-202611271502-19-bookworm@sha256:da45701d44a16bfd34f99d33e4362c278736d97e2a3a37cd90da79321e56e088
         - name: postgis
           image:
-            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271432-19-bookworm@sha256:a78a36a380a6d1093ede297262f4b68e8b0a27325aab7b515f6c61d372346b32
+            reference: ghcr.io/cloudnative-pg/postgis-extension:3.7.0-202611271501-19-bookworm@sha256:f69ed6846d376518f1591c45022f910c15fe04ea1d99bf41be8fe75cd4c15f7d
           ld_library_path:
             - system
           env:
